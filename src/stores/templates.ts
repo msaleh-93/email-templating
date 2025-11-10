@@ -2,6 +2,8 @@ import Handlebars from "handlebars";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+import { eventsSub } from "~/utils/events";
+
 const BASE_URL = "http://localhost:3210",
   HBS = ".hbs";
 
@@ -67,10 +69,8 @@ export const useTemplates = create<TemplatesStore>()(
       }
 
       // Listen for all relevant events
-      document.addEventListener("visibilitychange", handleFocusChange);
-      window.addEventListener("focus", handleFocusChange);
-      window.addEventListener("blur", handleFocusChange);
-
+      eventsSub(document).visibilitychange(handleFocusChange);
+      eventsSub(window).focus(handleFocusChange).blur(handleFocusChange);
       handleFocusChange();
 
       return {
