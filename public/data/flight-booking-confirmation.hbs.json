@@ -1,0 +1,113 @@
+{
+  "language": "en",
+  "adminEmail": true,
+  "approved": true,
+  "multiCity": false,
+  "roundTrip": false,
+  "corpBooking": true,
+  "headerLogoSrc": "http://localhost:3210/assets/header-logo-corp.svg",
+  "footerLogoSrc": "http://localhost:3210/assets/footer-logo-corp.svg",
+  "approvalIconSrc": "http://localhost:3210/assets/checkmark.svg",
+  "rejectionIconSrc": "http://localhost:3210/assets/rejected-stamp.png",
+  "plainIconSrc": "http://localhost:3210/assets/plain.svg",
+  "callIconSrc": "http://localhost:3210/assets/call.svg",
+  "arrowRightIconSrc": "http://localhost:3210/assets/arrow-right.svg",
+  "hotelBannerImageSrc": "http://localhost:3210/assets/hotel-banner-image.svg",
+  "homepageLink": "https://flyakeed.com",
+  "contactUsLink": "https://flyakeed.com/contact.html",
+  "hotelBookingLink": "https://hotels.flyakeed.com/hotel/search",
+  "pendingRequestLink": "",
+  "approvalLink": "",
+  "rejectionLink": "",
+  "subjectLine": "One Way Trip Confirmation",
+  "issueDate": "5 Nov 2025",
+  "issueId": "654654",
+  "requestEndsAt": "7:00AM",
+  "pnr": "8JT9Q3",
+  "steps": [
+    {
+      "isFlight": true,
+      "airline": "Saudia",
+      "plain": "SV540",
+      "class": "Economy",
+      "departure": {
+        "city": "Madinah",
+        "airport": "MED",
+        "date": "12 NOV",
+        "time": "14:00"
+      },
+      "arrival": {
+        "city": "Dubai",
+        "airport": "DXB",
+        "date": "12 NOV",
+        "time": "15:30"
+      },
+      "duration": "1h 30m"
+    },
+    {
+      "isLayover": true,
+      "duration": "2h 25m",
+      "location": "DXB"
+    },
+    {
+      "isFlight": true,
+      "airline": "Emirates",
+      "plain": "EK815",
+      "class": "Economy",
+      "departure": {
+        "city": "Dubai",
+        "airport": "DXB",
+        "date": "12 NOV",
+        "time": "17:45"
+      },
+      "arrival": {
+        "city": "Muscat",
+        "airport": "MCT",
+        "date": "12 NOV",
+        "time": "18:45"
+      },
+      "duration": "1h 00m"
+    }
+  ],
+  "passengersSummary": "2 Adults, 1 Child",
+  "passengers": [
+    {
+      "imageSrc": null,
+      "label": "MA",
+      "name": "Muath Badee",
+      "seat": "G1",
+      "role": "Product"
+    },
+    {
+      "imageSrc": null,
+      "label": "AR",
+      "name": "Ali Roy",
+      "seat": "G2",
+      "role": "Design"
+    }
+  ],
+  "policyViolations": [
+    {
+      "number": 1,
+      "value": "Not the cheapest flight"
+    },
+    {
+      "number": 2,
+      "value": "Not domestic"
+    },
+    {
+      "number": 3,
+      "value": "Included dependants"
+    }
+  ],
+  "requestedVia": "Akeed Corp",
+  "purpose": "Business Trip",
+  "tag": "General",
+  "basePrice": "6220.18",
+  "serviceFee": "30.00",
+  "vat": "10.00",
+  "totalPrice": "6250.18",
+  "currency": "SAR",
+  "hotelCity": "Dubai",
+  "contactInfo": "+966 920 000 091  Riyadh, Saudi Arabia"
+}

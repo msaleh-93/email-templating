@@ -1,0 +1,173 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Welcome Email</title>
+  <style>
+    /* These styles will be inlined by juice */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background-color: #007bff;
+      padding: 40px 30px;
+      text-align: center;
+    }
+
+    .header h1 {
+      color: #ffffff;
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .content {
+      background-color: #ffffff;
+      padding: 40px 30px;
+    }
+
+    .content h2 {
+      color:
+        #333333;
+      margin: 0 0 20px;
+      font-size: 24px;
+    }
+
+    .content p {
+      color: #666666;
+      line-height: 1.6;
+      margin: 0 0 15px;
+      font-size: 16px;
+    }
+
+    .button {
+      background-color: #007bff;
+      color: #ffffff !important;
+      text-decoration:
+        none;
+      padding: 14px 28px;
+      border-radius: 4px;
+      display: inline-block;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .footer {
+      background-color: #f8f9fa;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .footer p {
+      color: #999999;
+      font-size: 14px;
+      margin: 5px 0;
+      line-height: 1.5;
+    }
+
+    .footer a {
+      color:
+        #007bff;
+      text-decoration: none;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .content {
+        padding: 30px 20px !important;
+      }
+
+      .header {
+        padding:
+          30px 20px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f4f4f4;">
+    <tr>
+      <td align="center" style="padding: 20px 0;">
+
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="email-container">
+
+          <!-- Header -->
+          <tr>
+            <td class="header">
+              <h1>Welcome to {{companyName}}! 🎉</h1>
+            </td>
+          </tr>
+
+          <!-- Content -->
+          <tr>
+            <td class="content">
+              <h2>Hi {{userName}},</h2>
+
+              <p>We're thrilled to have you on board! Your account has been
+                successfully created and you're all set to get started.</p>
+
+              <p>Here are a few things you can do to get the most out of your
+                experience:</p>
+
+              <ul style="color: #666666; line-height: 1.8; margin: 20px 0;">
+                <li>Complete your profile</li>
+                <li>Explore our features</li>
+                <li>Connect with our community</li>
+                <li>Check out our getting started guide</li>
+              </ul>
+
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td>
+                    <a href="{{ctaLink}}" class="button">Get Started Now</a>
+                  </td>
+                </tr>
+              </table>
+
+              <p>If you have any questions or need assistance, feel free to
+                reach out to our support team anytime.</p>
+
+              <p>Best regards,<br />
+                The
+                {{companyName}}
+                Team</p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td class="footer">
+              <p><strong>{{companyName}}</strong></p>
+              <p>123 Business Street, Suite 100<br />
+                City, State 12345</p>
+              <p>
+                <a href="#">Unsubscribe</a>
+                |
+                <a href="#">View in browser</a>
+                |
+                <a href="#">Contact us</a>
+              </p>
+              <p>&copy;
+                {{currentYear}}
+                {{companyName}}. All rights reserved.</p>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

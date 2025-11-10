@@ -1,0 +1,402 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Booking</title>
+</head>
+<style>
+  @media screen and (min-width: 580px) {
+    .padded-sides {
+      padding-right: 32px !important;
+      padding-left: 32px !important;
+    }
+
+    .padded-right {
+      padding-right: 32px !important;
+    }
+
+    .padded-left {
+      padding-left: 32px !important;
+    }
+  }
+
+  .booking-header {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00419C;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    text-align: left;
+  }
+
+  .container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    padding: 16px;
+  }
+
+  .booking-info {
+    background-color: #0085E5;
+    border-radius: 8px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .booking-info span {
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 10px;
+  }
+
+  .hotel-details {
+    display: flex;
+    text-align: left;
+    font-weight: bold;
+    color: #00419C;
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
+
+  .hotel-location {
+    font-size: 12px;
+    margin-left:0px;
+  }
+
+  .room-info {
+    display: block;
+    justify-content: space-between;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #496997;
+    text-align: left;
+  }
+
+  .room-info-header {
+    color: #0F4096;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .room-info div {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .room-info-nights {
+    color: #0763DF;
+    font-weight: bold;
+    padding-right: 3px;
+  }
+
+  .check-info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #666;
+  }
+
+  .check-info-wrapper div {
+    background-color: #ECF1F8;
+    border-radius: 8px;
+    padding: 5px;
+    text-align: left;
+    min-width: 227px;
+  }
+
+  .check-info-header {
+    color: #384E6B;
+  }
+
+  .check-info-date {
+    font-weight: bold;
+    font-size: 16px;
+    color: #384E6B;
+  }
+
+  .note-header {
+    font-weight: bold;
+    text-align: left;
+    font-size: 12px;
+  }
+
+  .note div {
+    background-color: #ECF1F8;
+    border-radius: 8px;
+    padding: 10px;
+    color: #384E6B;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    text-align: left;
+    font-size: 12px;
+  }
+
+  .hotel-address div {
+    padding: 10px;
+    background-color: #ECF1F8;
+    border-radius: 8px;
+    text-align: left;
+    color: #384E6B;
+  }
+
+  .price-info {
+    color: #666;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 8px;
+  }
+
+  .refund-info {
+    font-size: 12px;
+    color: #0C5A3A;
+    text-align: center;
+    padding-bottom: 16px;
+  }
+
+  .buttons {
+    justify-content: space-between;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .buttons a {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 8px;
+    font-size: 14px;
+  }
+
+  .buttons a:last-child {
+    margin-right: 0;
+  }
+</style>
+
+<body style="background-color: #CCE6FF; text-align: center; font-family: inter,system-ui,sans-serif; font-size: 14px;padding-right: 8px;padding-left: 8px;margin:0;">
+  <table align="center" border="0" width="100%" border="0" style="background-color:red-; center; text-align: center;padding:0; padding-top:52px; padding-bottom:52px;">
+    <tbody>
+      <tr>
+        <td style="padding:0;">
+          <table align="center" width="100%" border="0" style="border-collapse:collapse;background-color: #F8FAFC
+
+; max-width: 600px;border-bottom: 1px solid #B1CDF6;">
+            <tbody>
+              <tr height="74">
+                <td class="padded-left" style="padding-left:16px;">
+                  <a href="https://flyakeed.com">
+                    <img src="https://cdn.flyakeed.com/flyakeed-emails/images/FlyAkeed+Logo.svg" height="24"></a>
+                </td>
+                <td width="100%"></td>
+
+                
+              </tr>
+
+              <!--start of body-->
+              <tr>
+                <td class="padded-sides" style="padding-right:16px; padding-left:16px" colspan="3">
+                  <div style="height: 1px; width:100%; background-color:#bbd4ff"></div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="padded-sides" style="padding-right:16px; padding-left:16px" height="26"></td>
+              </tr>
+              <tr>
+                <td class="padded-left" style="padding-left:5px; font-size: 12px; font-weight:600; color: #00419C;">{{Name Name}}</td>
+                <td width="100%"></td>
+                <td class="padded-right" style="padding-right:20px; font-size: 12px; font-weight:300; color: #4A668C;">Adult</td>
+              </tr>
+              <tr>
+                <td colspan="3" height="26"></td>
+              </tr>
+              <!-- White Container with Rounded Corners -->
+              <tr>
+                <td class="padded-sides" colspan="3">
+                  <div class="container">
+                    <div class="booking-info">
+                      <span>Booking#</span>
+                      <strong style="margin-right:200px;">DK2JD8UGSK</strong>
+                    </div>
+
+                    <div class="hotel-details">
+
+<img src="https://cdn.flyakeed.com/flyakeed-emails/images/Hotel.svg" width="34" height="34" style="margin-right: 1px; margin-top:0px; ">
+                      <div style="margin-left:10px;">
+                      <div>
+                        Sheraton Hotel Al-Haram </div> 
+                      <div class="hotel-location" > Makkah, Saudi Arabia </div> 
+                        </div> 
+                    </div>
+                    <div style="height: 1px; width:100%; background-color:#bbd4ff; margin-top:10px; margin-bottom:10px;"></div>
+                    <div class="room-info-header">
+
+                      Royal Suite
+                    </div>
+                    <div class="room-info">
+                      <span class="room-info-nights">
+                        6 Nights </span> King bed, Front view, Breakfast, Wifi
+                    </div>
+                    <div style="height: 1px; width:100%; background-color:#bbd4ff; margin-top:10px; margin-bottom:10px;"></div>
+
+                    <div class="room-info-header">
+                      Standard Room
+                    </div>
+
+                    <div class="room-info">
+                      <span class="room-info-nights">
+                        2 Nights </span> Single bed, Smoking
+                    </div>
+
+                    <div class="hotel-address" style=" margin-top:15px">
+
+                      <div>
+ <img src="https://cdn.flyakeed.com/flyakeed-emails/images/LocationIcon.svg" width="24" height="20" style="margin-right: 1px; ">
+                        3421 Al-Haram Street, Rawabi Dist, Makkah, Saudi Arabia     
+                      </div>
+
+                    </div>
+
+                    <div class="check-info-wrapper">
+                      <div>
+                        <div class="check-info-header"> Check-in</div>
+                        <div class="check-info-date"> 26 May</div>
+                        <div>
+                          2:00 – 11:30 PM
+                        </div>
+
+                      </div>
+                      <div>
+                        <div class="check-info-header"> Check-out</div>
+                        <div class="check-info-date"> 4 Aug</div>
+                        <div>
+                          12:00 – 2:00 PM
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="note">
+                      <div>
+                        <span class="note-header"> Note: </span>
+                        <br>
+                        Steve Jobs once said that intuition is more powerful than intellect. Let me show you how to harness the incredible power of your intuition.
+                      </div>
+                    </div>
+
+                  </div>
+                </td>
+  <tr>
+                <td colspan="3" class="padded-sides" style="line-height:21px; vertical-align:top;padding-right:16px; padding-left:16px; padding-top:16px">
+
+                  <img src="https://cdn.flyakeed.com/flyakeed-emails/images/Mastercard.svg" width="24" height="11" style="margin-right: 4px; "><span style="line-height:23px; vertical-align:top;font-size: 14px; font-weight: 700; "> 
+
+                    <span class="price-info">
+                      SAR
+                    </span>
+
+                    6,250.18
+                </span>
+                </td>
+              </tr>
+              <tr>
+                <td class="padded-sides" style="padding-right:16px; padding-left:16px; vertical-align:top;" colspan="3">
+                 
+
+                  <div class="refund-info">
+                    50% Refundable 48h before Check-in<br>
+                    15% Refundable 24h before Check-in
+                  </div>
+                  <div style="height: 1px; width:100%; background-color:#bbd4ff"></div>
+                </td>
+
+              </tr>
+
+            
+              <tr>
+                <td colspan="3" height="26"></td>
+              </tr>
+              <tr>
+                <td class="padded-sides" style="padding-right: 16px;padding-left: 16px;" colspan="3">
+                  <div>
+
+                    <a href="http://" style="background-color:#196DF5;border-radius:20px;color:#ffffff;display:inline-block;font-family: inter,system-ui,sans-serif;font-size:14px;font-weight:bold;line-height:37px;text-align:center;text-decoration:none;width:auto-;-webkit-text-size-adjust:none;">
+                      <table width="auto" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                          <tr>
+                            <td width="22px">&nbsp;</td>
+                            <td>Download PDF</td>
+                            <td width="22px">&nbsp;</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" height="26"></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="padded-sides" style="line-height:21px; vertical-align:top;padding-right:16px; padding-left:16px;">
+                  <a href="" style="text-decoration:none;">
+                    <img src="https://cdn.flyakeed.com/flyakeed-emails/images/help.png" width="23" height="23" style="margin-right: 4px"><span style="line-height:23px; vertical-align:top;font-size: 14px; font-weight: 700; color: #196DF5;">Need Help?</span></a>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" height="26"></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td height="16"></td>
+      </tr>
+      <!--end of body-->
+
+      <!--footer section-->
+
+      <tr>
+        <td style="padding:0;">
+          <table align="center" width="100%" border="0" style="border-collapse:collapse;background-color: #1A1F71; max-width: 600px;">
+            <tbody style="padding-top:32px;padding-bottom:32px;">
+              <tr>
+                <td class="padded-sides" style="padding-right:16px;padding-left:16px;padding-top:32px;padding-bottom:20px;">
+                  <a href="https://flyakeed.com">
+                    <img src="https://cdn.flyakeed.com/flyakeed-emails/images/FlyAkeed+Footer.svg" height="40"></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="padded-sides" style="line-height: 1.6;padding-right:16px;padding-left:16px;font-size:12px;padding-bottom:32px;">
+                  <a style="disply:inline-block;color:#8FC0FF!important;text-decoration:none;white-space: nowrap;" href="tel:+966920000091">+966 920 000 091</a>
+                  <a style="disply:inline-block;color:#8FC0FF!important;text-decoration:none;padding-left:10px;white-space: nowrap;">Riyadh, Saudi Arabia</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

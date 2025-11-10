@@ -1,0 +1,78 @@
+{
+  "language": "en",
+  "textDirection": "ltr",
+  "bookingDate": "5 Nov 2023",
+  "bookingId": "654655",
+  "isPendingApproval": true,
+  "pendingApprovalTitle": "Your Flight Booking is Pending Approval",
+  "pnr": "PENDING",
+  "flights": [
+    {
+      "airline": "Emirates",
+      "flightNumber": "EK815",
+      "class": "Business",
+      "origin": {
+        "city": "Dubai",
+        "code": "DXB",
+        "date": "20 NOV",
+        "time": "08:00"
+      },
+      "destination": {
+        "city": "London",
+        "code": "LHR",
+        "date": "20 NOV",
+        "time": "12:30"
+      },
+      "duration": "7hr 30m",
+      "layover": null
+    },
+    {
+      "airline": "Emirates",
+      "flightNumber": "EK816",
+      "class": "Business",
+      "origin": {
+        "city": "London",
+        "code": "LHR",
+        "date": "25 NOV",
+        "time": "14:00"
+      },
+      "destination": {
+        "city": "Dubai",
+        "code": "DXB",
+        "date": "26 NOV",
+        "time": "00:30"
+      },
+      "duration": "6hr 30m",
+      "layover": null
+    }
+  ],
+  "passengerCount": "1 Adult",
+  "passengers": [
+    {
+      "badge": "KA",
+      "name": "Khalid Ahmed",
+      "type": "G1",
+      "role": "Engineering"
+    }
+  ],
+  "policyViolations": [
+    "Not the cheapest flight",
+    "Business class selected"
+  ],
+  "policyViolationsTitle": "Policy Violations",
+  "requestedViaLabel": "Requested via",
+  "requestedVia": "Akeed Corp",
+  "purposeLabel": "Purpose",
+  "purpose": "Client Meeting",
+  "tagLabel": "Tag",
+  "tag": "Sales",
+  "isRoundTrip": true,
+  "hotelCity": "London",
+  "hotelBannerText": "Book Your Hotel in",
+  "hotelDeepLink": "akeedcorp://hotel/search?city=LHR&checkIn=2023-11-20&checkOut=2023-11-25&guests=1&rooms=1&radius=30&culture=en&utm_campaign=promote_hotel_after_flight&utm_medium=postbooking&utm_source=email",
+  "needHelpText": "Need Help?",
+  "helpLink": "https://support.akeedcorp.com",
+  "contactPhone": "+966 920 000 091",
+  "contactLocation": "Riyadh, Saudi Arabia",
+  "logoUrl": "http://localhost:3210/assets/logo-fly-akeed.svg"
+}

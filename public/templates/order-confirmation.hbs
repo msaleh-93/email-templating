@@ -1,0 +1,225 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Order Confirmation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family:
+        Arial, Helvetica, sans-serif;
+    }
+
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background-color: #28a745;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .header h1 {
+      color: #ffffff;
+      margin: 0;
+      font-size:
+        24px;
+    }
+
+    .content {
+      background-color: #ffffff;
+      padding: 40px 30px;
+    }
+
+    .content p {
+      color: #666666;
+      line-height: 1.6;
+      margin: 0 0 15px;
+      font-size: 16px;
+    }
+
+    .order-info {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+
+    .order-info p {
+      margin: 8px 0;
+      color: #333333;
+    }
+
+    .order-info strong {
+      color: #000000;
+    }
+
+    .items-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    .items-table th {
+      background-color: #f8f9fa;
+      padding: 12px;
+      text-align: left;
+      color:
+        #333333;
+      font-weight: bold;
+      border-bottom: 2px solid #dee2e6;
+    }
+
+    .items-table td {
+      padding: 12px;
+      border-bottom: 1px solid #dee2e6;
+      color:
+        #666666;
+    }
+
+    .items-table .text-right {
+      text-align: right;
+    }
+
+    .total-row {
+      background-color: #f8f9fa;
+      font-weight: bold;
+    }
+
+    .total-row td {
+      color:
+        #000000;
+      font-size: 18px;
+    }
+
+    .button {
+      background-color: #007bff;
+      color:
+        #ffffff !important;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 4px;
+      display: inline-block;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .footer {
+      background-color: #f8f9fa;
+      padding: 30px;
+      text-align:
+        center;
+    }
+
+    .footer p {
+      color: #999999;
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .content {
+        padding: 30px 20px !important;
+      }
+
+      .items-table th,
+      .items-table td {
+        padding: 8px 6px !important;
+        font-size: 14px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f4f4f4;">
+    <tr>
+      <td align="center" style="padding: 20px 0;">
+
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="email-container">
+
+          <!-- Header -->
+          <tr>
+            <td class="header">
+              <h1>✓ Order Confirmed!</h1>
+            </td>
+          </tr>
+
+          <!-- Content -->
+          <tr>
+            <td class="content">
+              <p>Hi {{userName}},</p>
+
+              <p>Thank you for your order! We've received your order and are
+                getting it ready to ship.</p>
+
+              <div class="order-info">
+                <p><strong>Order Number:</strong> #{{orderNumber}}</p>
+                <p><strong>Order Date:</strong> {{orderDate}}</p>
+                <p><strong>Shipping Address:</strong><br />{{shippingAddress}}</p>
+              </div>
+
+              <h2 style="color: #333333; margin: 30px 0 20px;">Order Details</h2>
+
+              <table role="presentation" class="items-table" cellspacing="0" cellpadding="0">
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th class="text-right">Qty</th>
+                    <th class="text-right">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each items}}
+                  <tr>
+                    <td>{{this.name}}</td>
+                    <td class="text-right">{{this.quantity}}</td>
+                    <td class="text-right">{{currency this.price}}</td>
+                  </tr>
+                  {{/each}}
+                  <tr class="total-row">
+                    <td colspan="2">Total</td>
+                    <td class="text-right">{{currency total}}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td>
+                    <a href="#" class="button">Track Your Order</a>
+                  </td>
+                </tr>
+              </table>
+
+              <p>We'll send you another email with tracking information once
+                your order ships.</p>
+
+              <p>If you have any questions about your order, please don't
+                hesitate to contact us.</p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td class="footer">
+              <p><strong>Need Help?</strong></p>
+              <p>Contact our support team at support@example.com</p>
+              <p>&copy; {{currentYear}} Company Name. All rights reserved.</p>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

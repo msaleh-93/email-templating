@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/fly-akeed-logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>email-templating</title>
+    <script>
+      const THEMES = [
+          { key: "light", icon: "☀️" },
+          { key: "dark", icon: "🌒" },
+          { key: "system", icon: "💻️" },
+        ],
+        classList = document.documentElement.classList;
+
+      let appTheme = localStorage.getItem("theme") || "system";
+      if (THEMES.every(({ key }) => key !== appTheme)) appTheme = "system";
+
+      let theme;
+      for ({ key: theme } of THEMES)
+        classList.toggle(theme, theme === appTheme);
+
+      if (appTheme === "system")
+        classList.toggle(
+          "dark",
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+
+      console.log(
+        `Theme Set to ${THEMES.find(({ key }) => key === appTheme)?.icon}`
+      );
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

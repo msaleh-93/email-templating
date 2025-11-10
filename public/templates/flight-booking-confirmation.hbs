@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="{{language}}" dir="{{#if rtl}}rtl{{else}}ltr{{/if}}" xmlns:v=" urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="color-scheme" content="light">
+  <meta name="supported-color-schemes" content="light">
+  <title>
+    {{~#if adminEmail~}}
+    Flight Approval Request
+    {{~else}}{{#if approved~}}
+    Flight Confirmation
+    {{~else~}}
+    Flight Rejection
+    {{~/if}}
+    {{/if~}}
+  </title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    :root {
+      color-scheme: light;
+      supported-color-schemes: light;
+    }
+
+    @media screen and (min-width: 512px) {
+      .corp-booking {
+        display: inline-block;
+      }
+    }
+  </style>
+</head>
+
+<body xml:lang="{{language}}" style="
+  background-color: #CCE6FF;
+  text-align: center;
+  font-family: inter, system-ui, sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+">
+  <table width="100%" align="center" border="0" lang="{{language}}" dir="{{#if rtl}}rtl{{else}}ltr{{/if}}"
+    role="presentation" aria-roledescription="email" aria-label="{{subjectLine}}"
+    style="border-collapse: collapse; background-color: #CCE6FF;">
+    <tbody>
+      <tr>
+        <td style="min-width: 8px; padding: 0;"></td>
+        <td style="padding: 0;">
+          <table width="100%" align="center" border="0" style="border-collapse: collapse;">
+            <tbody>
+              <tr height="48">
+                <td style="padding: 0;"></td>
+              </tr>
+              <!-- Main Content -->
+              <tr>
+                <td style="padding: 0;">
+                  <table id="main-content" width="100%" align="center" border="0"
+                    style="border-collapse: collapse; max-width: 512px; background-color: #FFFFFF;">
+                    <tbody>
+                      <tr>
+                        <td width="6.25%" style="min-width: 16px; max-width: 32px; padding: 0;"></td>
+                        <td width="87.5%" style="padding: 0;">
+                          <table width="100%" align="center" border="0" style="border-collapse: collapse;">
+                            <tbody>
+                              <!-- Header -->
+                              <tr>
+                                <td style="padding: 0;">
+                                  <table width="100%" align="center" border="0" style="border-collapse: collapse;">
+                                    <tbody>
+                                      <tr height="72">
+                                        <td style="padding: 0;">
+                                          <a href="{{#if homepageLink}}{{homepageLink}}{{else}}https://flyakeed.com{{/if}}"
+                                            target="_blank">
+                                            <img src="{{headerLogoSrc}}" alt="flyakeed-logo" height="24" />
+                                          </a>
+                                        </td>
+                                        <td width="100%" style="padding: 0;"></td>
+                                        <td style="min-width: 72px; padding: 0;">
+                                          <table width="100%" align="center" border="0"
+                                            style="border-collapse: collapse;">
+                                            <tbody>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <p
+                                                    style="margin: 0; font-size: 12px; text-align: end; color: #496997;">
+                                                    {{issueDate}}
+                                                  </p>
+                                                </td>
+                                              </tr>
+                                              <tr height="4">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <p
+                                                    style="margin: 0; font-size: 12px; text-align: end; color: #496997;">
+                                                    ID:{{issueId}}
+                                                  </p>
+                                                </td>
+                                              </tr>
+                                              <tr height="4">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td width="100%" height="1" style="height: 1px; padding: 0; background-color: #C2CAD6;">
+                                </td>
+                              </tr>
+                              <tr height="24">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              <!-- Content Title -->
+                              {{#if adminEmail}}
+                              <tr>
+                                <td style="padding: 0;">
+                                  <table align="center" border="0" style="border-collapse: collapse;">
+                                    <tbody>
+                                      <tr>
+                                        <td width="4" style="padding: 0;"></td>
+                                        <td style="padding: 0;">
+                                          <h3
+                                            style="margin:0; font-size: 16px; font-weight: bold; text-align: center; color: #003180;">
+                                            {{~#if multiCity~}}
+                                            Multi City Request
+                                            {{~else}}{{#if roundTrip~}}
+                                            Round Trip Request
+                                            {{~else~}}
+                                            Oneway Request
+                                            {{~/if}}
+                                            {{/if~}}
+                                          </h3>
+                                        </td>
+                                        <td width="8" style="padding: 0;"></td>
+                                        <td style="padding: 0;">
+                                          <strong style="margin:0; font-size: 12px; color: #BF1A0D;">Ends
+                                            {{requestEndsAt}}</strong>
+                                        </td>
+                                        <td width="4" style="padding: 0;"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              {{else}}{{#if approved}}
+                              <tr>
+                                <td style="padding: 0;">
+                                  <img src="{{approvalIconSrc}}" alt="approved" height="36" />
+                                </td>
+                              </tr>
+                              <tr height="10">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 0;">
+                                  <table width="100%" align="center" border="0" style="border-collapse: collapse;">
+                                    <tbody>
+                                      <tr>
+                                        <td width="5%" style="padding: 0;"></td>
+                                        <td width="90%" style="min-width: 224px; padding: 0;">
+                                          <h2
+                                            style="margin:0; font-size: 16px; font-weight: bold; text-align: center; color: #068832;">
+                                            {{~#if multiCity~}}
+                                            Your Multi City Trip Booking Confirmed!
+                                            {{~else}}{{#if roundTrip~}}
+                                            Your Round Trip Booking Confirmed!
+                                            {{~else~}}
+                                            Your Oneway Trip Booking Confirmed!
+                                            {{~/if}}
+                                            {{/if~}}
+                                          </h2>
+                                        </td>
+                                        <td width="5%" style="padding: 0;"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+
+                                </td>
+                              </tr>
+                              <tr height="16">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 0;">
+                                  <table height="40" width="100%" align="center" border="0"
+                                    style="border-collapse: collapse; background-color: #E4EAF1; border-radius: 12px;">
+                                    <tbody>
+                                      <tr>
+                                        <td width="32" style="padding: 0;">
+                                          <p style="margin: 0; font-size: 11px; text-align: end; color:#0D274A">PNR</p>
+                                        </td>
+                                        <td style="padding: 0;">
+                                          <h4
+                                            style="margin:0; font-size: 16px; font-weight: bold; text-align: center; color: #0D274A;">
+                                            {{pnr}}</h4>
+                                        </td>
+                                        <td width="32" style="padding: 0;">
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              {{else}}
+                              <tr>
+                                <td style="padding: 0;">
+                                  <img src="{{rejectionIconSrc}}" alt="approved" height="48" />
+                                </td>
+                              </tr>
+                              <tr height="16">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 0;">
+                                  <h2
+                                    style="margin:0; font-size: 18px; font-weight: bold; text-align: center; color: #00419C;">
+                                    Your Booking</h2>
+                                </td>
+                              </tr>
+                              <tr height="6">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 0;">
+                                  <h3
+                                    style="margin:0; font-size: 14px; font-weight: bold; text-align: center; color: #E50000;">
+                                    Has Been Rejected</h3>
+                                </td>
+                              </tr>
+                              {{/if}}
+                              {{/if}}
+                              <tr height="16">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              <!-- Flight Steps -->
+                              {{#each steps}}
+                              <tr>
+                                <td style="padding: 0;">
+                                  {{#if isFlight}}
+                                  <table width="100%" align="center" border="1"
+                                    style="border-width: 1px; border-style: solid; border-color: #C2CAD6; border-radius: 12px;">
+                                    <tbody>
+                                      <tr>
+                                        <td width="12" border="0" style="padding: 0; border-width: 0;"></td>
+                                        <td border="0" style="padding: 0; border-width: 0;">
+                                          <table width="100%" align="center" border="0"
+                                            style="border-collapse: collapse;">
+                                            <tbody>
+                                              <tr height="14">
+                                                <td style="padding: 0; border-width: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <table width="100%" align="center" border="0"
+                                                    style="border-collapse: collapse;">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td style="padding: 0;">
+                                                          <h3
+                                                            style="margin: 0; font-size: 14px; font-weight: normal; color: #7C92C0; text-align: start;">
+                                                            <strong style="font-size: 16px; color: #003180;">
+                                                              {{airline}}
+                                                            </strong> {{plain}}
+                                                          </h3>
+                                                        </td>
+                                                        <td style="padding: 0;">
+                                                          <p
+                                                            style="margin: 0; font-size: 14px; color: #67788F; text-align: end;">
+                                                            {{class}}</p>
+                                                        </td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                              <tr height="16">
+                                                <td style="padding: 0; border-width: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td width="100%" height="1"
+                                                  style="height: 1px; padding: 0; background-color: #C2CAD6;">
+                                                </td>
+                                              </tr>
+                                              <tr height="20">
+                                                <td style="padding: 0; border-width: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <table width="100%" align="center" border="0"
+                                                    style="border-collapse: collapse;">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td style="padding: 0;">
+                                                          <h3
+                                                            style="margin: 0; font-size: 14px; font-weight: bold; color: #008AE0; text-align: start;">
+                                                            {{departure.city}}
+                                                          </h3>
+                                                        </td>
+                                                        <td style="padding: 0;">
+                                                          <h3
+                                                            style="margin: 0; font-size: 14px; font-weight: bold; color: #008AE0; text-align: end;">
+                                                            {{arrival.city}}
+                                                          </h3>
+                                                        </td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <table width="100%" align="center" border="0"
+                                                    style="border-collapse: collapse;">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td width="64" style="min-width: 64px; padding: 0;">
+                                                          <h2
+                                                            style="margin: 0; font-size: 20px; font-weight: bold; text-align: start; color: #003180;">
+                                                            {{departure.airport}}
+                                                          </h2>
+                                                        </td>
+                                                        <td style="padding: 0;">
+                                                          <table width="100%" align="center" border="0"
+                                                            style="border-collapse: collapse;">
+                                                            <tbody>
+                                                              <tr height="4">
+                                                                <td
+                                                                  style="padding: 0; border-top-width: 2px; border-top-style: dashed; border-color: #0099FF;">
+                                                                </td>
+                                                              </tr>
+                                                            </tbody>
+                                                          </table>
+                                                        </td>
+                                                        <td width="32" style="padding: 0;">
+                                                          <img height="24" src="{{../plainIconSrc}}" />
+                                                        </td>
+                                                        <td style="padding: 0;">
+                                                          <table width="100%" align="center" border="0"
+                                                            style="border-collapse: collapse;">
+                                                            <tbody>
+                                                              <tr height="4">
+                                                                <td
+                                                                  style="padding: 0; border-top-width: 2px; border-top-style: dashed; border-color: #0099FF;">
+                                                                </td>
+                                                              </tr>
+                                                            </tbody>
+                                                          </table>
+                                                        </td>
+                                                        <td width="64" style="min-width: 64px; padding: 0;">
+                                                          <h2
+                                                            style="margin: 0; font-size: 20px; font-weight: bold; text-align: end; color: #003180;">
+                                                            {{arrival.airport}}
+                                                          </h2>
+                                                        </td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                              <tr height="6">
+                                                <td style="padding: 0"></td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <table width="100%" align="center" border="0"
+                                                    style="border-collapse: collapse;">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td style="padding: 0;">
+                                                          <p
+                                                            style="margin: 0; font-size: 14px; text-align: start; color: #003180;">
+                                                            <strong>{{departure.date}}</strong> {{departure.time}}
+                                                          </p>
+                                                        </td>
+                                                        <td style="min-width: 128px; padding: 0;">
+                                                          <p style="margin: 0; font-size: 14px; color: #008AE0;">
+                                                            {{duration}}
+                                                          </p>
+                                                        </td>
+                                                        <td style="padding: 0;">
+                                                          <p
+                                                            style="margin: 0; font-size: 14px; text-align: end; color: #003180;">
+                                                            <strong>{{arrival.date}}</strong> {{arrival.time}}
+                                                          </p>
+                                                        </td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <table width="100%" align="center" border="0"
+                                                    style="border-collapse: collapse;">
+                                                    <tbody></tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                              <tr height="18">
+                                                <td style="padding: 0; border-width: 0;"></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                        <td width="12" border="0" style="padding: 0; border-width: 0;"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  {{else}}{{#if isLayover}}
+                                  <table width="100%" align="center" border="0" style="border-collapse: collapse;">
+                                    <tbody>
+                                      <tr>
+                                        <td style="padding: 0;">
+                                          <p style="margin: 0; font-size: 13px; color: #496997; display: inline;">
+                                            🕘️ {{duration}} layover at {{location}}
+                                          </p>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+
+                                  </table>
+                                  {{/if}}
+                                  {{/if}}
+                                </td>
+                              </tr>
+                              <tr height="16">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              {{/each}}
+                              <!-- Passenger Summary -->
+                              <tr>
+                                <td style="padding: 0;">
+                                  <table width="100%" align="center" border="1"
+                                    style="border-width: 1px; border-style: solid; border-color: #C2CAD6; border-radius: 12px;">
+                                    <tbody>
+                                      <tr>
+                                        <td width="12" border="0" style="padding: 0; border-width: 0;"></td>
+                                        <td border="0" style="padding: 0; border-width: 0;">
+                                          <table width="100%" align="center" border="0"
+                                            style="border-collapse: collapse;">
+                                            <tbody>
+                                              <tr height="14">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <p
+                                                    style="margin: 0; font-size: 13px; font-weight: bold; color: #0F4096; text-align: start;">
+                                                    {{passengersSummary}}</p>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <table width="100%" align="center" border="0"
+                                                    style="border-collapse: collapse;">
+                                                    <tbody>
+                                                      {{#each passengers}}
+                                                      <tr height="8">
+                                                        <td style="padding: 0;"></td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td style="padding: 0;">
+                                                          <table width="100%" align="center" border="0"
+                                                            style="border-collapse: collapse;">
+                                                            <tbody>
+                                                              <tr>
+                                                                <td width="32" height="32"
+                                                                  style="min-width: 32px; height: 32px; padding: 0; background-color: #E0F1FF; border-radius: 32px;">
+                                                                  <h4
+                                                                    style="margin: 0; font-size: 12px; color: #0763DF; text-align: center;">
+                                                                    {{label}}
+                                                                  </h4>
+                                                                </td>
+                                                                <td width="8" style="padding: 0;"></td>
+                                                                <td style="padding: 0;">
+                                                                  <h3
+                                                                    style="margin: 0; font-size: 13px; font-weight: bold; color: #003180; text-align: start;">
+                                                                    {{name}}
+                                                                    <span
+                                                                      style="font-size: 10px; font-weight: normal; color: #4A668C;">
+                                                                      {{seat}}
+                                                                    </span>
+                                                                  </h3>
+                                                                </td>
+                                                                <td style="padding: 0;">
+                                                                  <p
+                                                                    style="margin: 0; font-size: 13px; color: #4A668C; text-align: end;">
+                                                                    {{role}}
+                                                                  </p>
+                                                                </td>
+                                                              </tr>
+                                                            </tbody>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+                                                      {{/each}}
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                              {{#if corpBooking}}
+                                              {{#if policyViolations}}
+                                              <tr height="16">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td width="100%" height="1"
+                                                  style="height: 1px; padding: 0; background-color: #C2CAD6;">
+                                                </td>
+                                              </tr>
+                                              <tr height="16">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <h2
+                                                    style="margin: 0; font-size: 13px; font-weight: bold; text-align: start; color: #893606;">
+                                                    Policy Violations</h2>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <table width="100%" align="center" border="0"
+                                                    style="border-collapse: collapse;">
+                                                    <tbody>
+                                                      {{#each policyViolations}}
+                                                      <tr height="6">
+                                                        <td style="padding: 0;"></td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td width="20" style="padding: 0;">
+                                                          <p
+                                                            style="width: 14px; height: 14px; border-radius: 14px; background-color: #893606; color: #FFFFFF; margin: 0; font-size: 12px;">
+                                                            {{number}}
+                                                          </p>
+                                                        </td>
+                                                        <td style="padding: 0;">
+                                                          <p
+                                                            style="margin: 0; font-size: 12px; color: #893606; text-align: start;">
+                                                            {{value}}
+                                                          </p>
+                                                        </td>
+                                                      </tr>
+                                                      {{/each}}
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                              {{/if}}
+                                              <tr height="16">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td width="100%" height="1"
+                                                  style="height: 1px; padding: 0; background-color: #C2CAD6;">
+                                                </td>
+                                              </tr>
+                                              <tr height="16">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <div class="corp-booking"
+                                                    style="min-width: 98px; padding-right: 32px; padding-bottom: 12px;">
+                                                    <p
+                                                      style="margin: 0; padding-bottom: 4px; font-size: 12px; text-align: start; color: #67788F;">
+                                                      Requested via
+                                                    </p>
+                                                    <h3
+                                                      style="margin: 0; font-size: 14px; font-weight: bold; text-align: start; color: #384E6B;">
+                                                      {{requestedVia}}
+                                                    </h3>
+                                                  </div>
+                                                  <div class="corp-booking"
+                                                    style="min-width: 98px; padding-right: 32px; padding-bottom: 12px;">
+                                                    <p
+                                                      style="margin: 0; padding-bottom: 4px; font-size: 12px; text-align: start; color: #67788F;">
+                                                      Purpose
+                                                    </p>
+                                                    <h3
+                                                      style="margin: 0; font-size: 14px; font-weight: bold; text-align: start; color: #384E6B;">
+                                                      {{purpose}}
+                                                    </h3>
+                                                  </div>
+                                                  <div class="corp-booking"
+                                                    style="min-width: 98px; padding-right: 32px; padding-bottom: 12px;">
+                                                    <p
+                                                      style="margin: 0; padding-bottom: 4px; font-size: 12px; text-align: start; color: #67788F;">
+                                                      Tag
+                                                    </p>
+                                                    <h3
+                                                      style="margin: 0; font-size: 14px; font-weight: bold; text-align: start; color: #384E6B;">
+                                                      {{tag}}
+                                                    </h3>
+                                                  </div>
+                                                </td>
+                                              </tr>
+                                              {{/if}}
+                                              <tr height="14">
+                                                <td style="padding: 0; border-width: 0;"></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                        <td width="12" border="0" style="padding: 0; border-width: 0;"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr height="16">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              <!-- Price Summary -->
+                              <tr>
+                                <td style="padding: 0;">
+                                  <table width="100%" align="center" border="1"
+                                    style="border-width: 1px; border-style: solid; border-color: #C2CAD6; border-radius: 12px;">
+                                    <tbody>
+                                      <tr>
+                                        <td width="12" border="0" style="padding: 0; border-width: 0;"></td>
+                                        <td border="0" style="padding: 0; border-width: 0;">
+                                          <table width="100%" align="center" border="0"
+                                            style="border-collapse: collapse;">
+                                            <tbody>
+                                              <tr height="10">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <table width="100%" align="center" border="0"
+                                                    style="border-collapse: collapse;">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td style="padding: 0;">
+                                                          <h3
+                                                            style="margin: 0; font-size: 12px; font-weight: normal; color: #4A668C; text-align: start;">
+                                                            Base Price
+                                                          </h3>
+                                                        </td>
+                                                        <td style="padding: 0;">
+                                                          <p
+                                                            style="margin: 0; font-size: 12px; color: #4A668C; text-align: end;">
+                                                            {{currency}} <strong>{{basePrice}}</strong>
+                                                          </p>
+                                                        </td>
+                                                      </tr>
+                                                      <tr height="8">
+                                                        <td style="padding: 0;"></td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td style="padding: 0;">
+                                                          <h3
+                                                            style="margin: 0; font-size: 12px; font-weight: normal; color: #4A668C; text-align: start;">
+                                                            Service Fee
+                                                          </h3>
+                                                        </td>
+                                                        <td style="padding: 0;">
+                                                          <p
+                                                            style="margin: 0; font-size: 12px; color: #4A668C; text-align: end;">
+                                                            {{currency}} <strong>{{serviceFee}}</strong>
+                                                          </p>
+                                                        </td>
+                                                      </tr>
+                                                      <tr height="8">
+                                                        <td style="padding: 0;"></td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td style="padding: 0;">
+                                                          <h3
+                                                            style="margin: 0; font-size: 12px; font-weight: normal; color: #4A668C; text-align: start;">
+                                                            VAT
+                                                          </h3>
+                                                        </td>
+                                                        <td style="padding: 0;">
+                                                          <p
+                                                            style="margin: 0; font-size: 12px; color: #4A668C; text-align: end;">
+                                                            {{currency}} <strong>{{vat}}</strong>
+                                                          </p>
+                                                        </td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                              <tr height="12">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td width="100%" height="1"
+                                                  style="height: 1px; padding: 0; background-color: #C2CAD6;">
+                                                </td>
+                                              </tr>
+                                              <tr height="12">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <table width="100%" align="center" border="0"
+                                                    style="border-collapse: collapse;">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td style="padding: 0;">
+                                                          <h3
+                                                            style="margin: 0; font-size: 12px; font-weight: bold; color: #212F4A; text-align: start;">
+                                                            Total Price
+                                                          </h3>
+                                                        </td>
+                                                        <td style="padding: 0;">
+                                                          <p
+                                                            style="margin: 0; font-size: 12px; color: #212F4A; text-align: end;">
+                                                            {{currency}} <strong>{{totalPrice}}</strong>
+                                                          </p>
+                                                        </td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                              <tr height="10">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                        <td width="12" border="0" style="padding: 0; border-width: 0;"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+
+                              {{#if adminEmail}}
+                              <!-- Request Actions -->
+                              <tr height="32">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 0;">
+                                  <table align="center" border="0" style="border-collapse: collapse;">
+                                    <tbody>
+                                      <tr>
+                                        <td style="padding: 0;">
+                                          <a style="text-decoration: none;" href="{{rejectionLink}}" target="_blank">
+                                            <table width="128" height="32" align="center" border="0"
+                                              style="border-collapse: collapse; background-color: #B32318; border-radius: 32px;">
+                                              <tbody>
+                                                <tr>
+                                                  <td style="padding: 0;">
+                                                    <p
+                                                      style="margin: 0; font-size: 14px; font-weight: bold; color: #FFFFFF; text-align: center;">
+                                                      Reject
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </a>
+                                        </td>
+                                        <td width="10" style="padding: 0;"></td>
+                                        <td style="padding: 0;">
+                                          <a style="text-decoration: none;" href="{{approvalLink}}" target="_blank">
+                                            <table width="128" height="32" align="center" border="0"
+                                              style="border-collapse: collapse; background-color: #079235; border-radius: 32px;">
+                                              <tbody>
+                                                <tr>
+                                                  <td style="padding: 0;">
+                                                    <p
+                                                      style="margin: 0; font-size: 14px; font-weight: bold; color: #FFFFFF; text-align: center;">
+                                                      Approve
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr height="32">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              {{else}}{{#if roundTrip}}
+                              <!-- Book Your Hotel -->
+                              <tr height="16">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 0;">
+                                  <a style="text-decoration: none;" href="{{hotelBookingLink}}" target="_blank">
+                                    <table height="72" width="100%" align="center" border="0"
+                                      style="border-collapse: collapse; background-color: #196DFB; border-radius: 12px;">
+                                      <tbody>
+                                        <tr>
+                                          <td width="16" style="padding: 0;"></td>
+                                          <td style="padding: 0;">
+                                            <h2
+                                              style="margin: 0; font-size: 16px; font-weight: bold; color: #FFFFFF; text-align: start;">
+                                              Book Your Hotel in {{hotelCity}} <img height="14"
+                                                src="{{arrowRightIconSrc}}" />
+                                            </h2>
+                                          </td>
+                                          <td style="max-width: 69px; padding: 0;">
+                                            <table align="end" border="0"
+                                              style="border-collapse: collapse; background-color: #196DFB; border-radius: 12px; overflow: hidden;">
+                                              <tbody>
+                                                <tr height="21">
+                                                  <td style="padding: 0;"></td>
+                                                </tr>
+                                                <tr>
+                                                  <td width="100%" style="padding: 0;"></td>
+                                                  <td style="padding: 0;">
+                                                    <img height="48" src="{{hotelBannerImageSrc}}"
+                                                      style="padding: 0; margin: 0;" />
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr height="16">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              {{else}}
+                              <tr height="16">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              {{/if}}
+                              {{/if}}
+                              <!-- Contact Us -->
+                              <tr height="32">
+                                <td style="padding: 0;">
+                                  <table align="center" border="0" style="border-collapse: collapse;">
+                                    <tbody>
+                                      <tr>
+                                        <td style="padding: 0;">
+                                          <a width="128" style="min-width: 128px; text-decoration: none;"
+                                            href="{{#if contactUsLink}}{{contactUsLink}}{{else}}https://flyakeed.com/contact.html{{/if}}"
+                                            target="_blank">
+                                            <table height="32" align="center" border="0"
+                                              style="border-collapse: collapse;">
+                                              <tbody>
+                                                <tr>
+                                                  <td width="8" style="padding: 0;"></td>
+                                                  <td style="padding: 0;">
+                                                    <img height="20" src="{{callIconSrc}}" />
+                                                  </td>
+                                                  <td width="4" style="margin: 0;"></td>
+                                                  <td style="padding: 0;">
+                                                    <p
+                                                      style="margin: 0; font-size: 14px; font-weight: bold; color: #196DF5;">
+                                                      Need Help?
+                                                    </p>
+                                                  </td>
+                                                  <td width="8" style="padding: 0;"></td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </a>
+                                        </td>
+                                        {{#if adminEmail}}
+                                        <td width="32" style="padding: 0;"></td>
+                                        <td style="padding: 0;">
+                                          <a width="128" style="min-width: 128px; text-decoration: none;"
+                                            href="{{pendingRequestLink}}" target="_blank">
+                                            <table height="32" align="center" border="0"
+                                              style="border-collapse: collapse;">
+                                              <tbody>
+                                                <tr>
+                                                  <td width="8" style="padding: 0;"></td>
+                                                  <td style="padding: 0;">
+                                                    <p
+                                                      style="margin: 0; font-size: 14px; font-weight: bold; color: #196DF5;">
+                                                      View Online
+                                                    </p>
+                                                  </td>
+                                                  <td width="8" style="padding: 0;"></td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </a>
+                                        </td>
+                                        {{/if}}
+                                      </tr>
+                                    </tbody>
+                                  </table>
+
+                                </td>
+                              </tr>
+                              <tr height="32">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td width="6.25%" style="min-width: 16px; max-width: 32px; padding: 0;"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr height="10">
+                <td style="padding: 0;"></td>
+              </tr>
+              <!-- Footer -->
+              <tr>
+                <td style="padding: 0;">
+                  <table id="footer" width="100%" align="center" border="0"
+                    style="max-width: 512px; border-collapse: collapse; background-color: #0A0F57;">
+                    <tbody>
+                      <tr>
+                        <td width="32" style="padding: 0;"></td>
+                        <td style="padding: 0;">
+                          <table width="100%" align="center" border="0" style="border-collapse: collapse;">
+                            <tbody>
+                              <tr height="32">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 0;">
+                                  <img height="36" src="{{footerLogoSrc}}" />
+                                </td>
+                              </tr>
+                              <tr height="20">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 0;">
+                                  <p style="margin: 0; font-size: 10px; color: #8FC0FF;">{{contactInfo}}</p>
+                                </td>
+                              </tr>
+                              <tr height="32">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td width="32" style="padding: 0;"></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr height="48">
+                <td style="padding: 0;"></td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td style="min-width: 8px; padding: 0;"></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
