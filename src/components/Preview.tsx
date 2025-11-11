@@ -18,7 +18,7 @@ export function Preview({ title, size, canSave }: Props) {
   });
 
   const ref = useRef<HTMLAnchorElement>(null);
-  const [filename, setFilename] = useState(selected);
+  const [filename, setFilename] = useState(selected || "template.html");
 
   return (
     <div className="flex flex-col gap-2">
@@ -50,12 +50,23 @@ export function Preview({ title, size, canSave }: Props) {
         ) : null}
         <a ref={ref} hidden />
       </div>
-      <iframe
-        width={size}
-        src={srcDoc ? undefined : `/templates/${selected}`}
-        srcDoc={srcDoc}
-        className="bg-gray-600 rounded-lg flex-1"
-      />
+      {selected ? (
+        <iframe
+          width={size}
+          src={srcDoc ? undefined : `/templates/${selected}`}
+          srcDoc={srcDoc}
+          className="bg-gray-300 dark:bg-gray-600 rounded-lg flex-1"
+        />
+      ) : (
+        <div
+          style={{ width: size }}
+          className="bg-gray-300 dark:bg-gray-600 rounded-lg flex-1 flex items-center justify-center"
+        >
+          <h2 className="text-2xl text-center font-bold">
+            No template selected
+          </h2>
+        </div>
+      )}
     </div>
   );
 }

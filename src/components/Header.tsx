@@ -1,12 +1,13 @@
 import { memo } from "react";
 
+import logo from "~/fly-akeed-logo.svg";
 import { useTheme } from "~/stores/theme";
 
 export default function Header() {
   return (
     <header className="w-full h-16 px-8 bg-indigo-700 text-white flex items-center justify-between sticky top-0 z-20">
       <div className="flex gap-5 items-center">
-        <img src="/fly-akeed-logo.svg" alt="FlyAkeed Logo" className="h-10" />
+        <img src={logo} alt="FlyAkeed Logo" className="h-10" />
 
         <h1 className="text-2xl font-bold" dir="auto">
           Fly Akeed - Email Templates

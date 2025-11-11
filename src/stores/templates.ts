@@ -4,8 +4,7 @@ import { persist } from "zustand/middleware";
 
 import { eventsSub } from "~/utils/events";
 
-const BASE_URL = "http://localhost:3210",
-  HBS = ".hbs";
+const HBS = ".hbs";
 
 interface TemplatesStore {
   templates: Array<string>;
@@ -108,12 +107,12 @@ export const useTemplates = create<TemplatesStore>()(
     {
       name: "templates",
       partialize: ({ selected }) => ({ selected }),
-    }
-  )
+    },
+  ),
 );
 
 async function getTemplates() {
-  const rsp = await fetch(`${BASE_URL}/api/templates`);
+  const rsp = await fetch("/api/templates");
   const data = await rsp.json();
   return data as string[];
 }
@@ -124,12 +123,12 @@ async function getHbsTemplate(filename: string) {
 }
 
 async function getData(template: string) {
-  const rsp = await fetch(`${BASE_URL}/api/data/${template}`);
+  const rsp = await fetch(`/api/data/${template}`);
   return (await rsp.json()) as Record<string, unknown>;
 }
 
 async function setData(template: string, data: unknown) {
-  fetch(`${BASE_URL}/api/data/${template}`, {
+  fetch(`/api/data/${template}`, {
     method: "POST",
     body: JSON.stringify(data),
   });
