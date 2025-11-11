@@ -53,7 +53,6 @@ const server = serve({
     "/templates/:filename": {
       async GET(req) {
         const filename = req.params.filename;
-        console.log(">>> /templates/:filename", filename);
         const file = Bun.file(`./public/templates/${filename}`);
         return (await file.exists())
           ? new Response(await file.text(), {
