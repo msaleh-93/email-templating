@@ -19,7 +19,6 @@ const server = serve({
     },
     "/api/templates": {
       async GET() {
-        console.log(process.cwd());
         return Response.json((await readdir("./public/templates")).sort());
       },
     },
