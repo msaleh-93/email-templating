@@ -56,7 +56,7 @@
     style="border-collapse: collapse; background-color: #CCE6FF;">
     <tbody>
       <tr>
-        <td style="min-width: 8px; padding: 0;"></td>
+        <td width="8" style="min-width: 8px; padding: 0;"></td>
         <td style="padding: 0;">
           <table width="100%" align="center" border="0" style="border-collapse: collapse;">
             <tbody>
@@ -94,7 +94,7 @@
                                               <tr>
                                                 <td style="padding: 0;">
                                                   <p
-                                                    style="margin: 0; font-size: 12px; text-align: end; color: #496997;">
+                                                    style="margin: 0; font-size: 12px; font-weight: 500; text-align: end; color: #496997;">
                                                     {{issueDate}}
                                                   </p>
                                                 </td>
@@ -105,7 +105,7 @@
                                               <tr>
                                                 <td style="padding: 0;">
                                                   <p
-                                                    style="margin: 0; font-size: 12px; text-align: end; color: #496997;">
+                                                    style="margin: 0; font-size: 12px; font-weight: 500; text-align: end; color: #496997;">
                                                     ID:{{issueId}}
                                                   </p>
                                                 </td>
@@ -138,7 +138,7 @@
                                         <td width="4" style="padding: 0;"></td>
                                         <td style="padding: 0;">
                                           <h3
-                                            style="margin:0; font-size: 16px; font-weight: bold; text-align: center; color: #003180;">
+                                            style="margin:0; font-size: 16px; font-weight: 700; text-align: center; color: #003180;">
                                             {{~#if multiCity~}}
                                             Multi City Request
                                             {{~else}}{{#if roundTrip~}}
@@ -151,7 +151,8 @@
                                         </td>
                                         <td width="8" style="padding: 0;"></td>
                                         <td style="padding: 0;">
-                                          <strong style="margin:0; font-size: 12px; color: #BF1A0D;">Ends
+                                          <strong
+                                            style="margin:0; font-size: 12px; font-weight: 500; color: #BF1A0D;">Ends
                                             {{requestEndsAt}}</strong>
                                         </td>
                                         <td width="4" style="padding: 0;"></td>
@@ -177,7 +178,7 @@
                                         <td width="5%" style="padding: 0;"></td>
                                         <td width="90%" style="min-width: 224px; padding: 0;">
                                           <h2
-                                            style="margin:0; font-size: 16px; font-weight: bold; text-align: center; color: #068832;">
+                                            style="margin:0; font-size: 16px; font-weight: 700; text-align: center; color: #068832;">
                                             {{~#if multiCity~}}
                                             Your Multi City Trip Booking Confirmed!
                                             {{~else}}{{#if roundTrip~}}
@@ -205,11 +206,13 @@
                                     <tbody>
                                       <tr>
                                         <td width="32" style="padding: 0;">
-                                          <p style="margin: 0; font-size: 11px; text-align: end; color:#384e6b">PNR</p>
+                                          <p
+                                            style="margin: 0; font-size: 11px; font-weight: 600; text-align: end; color:#384e6b">
+                                            PNR</p>
                                         </td>
                                         <td style="padding: 0;">
                                           <h4
-                                            style="margin:0; font-size: 16px; font-weight: bold; text-align: center; color: #384e6b;">
+                                            style="margin:0; font-size: 16px; font-weight: 700; text-align: center; color: #384e6b;">
                                             {{pnr}}</h4>
                                         </td>
                                         <td width="32" style="padding: 0;">
@@ -231,7 +234,7 @@
                               <tr>
                                 <td style="padding: 0;">
                                   <h2
-                                    style="margin:0; font-size: 18px; font-weight: bold; text-align: center; color: #00419C;">
+                                    style="margin:0; font-size: 18px; font-weight: 700; text-align: center; color: #00419C;">
                                     Your Booking</h2>
                                 </td>
                               </tr>
@@ -241,7 +244,7 @@
                               <tr>
                                 <td style="padding: 0;">
                                   <h3
-                                    style="margin:0; font-size: 14px; font-weight: bold; text-align: center; color: #E50000;">
+                                    style="margin:0; font-size: 14px; font-weight: 700; text-align: center; color: #E50000;">
                                     Has Been Rejected</h3>
                                 </td>
                               </tr>
@@ -275,15 +278,16 @@
                                                       <tr>
                                                         <td style="padding: 0;">
                                                           <h3
-                                                            style="margin: 0; font-size: 14px; font-weight: normal; color: #7C92C0; text-align: start;">
-                                                            <strong style="font-size: 16px; color: #003180;">
+                                                            style="margin: 0; font-size: 14px; font-weight: 500; color: #7C92C0; text-align: start;">
+                                                            <span
+                                                              style="font-size: 16px; font-weight: 600; color: #003180;">
                                                               {{airline}}
-                                                            </strong> {{plain}}
+                                                            </span> {{plain}}
                                                           </h3>
                                                         </td>
                                                         <td style="padding: 0;">
                                                           <p
-                                                            style="margin: 0; font-size: 14px; color: #67788F; text-align: end;">
+                                                            style="margin: 0; font-size: 14px; font-weight: 500; color: #67788F; text-align: end;">
                                                             {{class}}</p>
                                                         </td>
                                                       </tr>
@@ -310,13 +314,13 @@
                                                       <tr>
                                                         <td style="padding: 0;">
                                                           <h3
-                                                            style="margin: 0; font-size: 14px; font-weight: bold; color: #008AE0; text-align: start;">
+                                                            style="margin: 0; font-size: 14px; font-weight: 600; color: #008AE0; text-align: start;">
                                                             {{departure.city}}
                                                           </h3>
                                                         </td>
                                                         <td style="padding: 0;">
                                                           <h3
-                                                            style="margin: 0; font-size: 14px; font-weight: bold; color: #008AE0; text-align: end;">
+                                                            style="margin: 0; font-size: 14px; font-weight: 600; color: #008AE0; text-align: end;">
                                                             {{arrival.city}}
                                                           </h3>
                                                         </td>
@@ -333,7 +337,7 @@
                                                       <tr>
                                                         <td width="64" style="min-width: 64px; padding: 0;">
                                                           <h2
-                                                            style="margin: 0; font-size: 20px; font-weight: bold; text-align: start; color: #003180;">
+                                                            style="margin: 0; font-size: 20px; font-weight: 700; text-align: start; color: #003180;">
                                                             {{departure.airport}}
                                                           </h2>
                                                         </td>
@@ -366,7 +370,7 @@
                                                         </td>
                                                         <td width="64" style="min-width: 64px; padding: 0;">
                                                           <h2
-                                                            style="margin: 0; font-size: 20px; font-weight: bold; text-align: end; color: #003180;">
+                                                            style="margin: 0; font-size: 20px; font-weight: 700; text-align: end; color: #003180;">
                                                             {{arrival.airport}}
                                                           </h2>
                                                         </td>
@@ -386,19 +390,22 @@
                                                       <tr>
                                                         <td style="padding: 0;">
                                                           <p
-                                                            style="margin: 0; font-size: 14px; text-align: start; color: #003180;">
-                                                            <strong>{{departure.date}}</strong> {{departure.time}}
+                                                            style="margin: 0; font-size: 14px; font-weight: 500; text-align: start; color: #003180;">
+                                                            <span style="font-weight: 700;">{{departure.date}}</span>
+                                                            {{departure.time}}
                                                           </p>
                                                         </td>
                                                         <td style="min-width: 128px; padding: 0;">
-                                                          <p style="margin: 0; font-size: 14px; color: #008AE0;">
+                                                          <p
+                                                            style="margin: 0; font-size: 14px; font-weight: 500; color: #008AE0;">
                                                             {{duration}}
                                                           </p>
                                                         </td>
                                                         <td style="padding: 0;">
                                                           <p
-                                                            style="margin: 0; font-size: 14px; text-align: end; color: #003180;">
-                                                            <strong>{{arrival.date}}</strong> {{arrival.time}}
+                                                            style="margin: 0; font-size: 14px; font-weight: 500; text-align: end; color: #003180;">
+                                                            <span style="font-weight: 700;">{{arrival.date}}</span>
+                                                            {{arrival.time}}
                                                           </p>
                                                         </td>
                                                       </tr>
@@ -429,7 +436,8 @@
                                     <tbody>
                                       <tr>
                                         <td style="padding: 0;">
-                                          <p style="margin: 0; font-size: 13px; color: #4A668C; display: inline;">
+                                          <p
+                                            style="margin: 0; font-size: 13px; font-weight: 500; color: #4A668C; display: inline;">
                                             🕘️ {{duration}} layover in {{location}}
                                           </p>
                                         </td>
@@ -463,7 +471,7 @@
                                               <tr>
                                                 <td style="padding: 0;">
                                                   <p
-                                                    style="margin: 0; font-size: 13px; font-weight: bold; color: #0F4096; text-align: start;">
+                                                    style="margin: 0; font-size: 13px; font-weight: 600; color: #0F4096; text-align: start;">
                                                     {{passengersSummary}}</p>
                                                 </td>
                                               </tr>
@@ -483,26 +491,31 @@
                                                             <tbody>
                                                               <tr>
                                                                 <td width="32" height="32"
-                                                                  style="min-width: 32px; height: 32px; padding: 0; background-color: #E0F1FF; border-radius: 32px;">
+                                                                  style="min-width: 32px; height: 32px; padding: 0; {{#unless imageSrc}}background-color: #E0F1FF; border-radius: 32px;{{/unless}}">
+                                                                  {{#if imageSrc}}
+                                                                  <img width="100%" src="{{imageSrc}}"
+                                                                    style="border-radius: 32px;" />
+                                                                  {{else}}
                                                                   <h4
-                                                                    style="margin: 0; font-size: 12px; color: #0763DF; text-align: center;">
+                                                                    style="margin: 0; font-size: 12px; font-weight: 500; color: #0763DF; text-align: center;">
                                                                     {{label}}
                                                                   </h4>
+                                                                  {{/if}}
                                                                 </td>
                                                                 <td width="8" style="padding: 0;"></td>
                                                                 <td style="padding: 0;">
                                                                   <h3
-                                                                    style="margin: 0; font-size: 13px; font-weight: bold; color: #003180; text-align: start;">
+                                                                    style="margin: 0; font-size: 13px; font-weight: 600; color: #003180; text-align: start;">
                                                                     {{name}}
                                                                     <span
-                                                                      style="font-size: 10px; font-weight: normal; color: #4A668C;">
+                                                                      style="font-size: 10px; font-weight: 500; color: #4A668C;">
                                                                       {{seat}}
                                                                     </span>
                                                                   </h3>
                                                                 </td>
                                                                 <td style="padding: 0;">
                                                                   <p
-                                                                    style="margin: 0; font-size: 13px; color: #4A668C; text-align: end;">
+                                                                    style="margin: 0; font-size: 13px; font-weight: 500; color: #4A668C; text-align: end;">
                                                                     {{role}}
                                                                   </p>
                                                                 </td>
@@ -532,7 +545,7 @@
                                               <tr>
                                                 <td style="padding: 0;">
                                                   <h2
-                                                    style="margin: 0; font-size: 13px; font-weight: bold; text-align: start; color: #893606;">
+                                                    style="margin: 0; font-size: 13px; font-weight: 600; text-align: start; color: #893606;">
                                                     Policy Violations</h2>
                                                 </td>
                                               </tr>
@@ -548,13 +561,13 @@
                                                       <tr>
                                                         <td width="20" style="padding: 0;">
                                                           <p
-                                                            style="width: 14px; height: 14px; border-radius: 14px; background-color: #893606; color: #FFFFFF; margin: 0; font-size: 12px;">
+                                                            style="width: 14px; height: 14px; border-radius: 14px; background-color: #893606; color: #FFFFFF; margin: 0; font-size: 12px; font-weight: 500;">
                                                             {{number}}
                                                           </p>
                                                         </td>
                                                         <td style="padding: 0;">
                                                           <p
-                                                            style="margin: 0; font-size: 12px; color: #893606; text-align: start;">
+                                                            style="margin: 0; font-size: 12px; font-weight: 500; color: #893606; text-align: start;">
                                                             {{value}}
                                                           </p>
                                                         </td>
@@ -581,33 +594,33 @@
                                                   <div class="corp-booking"
                                                     style="min-width: 98px; padding-right: 32px; padding-bottom: 12px;">
                                                     <p
-                                                      style="margin: 0; padding-bottom: 4px; font-size: 12px; text-align: start; color: #67788F;">
+                                                      style="margin: 0; padding-bottom: 4px; font-size: 12px; font-weight: 500; text-align: start; color: #67788F;">
                                                       Requested via
                                                     </p>
                                                     <h3
-                                                      style="margin: 0; font-size: 14px; font-weight: bold; text-align: start; color: #384E6B;">
+                                                      style="margin: 0; font-size: 14px; font-weight: 600; text-align: start; color: #384E6B;">
                                                       {{requestedVia}}
                                                     </h3>
                                                   </div>
                                                   <div class="corp-booking"
                                                     style="min-width: 98px; padding-right: 32px; padding-bottom: 12px;">
                                                     <p
-                                                      style="margin: 0; padding-bottom: 4px; font-size: 12px; text-align: start; color: #67788F;">
+                                                      style="margin: 0; padding-bottom: 4px; font-size: 12px; font-weight: 500; text-align: start; color: #67788F;">
                                                       Purpose
                                                     </p>
                                                     <h3
-                                                      style="margin: 0; font-size: 14px; font-weight: bold; text-align: start; color: #384E6B;">
+                                                      style="margin: 0; font-size: 14px; font-weight: 600; text-align: start; color: #384E6B;">
                                                       {{purpose}}
                                                     </h3>
                                                   </div>
                                                   <div class="corp-booking"
                                                     style="min-width: 98px; padding-right: 32px; padding-bottom: 12px;">
                                                     <p
-                                                      style="margin: 0; padding-bottom: 4px; font-size: 12px; text-align: start; color: #67788F;">
+                                                      style="margin: 0; padding-bottom: 4px; font-size: 12px; font-weight: 500; text-align: start; color: #67788F;">
                                                       Tag
                                                     </p>
                                                     <h3
-                                                      style="margin: 0; font-size: 14px; font-weight: bold; text-align: start; color: #384E6B;">
+                                                      style="margin: 0; font-size: 14px; font-weight: 600; text-align: start; color: #384E6B;">
                                                       {{tag}}
                                                     </h3>
                                                   </div>
@@ -652,14 +665,14 @@
                                                       <tr>
                                                         <td style="padding: 0;">
                                                           <h3
-                                                            style="margin: 0; font-size: 12px; font-weight: normal; color: #4A668C; text-align: start;">
+                                                            style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: start;">
                                                             Base Price
                                                           </h3>
                                                         </td>
                                                         <td style="padding: 0;">
                                                           <p
-                                                            style="margin: 0; font-size: 12px; color: #4A668C; text-align: end;">
-                                                            {{currency}} <strong>{{basePrice}}</strong>
+                                                            style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: end;">
+                                                            {{currency}} {{basePrice}}
                                                           </p>
                                                         </td>
                                                       </tr>
@@ -669,14 +682,14 @@
                                                       <tr>
                                                         <td style="padding: 0;">
                                                           <h3
-                                                            style="margin: 0; font-size: 12px; font-weight: normal; color: #4A668C; text-align: start;">
+                                                            style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: start;">
                                                             Service Fee
                                                           </h3>
                                                         </td>
                                                         <td style="padding: 0;">
                                                           <p
-                                                            style="margin: 0; font-size: 12px; color: #4A668C; text-align: end;">
-                                                            {{currency}} <strong>{{serviceFee}}</strong>
+                                                            style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: end;">
+                                                            {{currency}} {{serviceFee}}
                                                           </p>
                                                         </td>
                                                       </tr>
@@ -686,14 +699,14 @@
                                                       <tr>
                                                         <td style="padding: 0;">
                                                           <h3
-                                                            style="margin: 0; font-size: 12px; font-weight: normal; color: #4A668C; text-align: start;">
+                                                            style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: start;">
                                                             VAT
                                                           </h3>
                                                         </td>
                                                         <td style="padding: 0;">
                                                           <p
-                                                            style="margin: 0; font-size: 12px; color: #4A668C; text-align: end;">
-                                                            {{currency}} <strong>{{vat}}</strong>
+                                                            style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: end;">
+                                                            {{currency}} {{vat}}
                                                           </p>
                                                         </td>
                                                       </tr>
@@ -720,14 +733,17 @@
                                                       <tr>
                                                         <td style="padding: 0;">
                                                           <h3
-                                                            style="margin: 0; font-size: 12px; font-weight: bold; color: #212F4A; text-align: start;">
+                                                            style="margin: 0; font-size: 12px; font-weight: 500; color: #212F4A; text-align: start;">
                                                             Total Price
                                                           </h3>
                                                         </td>
                                                         <td style="padding: 0;">
                                                           <p
-                                                            style="margin: 0; font-size: 12px; color: #212F4A; text-align: end;">
-                                                            {{currency}} <strong>{{totalPrice}}</strong>
+                                                            style="margin: 0; font-size: 14px; font-weight: 600; color: #212F4A; text-align: end;">
+                                                            <span
+                                                              style="font-size: 12px; font-weight: 500; color: #4A668C;">
+                                                              {{currency}}
+                                                            </span> {{totalPrice}}
                                                           </p>
                                                         </td>
                                                       </tr>
@@ -735,7 +751,7 @@
                                                   </table>
                                                 </td>
                                               </tr>
-                                              <tr height="10">
+                                              <tr height=" 10">
                                                 <td style="padding: 0;"></td>
                                               </tr>
                                             </tbody>
@@ -760,13 +776,13 @@
                                       <tr>
                                         <td style="padding: 0;">
                                           <a style="text-decoration: none;" href="{{rejectionLink}}" target="_blank">
-                                            <table width="128" height="32" align="center" border="0"
-                                              style="border-collapse: collapse; background-color: #B32318; border-radius: 32px;">
+                                            <table width="128" height="37" align="center" border="0"
+                                              style="border-collapse: collapse; background-color: #B32318; border-radius: 36px;">
                                               <tbody>
                                                 <tr>
                                                   <td style="padding: 0;">
                                                     <p
-                                                      style="margin: 0; font-size: 14px; font-weight: bold; color: #FFFFFF; text-align: center;">
+                                                      style="margin: 0; font-size: 14px; font-weight: 700; color: #FFFFFF; text-align: center;">
                                                       Reject
                                                     </p>
                                                   </td>
@@ -778,13 +794,13 @@
                                         <td width="10" style="padding: 0;"></td>
                                         <td style="padding: 0;">
                                           <a style="text-decoration: none;" href="{{approvalLink}}" target="_blank">
-                                            <table width="128" height="32" align="center" border="0"
-                                              style="border-collapse: collapse; background-color: #079235; border-radius: 32px;">
+                                            <table width="128" height="36" align="center" border="0"
+                                              style="border-collapse: collapse; background-color: #079235; border-radius: 36px;">
                                               <tbody>
                                                 <tr>
                                                   <td style="padding: 0;">
                                                     <p
-                                                      style="margin: 0; font-size: 14px; font-weight: bold; color: #FFFFFF; text-align: center;">
+                                                      style="margin: 0; font-size: 14px; font-weight: 700; color: #FFFFFF; text-align: center;">
                                                       Approve
                                                     </p>
                                                   </td>
@@ -801,8 +817,8 @@
                               <tr height="32">
                                 <td style="padding: 0;"></td>
                               </tr>
-                              {{else}}{{#if roundTrip}}
-                              {{#if approved}}
+                              {{else}}{{#if approved}}
+                              {{#if roundTrip}}
                               <!-- Book Your Hotel -->
                               <tr height="16">
                                 <td style="padding: 0;"></td>
@@ -817,7 +833,7 @@
                                           <td width="16" style="padding: 0;"></td>
                                           <td style="padding: 0;">
                                             <h2
-                                              style="margin: 0; font-size: 16px; font-weight: bold; color: #FFFFFF; text-align: start;">
+                                              style="margin: 0; font-size: 16px; font-weight: 700; color: #FFFFFF; text-align: start;">
                                               Book Your Hotel in {{hotelCity}} <img height="14"
                                                 src="{{arrowRightIconSrc}}" />
                                             </h2>
@@ -848,9 +864,43 @@
                               <tr height="16">
                                 <td style="padding: 0;"></td>
                               </tr>
-                              {{/if}}
                               {{else}}
                               <tr height="16">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              {{/if}}
+                              {{else}}
+                              <tr height="32">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 0;">
+                                  <table align="center" border="0" style="border-collapse: collapse;">
+                                    <tbody>
+                                      <tr>
+                                        <td style="padding: 0;">
+                                          <a style="text-decoration: none;" href="{{reBookingLink}}" target="_blank">
+                                            <table width="200" height="36" align="center" border="0"
+                                              style="border-collapse: collapse; background-color: #196DF5; border-radius: 32px;">
+                                              <tbody>
+                                                <tr>
+                                                  <td style="padding: 0;">
+                                                    <p
+                                                      style="margin: 0; font-size: 14px; font-weight: 700; color: #FFFFFF; text-align: center;">
+                                                      Make Another Booking
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr height="32">
                                 <td style="padding: 0;"></td>
                               </tr>
                               {{/if}}
@@ -876,7 +926,7 @@
                                                   <td width="4" style="margin: 0;"></td>
                                                   <td style="padding: 0;">
                                                     <p
-                                                      style="margin: 0; font-size: 14px; font-weight: bold; color: #196DF5;">
+                                                      style="margin: 0; font-size: 14px; font-weight: 700; color: #196DF5;">
                                                       Need Help?
                                                     </p>
                                                   </td>
@@ -887,7 +937,7 @@
                                           </a>
                                         </td>
                                         {{#if adminEmail}}
-                                        <td width="32" style="padding: 0;"></td>
+                                        <td width="24" style="padding: 0;"></td>
                                         <td style="padding: 0;">
                                           <a width="128" style="min-width: 128px; text-decoration: none;"
                                             href="{{pendingRequestLink}}" target="_blank">
@@ -898,7 +948,7 @@
                                                   <td width="8" style="padding: 0;"></td>
                                                   <td style="padding: 0;">
                                                     <p
-                                                      style="margin: 0; font-size: 14px; font-weight: bold; color: #196DF5;">
+                                                      style="margin: 0; font-size: 14px; font-weight: 700; color: #196DF5;">
                                                       View Online
                                                     </p>
                                                   </td>
@@ -954,7 +1004,8 @@
                               </tr>
                               <tr>
                                 <td style="padding: 0;">
-                                  <p style="margin: 0; font-size: 10px; color: #A3D4F5;">{{contactInfo}}</p>
+                                  <p style="margin: 0; font-size: 10px; font-weight: 600; color: #A3D4F5;">
+                                    {{contactInfo}}</p>
                                 </td>
                               </tr>
                               <tr height="32">
@@ -976,7 +1027,7 @@
             </tbody>
           </table>
         </td>
-        <td style="min-width: 8px; padding: 0;"></td>
+        <td width="8" style="min-width: 8px; padding: 0;"></td>
       </tr>
     </tbody>
   </table>

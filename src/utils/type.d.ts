@@ -54,7 +54,7 @@ interface RequestEmail {
 
 type ConfirmationEmail = { adminEmail?: false; pnr: string } & (
   | { approved: true; approvalIconSrc: string }
-  | { approved: false; rejectionIconSrc: string }
+  | { approved: false; rejectionIconSrc: string; reBookingLink: string }
 );
 
 interface PolicyViolation {
