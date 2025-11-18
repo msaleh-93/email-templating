@@ -11,7 +11,7 @@
   "subjectLine": "One Way Trip Confirmation",
   "issueDate": "5 Nov 2025",
   "issueId": "654654",
-  "trip": "oneWayTrip",
+  "trip": "roundTrip",
   "scope": "B2B",
   "event": "tripApproval",
   "multiCityTrip": {
@@ -211,32 +211,23 @@
     "requestEndsAt": "7:00AM",
     "requestPreviewLink": "",
     "approvalLink": "",
-    "rejectionLink": "",
-    "priceSummary": {
-      "basePrice": "6220.18",
-      "serviceFee": "30.00",
-      "vat": "10.00",
-      "totalPrice": "6250.18",
-      "currency": "SAR"
-    }
+    "rejectionLink": ""
   },
   "tripApproval": {
     "tripApproval": true,
     "pnr": "8JT9Q3",
-    "iconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/checkmark.svg",
-    "priceSummary": {
-      "basePrice": "6220.18",
-      "serviceFee": "30.00",
-      "vat": "10.00",
-      "totalPrice": "6250.18",
-      "currency": "SAR"
-    }
+    "iconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/checkmark.svg"
   },
   "tripRejection": {
     "tripRejection": true,
     "reason": "Booking request rejected upon administrator(s) review.",
     "iconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/ice-cream.png",
-    "reBookingLink": "",
+    "reBookingLink": ""
+  },
+  "priceSummary": {
+    "basePrice": "6220.18",
+    "serviceFee": "30.00",
+    "vat": "10.00",
     "totalPrice": "6250.18",
     "currency": "SAR"
   },

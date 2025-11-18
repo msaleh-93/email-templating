@@ -31,6 +31,7 @@ interface AdminRequestEvent {
   adminRequest: AdminRequest;
   tripApproval?: TripApproval | null;
   tripRejection?: TripRejection | null;
+  priceSummary: PriceSummary;
 }
 
 interface TripApprovalEvent {
@@ -38,6 +39,7 @@ interface TripApprovalEvent {
   adminRequest?: AdminRequest | null;
   tripApproval: TripApproval;
   tripRejection?: TripRejection | null;
+  priceSummary: PriceSummary;
 }
 
 interface TripRejectionEvent {
@@ -45,6 +47,7 @@ interface TripRejectionEvent {
   adminRequest?: AdminRequest | null;
   tripApproval?: TripApproval | null;
   tripRejection: TripRejection;
+  priceSummary: Pick<PriceSummary, "totalPrice" | "currency">;
 }
 
 interface B2BScope {
@@ -79,21 +82,18 @@ interface AdminRequest {
   requestPreviewLink: string;
   approvalLink: string;
   rejectionLink: string;
-  priceSummary: PriceSummary;
 }
 
 interface TripApproval {
   tripApproval: true;
   iconSrc: string;
   pnr: string;
-  priceSummary: PriceSummary;
 }
 
-interface TripRejection extends Pick<PriceSummary, "totalPrice" | "currency"> {
+interface TripRejection {
   tripRejection: true;
   reason: string;
   reBookingLink: string;
-  priceSummary?: false;
 }
 
 interface PriceSummary {
