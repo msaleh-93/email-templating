@@ -131,7 +131,7 @@
                                 <td style="padding: 0;"></td>
                               </tr>
                               <!-- Admin Title -->
-                              {{#with (lookup . [event])}}{{#if adminRequest}}
+                              {{#with (lookup . [event])}}{{#unless tripApproval}}{{#unless tripRejection}}
                               <tr>
                                 <td style="padding: 0;">
                                   <table id="admin-request-title" align="center" border="0"
@@ -164,7 +164,7 @@
                                   </table>
                                 </td>
                               </tr>
-                              {{/if}}{{/with}}
+                              {{/unless}}{{/unless}}{{/with}}
                               <!-- Confirmation Title -->
                               {{#with (lookup . [event])}}{{#if tripApproval}}
                               <tr>

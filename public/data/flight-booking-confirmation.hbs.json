@@ -13,7 +13,7 @@
   "issueId": "654654",
   "trip": "roundTrip",
   "scope": "B2B",
-  "event": "tripApproval",
+  "event": "pendingTrip",
   "multiCityTrip": {
     "multiCityTrip": true,
     "steps": [
@@ -212,6 +212,10 @@
     "requestPreviewLink": "",
     "approvalLink": "",
     "rejectionLink": ""
+  },
+  "pendingTrip": {
+    "pendingTrip": true,
+    "requestEndsAt": "7:00AM"
   },
   "tripApproval": {
     "tripApproval": true,

@@ -22,6 +22,8 @@ interface B2CTripApproval extends B2CScope, TripApprovalEvent {}
 
 interface B2BAdminRequest extends B2BScope, AdminRequestEvent {}
 
+interface B2BPendingTrip extends B2BScope, PendingTripEvent {}
+
 interface B2BTripApproval extends B2BScope, TripApprovalEvent {}
 
 interface B2BTripRejection extends B2BScope, TripRejectionEvent {}
@@ -29,6 +31,16 @@ interface B2BTripRejection extends B2BScope, TripRejectionEvent {}
 interface AdminRequestEvent {
   event: "adminRequest";
   adminRequest: AdminRequest;
+  pendingTrip?: PendingTrip | null;
+  tripApproval?: TripApproval | null;
+  tripRejection?: TripRejection | null;
+  priceSummary: PriceSummary;
+}
+
+interface PendingTripEvent {
+  event: "pendingTrip";
+  adminRequest?: AdminRequest | null;
+  pendingTrip: PendingTrip;
   tripApproval?: TripApproval | null;
   tripRejection?: TripRejection | null;
   priceSummary: PriceSummary;
@@ -37,6 +49,7 @@ interface AdminRequestEvent {
 interface TripApprovalEvent {
   event: "tripApproval";
   adminRequest?: AdminRequest | null;
+  pendingTrip?: PendingTrip | null;
   tripApproval: TripApproval;
   tripRejection?: TripRejection | null;
   priceSummary: PriceSummary;
@@ -45,6 +58,7 @@ interface TripApprovalEvent {
 interface TripRejectionEvent {
   event: "tripRejection";
   adminRequest?: AdminRequest | null;
+  pendingTrip?: PendingTrip | null;
   tripApproval?: TripApproval | null;
   tripRejection: TripRejection;
   priceSummary: Pick<
@@ -85,6 +99,11 @@ interface AdminRequest {
   requestPreviewLink: string;
   approvalLink: string;
   rejectionLink: string;
+}
+
+interface PendingTrip {
+  pendingTrip: true;
+  requestEndsAt: string;
 }
 
 interface TripApproval {
