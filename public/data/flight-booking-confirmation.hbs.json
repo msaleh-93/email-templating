@@ -229,6 +229,7 @@
     "serviceFee": "30.00",
     "vat": "10.00",
     "totalPrice": "6250.18",
+    "currencyIconSrc": "/assets/sar.svg",
     "currency": "SAR"
   },
   "contactInfo": "+966 920 000 091  Riyadh, Saudi Arabia"

@@ -47,7 +47,10 @@ interface TripRejectionEvent {
   adminRequest?: AdminRequest | null;
   tripApproval?: TripApproval | null;
   tripRejection: TripRejection;
-  priceSummary: Pick<PriceSummary, "totalPrice" | "currency">;
+  priceSummary: Pick<
+    PriceSummary,
+    "totalPrice" | "currencyIconSrc" | "currency"
+  >;
 }
 
 interface B2BScope {
@@ -101,7 +104,8 @@ interface PriceSummary {
   serviceFee: string;
   vat: string;
   totalPrice: string;
-  currency: string;
+  currencyIconSrc: string;
+  currency?: string;
 }
 
 type Trip =

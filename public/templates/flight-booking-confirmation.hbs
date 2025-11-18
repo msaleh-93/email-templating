@@ -715,12 +715,12 @@
                                                           </h3>
                                                         </td>
                                                         <td style="padding: 0;">
+
                                                           <p
                                                             style="margin: 0; font-size: 14px; font-weight: 600; color: #212F4A; text-align: end;">
-                                                            <span
-                                                              style="font-size: 12px; font-weight: 500; color: #4A668C;">
-                                                              {{currency}}
-                                                            </span> {{totalPrice}}
+                                                            <img src="{{currencyIconSrc}}" height="11"
+                                                              alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}" />
+                                                            {{totalPrice}}
                                                           </p>
                                                         </td>
                                                       </tr>
@@ -839,7 +839,9 @@
                                                         <td style="padding: 0;">
                                                           <p
                                                             style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: end;">
-                                                            {{currency}} {{basePrice}}
+                                                            <img src="{{currencyIconSrc}}" height="11"
+                                                              alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}" />
+                                                            {{basePrice}}
                                                           </p>
                                                         </td>
                                                       </tr>
@@ -856,7 +858,9 @@
                                                         <td style="padding: 0;">
                                                           <p
                                                             style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: end;">
-                                                            {{currency}} {{serviceFee}}
+                                                            <img src="{{currencyIconSrc}}" height="11"
+                                                              alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}" />
+                                                            {{serviceFee}}
                                                           </p>
                                                         </td>
                                                       </tr>
@@ -873,7 +877,9 @@
                                                         <td style="padding: 0;">
                                                           <p
                                                             style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: end;">
-                                                            {{currency}} {{vat}}
+                                                            <img src="{{currencyIconSrc}}" height="11"
+                                                              alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}" />
+                                                            {{vat}}
                                                           </p>
                                                         </td>
                                                       </tr>
@@ -907,10 +913,9 @@
                                                         <td style="padding: 0;">
                                                           <p
                                                             style="margin: 0; font-size: 14px; font-weight: 600; color: #212F4A; text-align: end;">
-                                                            <span
-                                                              style="font-size: 12px; font-weight: 500; color: #4A668C;">
-                                                              {{currency}}
-                                                            </span> {{totalPrice}}
+                                                            <img src="{{currencyIconSrc}}" height="11"
+                                                              alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}" />
+                                                            {{totalPrice}}
                                                           </p>
                                                         </td>
                                                       </tr>
