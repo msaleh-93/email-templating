@@ -1,11 +1,11 @@
 {
   "language": "en",
   "rtl": false,
-  "headerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/header-logo.svg",
-  "footerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/footer-logo.svg",
-  "plainIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/plain.svg",
-  "clockIconSrc": "/assets/clock.svg",
-  "callIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/call.svg",
+  "headerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/header-logo.svg",
+  "footerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/footer-logo.svg",
+  "plainIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/plain.svg",
+  "clockIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/clock.svg",
+  "callIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/call.svg",
   "homepageLink": "https://flyakeed.com",
   "contactUsLink": "https://flyakeed.com/contact.html",
   "subjectLine": "One Way Trip Confirmation",
@@ -64,8 +64,8 @@
   },
   "roundTrip": {
     "roundTrip": true,
-    "arrowRightIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/arrow-right.svg",
-    "hotelBannerImageSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/hotel-banner-image.svg",
+    "arrowRightIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/arrow-right.svg",
+    "hotelBannerImageSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/hotel-banner-image.svg",
     "hotelBookingLink": "https://hotels.flyakeed.com/hotel/search",
     "hotelCity": "Dubai",
     "steps": [
@@ -186,8 +186,8 @@
   },
   "B2B": {
     "B2B": true,
-    "headerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/header-logo-corp.svg",
-    "footerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/footer-logo-corp.svg",
+    "headerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/header-logo-corp.svg",
+    "footerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/footer-logo-corp.svg",
     "policyViolations": [
       {
         "number": 1,
@@ -223,7 +223,7 @@
   "tripApproval": {
     "tripApproval": true,
     "pnr": "8JT9Q3",
-    "iconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/checkmark.svg",
+    "iconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/checkmark.svg",
     "priceSummary": {
       "basePrice": "6220.18",
       "serviceFee": "30.00",
@@ -235,7 +235,7 @@
   "tripRejection": {
     "tripRejection": true,
     "reason": "Booking request rejected upon administrator(s) review.",
-    "iconSrc": "/assets/ice-cream.png",
+    "iconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/ice-cream.png",
     "reBookingLink": "",
     "totalPrice": "6250.18",
     "currency": "SAR"
