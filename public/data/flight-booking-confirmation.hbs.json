@@ -1,11 +1,11 @@
 {
   "language": "en",
   "rtl": false,
-  "headerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/header-logo.svg",
-  "footerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/footer-logo.svg",
-  "plainIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/plain.svg",
-  "clockIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/clock.svg",
-  "callIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/call.svg",
+  "headerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/fc6ea289e6e53f131b1a74e67d5b1e637e361742/public/assets/header-logo.svg",
+  "footerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/fc6ea289e6e53f131b1a74e67d5b1e637e361742/public/assets/footer-logo.svg",
+  "plainIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/fc6ea289e6e53f131b1a74e67d5b1e637e361742/public/assets/plain.svg",
+  "clockIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/fc6ea289e6e53f131b1a74e67d5b1e637e361742/public/assets/clock.svg",
+  "callIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/fc6ea289e6e53f131b1a74e67d5b1e637e361742/public/assets/call.svg",
   "homepageLink": "https://flyakeed.com",
   "contactUsLink": "https://flyakeed.com/contact.html",
   "subjectLine": "One Way Trip Confirmation",
@@ -64,8 +64,8 @@
   },
   "roundTrip": {
     "roundTrip": true,
-    "arrowRightIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/arrow-right.svg",
-    "hotelBannerImageSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/hotel-banner-image.svg",
+    "arrowRightIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/fc6ea289e6e53f131b1a74e67d5b1e637e361742/public/assets/arrow-right.svg",
+    "hotelBannerImageSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/fc6ea289e6e53f131b1a74e67d5b1e637e361742/public/assets/hotel-banner-image.svg",
     "hotelBookingLink": "https://hotels.flyakeed.com/hotel/search",
     "hotelCity": "Dubai",
     "steps": [
@@ -186,8 +186,8 @@
   },
   "B2B": {
     "B2B": true,
-    "headerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/header-logo-corp.svg",
-    "footerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/footer-logo-corp.svg",
+    "headerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/fc6ea289e6e53f131b1a74e67d5b1e637e361742/public/assets/header-logo-corp.svg",
+    "footerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/fc6ea289e6e53f131b1a74e67d5b1e637e361742/public/assets/footer-logo-corp.svg",
     "policyViolations": [
       {
         "number": 1,
@@ -216,12 +216,12 @@
   "tripApproval": {
     "tripApproval": true,
     "pnr": "8JT9Q3",
-    "iconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/checkmark.svg"
+    "iconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/fc6ea289e6e53f131b1a74e67d5b1e637e361742/public/assets/checkmark.svg"
   },
   "tripRejection": {
     "tripRejection": true,
     "reason": "Booking request rejected upon administrator(s) review.",
-    "iconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/6e2c1085c829dce77145090c4ea41b7959dacc78/public/assets/ice-cream.png",
+    "iconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/fc6ea289e6e53f131b1a74e67d5b1e637e361742/public/assets/ice-cream.png",
     "reBookingLink": ""
   },
   "priceSummary": {
@@ -229,7 +229,7 @@
     "serviceFee": "30.00",
     "vat": "10.00",
     "totalPrice": "6250.18",
-    "currencyIconSrc": "/assets/sar.svg",
+    "currencyIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/fc6ea289e6e53f131b1a74e67d5b1e637e361742/public/assets/sar.svg",
     "currency": "SAR"
   },
   "contactInfo": "+966 920 000 091  Riyadh, Saudi Arabia"
