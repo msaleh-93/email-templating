@@ -1,4 +1,4 @@
-export type NewRootObject = {
+export type FlightEmail = {
   language: string;
   rtl?: boolean;
   headerLogoSrc: string;
