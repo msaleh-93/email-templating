@@ -1,114 +1,244 @@
 {
   "language": "en",
-  "adminEmail": false,
-  "approved": true,
-  "multiCity": true,
-  "roundTrip": false,
-  "corpBooking": true,
-  "headerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/header-logo-corp.svg",
-  "footerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/footer-logo-corp.svg",
-  "approvalIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/checkmark.svg",
-  "rejectionIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/rejected-stamp.png",
+  "rtl": false,
+  "headerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/header-logo.svg",
+  "footerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/footer-logo.svg",
   "plainIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/plain.svg",
+  "clockIconSrc": "/assets/clock.svg",
   "callIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/call.svg",
-  "arrowRightIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/arrow-right.svg",
-  "hotelBannerImageSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/hotel-banner-image.svg",
   "homepageLink": "https://flyakeed.com",
   "contactUsLink": "https://flyakeed.com/contact.html",
-  "hotelBookingLink": "https://hotels.flyakeed.com/hotel/search",
-  "reBookingLink": "",
-  "pendingRequestLink": "",
-  "approvalLink": "",
-  "rejectionLink": "",
   "subjectLine": "One Way Trip Confirmation",
   "issueDate": "5 Nov 2025",
   "issueId": "654654",
-  "requestEndsAt": "7:00AM",
-  "pnr": "8JT9Q3",
-  "steps": [
-    {
-      "isFlight": true,
-      "airline": "Saudia",
-      "plain": "SV540",
-      "class": "Economy",
-      "departure": {
-        "city": "Madinah",
-        "airport": "MED",
-        "date": "12 NOV",
-        "time": "14:00"
+  "trip": "oneWayTrip",
+  "scope": "B2B",
+  "event": "tripApproval",
+  "multiCityTrip": {
+    "multiCityTrip": true,
+    "steps": [
+      {
+        "isFlight": true,
+        "airline": "Saudia",
+        "plain": "SV540",
+        "class": "Economy",
+        "departure": {
+          "city": "Madinah",
+          "airport": "MED",
+          "date": "12 NOV",
+          "time": "14:00"
+        },
+        "arrival": {
+          "city": "Dubai",
+          "airport": "DXB",
+          "date": "12 NOV",
+          "time": "15:30"
+        },
+        "duration": "1h 30m"
       },
-      "arrival": {
-        "city": "Dubai",
-        "airport": "DXB",
-        "date": "12 NOV",
-        "time": "15:30"
+      {
+        "isLayover": true,
+        "duration": "2h 25m",
+        "location": "DXB"
       },
-      "duration": "1h 30m"
-    },
-    {
-      "isLayover": true,
-      "duration": "2h 25m",
-      "location": "DXB"
-    },
-    {
-      "isFlight": true,
-      "airline": "Emirates",
-      "plain": "EK815",
-      "class": "Economy",
-      "departure": {
-        "city": "Dubai",
-        "airport": "DXB",
-        "date": "12 NOV",
-        "time": "17:45"
+      {
+        "isFlight": true,
+        "airline": "Emirates",
+        "plain": "EK815",
+        "class": "Economy",
+        "departure": {
+          "city": "Dubai",
+          "airport": "DXB",
+          "date": "12 NOV",
+          "time": "17:45"
+        },
+        "arrival": {
+          "city": "Muscat",
+          "airport": "MCT",
+          "date": "12 NOV",
+          "time": "18:45"
+        },
+        "duration": "1h 00m"
+      }
+    ]
+  },
+  "roundTrip": {
+    "roundTrip": true,
+    "arrowRightIconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/arrow-right.svg",
+    "hotelBannerImageSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/hotel-banner-image.svg",
+    "hotelBookingLink": "https://hotels.flyakeed.com/hotel/search",
+    "hotelCity": "Dubai",
+    "steps": [
+      {
+        "isFlight": true,
+        "airline": "Saudia",
+        "plain": "SV540",
+        "class": "Economy",
+        "departure": {
+          "city": "Madinah",
+          "airport": "MED",
+          "date": "12 NOV",
+          "time": "14:00"
+        },
+        "arrival": {
+          "city": "Dubai",
+          "airport": "DXB",
+          "date": "12 NOV",
+          "time": "15:30"
+        },
+        "duration": "1h 30m"
       },
-      "arrival": {
-        "city": "Muscat",
-        "airport": "MCT",
-        "date": "12 NOV",
-        "time": "18:45"
+      {
+        "isLayover": true,
+        "duration": "2h 25m",
+        "location": "DXB"
       },
-      "duration": "1h 00m"
-    }
-  ],
+      {
+        "isFlight": true,
+        "airline": "Emirates",
+        "plain": "EK815",
+        "class": "Economy",
+        "departure": {
+          "city": "Dubai",
+          "airport": "DXB",
+          "date": "12 NOV",
+          "time": "17:45"
+        },
+        "arrival": {
+          "city": "Muscat",
+          "airport": "MCT",
+          "date": "12 NOV",
+          "time": "18:45"
+        },
+        "duration": "1h 00m"
+      }
+    ]
+  },
+  "oneWayTrip": {
+    "oneWayTrip": true,
+    "steps": [
+      {
+        "isFlight": true,
+        "airline": "Saudia",
+        "plain": "SV540",
+        "class": "Economy",
+        "departure": {
+          "city": "Madinah",
+          "airport": "MED",
+          "date": "12 NOV",
+          "time": "14:00"
+        },
+        "arrival": {
+          "city": "Dubai",
+          "airport": "DXB",
+          "date": "12 NOV",
+          "time": "15:30"
+        },
+        "duration": "1h 30m"
+      },
+      {
+        "isLayover": true,
+        "duration": "2h 25m",
+        "location": "DXB"
+      },
+      {
+        "isFlight": true,
+        "airline": "Emirates",
+        "plain": "EK815",
+        "class": "Economy",
+        "departure": {
+          "city": "Dubai",
+          "airport": "DXB",
+          "date": "12 NOV",
+          "time": "17:45"
+        },
+        "arrival": {
+          "city": "Muscat",
+          "airport": "MCT",
+          "date": "12 NOV",
+          "time": "18:45"
+        },
+        "duration": "1h 00m"
+      }
+    ]
+  },
   "passengersSummary": "2 Adults, 1 Child",
   "passengers": [
     {
-      "imageSrc": null,
+      "imageSrc": "https://randomuser.me/api/portraits/men/50.jpg",
       "label": "MA",
       "name": "Muath Badee",
-      "seat": "G1",
-      "role": "Product"
+      "grade": "G1",
+      "team": "Product"
     },
     {
       "imageSrc": null,
       "label": "AR",
       "name": "Ali Roy",
-      "seat": "G2",
-      "role": "Design"
+      "grade": "G1",
+      "team": "Design"
     }
   ],
-  "policyViolations": [
-    {
-      "number": 1,
-      "value": "Not the cheapest flight"
-    },
-    {
-      "number": 2,
-      "value": "Not domestic"
-    },
-    {
-      "number": 3,
-      "value": "Included dependants"
+  "B2C": {
+    "B2C": true,
+    "receiptId": "714493",
+    "paymentMethod": "Apple Pay"
+  },
+  "B2B": {
+    "B2B": true,
+    "headerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/header-logo-corp.svg",
+    "footerLogoSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/footer-logo-corp.svg",
+    "policyViolations": [
+      {
+        "number": 1,
+        "value": "Not the cheapest flight"
+      },
+      {
+        "number": 2,
+        "value": "Not domestic"
+      },
+      {
+        "number": 3,
+        "value": "Included dependants"
+      }
+    ],
+    "requestedVia": "Akeed Corp",
+    "purpose": "Business Trip",
+    "tag": "General"
+  },
+  "adminRequest": {
+    "adminRequest": true,
+    "requestEndsAt": "7:00AM",
+    "requestPreviewLink": "",
+    "approvalLink": "",
+    "rejectionLink": "",
+    "priceSummary": {
+      "basePrice": "6220.18",
+      "serviceFee": "30.00",
+      "vat": "10.00",
+      "totalPrice": "6250.18",
+      "currency": "SAR"
     }
-  ],
-  "requestedVia": "Akeed Corp",
-  "purpose": "Business Trip",
-  "tag": "General",
-  "basePrice": "6220.18",
-  "serviceFee": "30.00",
-  "vat": "10.00",
-  "totalPrice": "6250.18",
-  "currency": "SAR",
-  "hotelCity": "Dubai",
+  },
+  "tripApproval": {
+    "tripApproval": true,
+    "pnr": "8JT9Q3",
+    "iconSrc": "https://raw.githubusercontent.com/msaleh-93/email-templating/c8bac96923192589c8d30c34e5878d6c5af08c0a/public/assets/checkmark.svg",
+    "priceSummary": {
+      "basePrice": "6220.18",
+      "serviceFee": "30.00",
+      "vat": "10.00",
+      "totalPrice": "6250.18",
+      "currency": "SAR"
+    }
+  },
+  "tripRejection": {
+    "tripRejection": true,
+    "reason": "Booking request rejected upon administrator(s) review.",
+    "iconSrc": "/assets/ice-cream.png",
+    "reBookingLink": "",
+    "totalPrice": "6250.18",
+    "currency": "SAR"
+  },
   "contactInfo": "+966 920 000 091  Riyadh, Saudi Arabia"
 }

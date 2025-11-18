@@ -11,14 +11,13 @@
   <meta name="color-scheme" content="light">
   <meta name="supported-color-schemes" content="light">
   <title>
-    {{~#if adminEmail~}}
-    Flight Approval Request
-    {{~else}}{{#if approved~}}
-    Flight Confirmation
-    {{~else~}}
-    Flight Rejection
-    {{~/if}}
-    {{/if~}}
+    {{~#with (lookup . [event])}}{{#if adminRequest}}
+    Trip Approval Request
+    {{else}}{{#if tripApproval}}
+    Trip Confirmation
+    {{else}}{{#if tripRejection}}
+    Trip Rejection
+    {{/if}}{{/if}}{{/if}}{{/with}}
   </title>
   <!--[if mso]>
   <noscript>
@@ -77,13 +76,16 @@
                               <!-- Header -->
                               <tr>
                                 <td style="padding: 0;">
-                                  <table width="100%" align="center" border="0" style="border-collapse: collapse;">
+                                  <table id="header" width="100%" align="center" border="0"
+                                    style="border-collapse: collapse;">
                                     <tbody>
                                       <tr height="72">
                                         <td style="padding: 0;">
                                           <a href="{{#if homepageLink}}{{homepageLink}}{{else}}https://flyakeed.com{{/if}}"
                                             target="_blank">
-                                            <img src="{{headerLogoSrc}}" alt="flyakeed-logo" height="24" />
+                                            <img
+                                              src="{{#with (lookup . [scope])}}{{#if headerLogoSrc}}{{headerLogoSrc}}{{else}}{{@root.headerLogoSrc}}{{/if}}{{else}}{{@root.headerLogoSrc}}{{/with}}"
+                                              alt="flyakeed-logo" height="24" />
                                           </a>
                                         </td>
                                         <td width="100%" style="padding: 0;"></td>
@@ -128,25 +130,26 @@
                               <tr height="24">
                                 <td style="padding: 0;"></td>
                               </tr>
-                              <!-- Content Title -->
-                              {{#if adminEmail}}
+                              <!-- Admin Title -->
+                              {{#with (lookup . [event])}}{{#if adminRequest}}
                               <tr>
                                 <td style="padding: 0;">
-                                  <table align="center" border="0" style="border-collapse: collapse;">
+                                  <table id="admin-request-title" align="center" border="0"
+                                    style="border-collapse: collapse;">
                                     <tbody>
                                       <tr>
                                         <td width="4" style="padding: 0;"></td>
                                         <td style="padding: 0;">
                                           <h3
                                             style="margin:0; font-size: 16px; font-weight: 700; text-align: center; color: #003180;">
-                                            {{~#if multiCity~}}
-                                            Multi City Request
-                                            {{~else}}{{#if roundTrip~}}
+                                            {{#with @root.trip as | t |}}
+                                            {{#with (lookup @root [t])}}{{#if multiCityTrip}}
+                                            Multi City Trip Request
+                                            {{else}}{{#if roundTrip}}
                                             Round Trip Request
-                                            {{~else~}}
-                                            Oneway Request
-                                            {{~/if}}
-                                            {{/if~}}
+                                            {{else}}{{#if oneWayTrip}}
+                                            One Way Trip Request
+                                            {{/if}}{{/if}}{{/if}}{{/with}}{{/with}}
                                           </h3>
                                         </td>
                                         <td width="8" style="padding: 0;"></td>
@@ -161,10 +164,12 @@
                                   </table>
                                 </td>
                               </tr>
-                              {{else}}{{#if approved}}
+                              {{/if}}{{/with}}
+                              <!-- Confirmation Title -->
+                              {{#with (lookup . [event])}}{{#if tripApproval}}
                               <tr>
                                 <td style="padding: 0;">
-                                  <img src="{{approvalIconSrc}}" alt="approved" height="36" />
+                                  <img src="{{iconSrc}}" alt="approved" height="36" />
                                 </td>
                               </tr>
                               <tr height="10">
@@ -178,22 +183,21 @@
                                         <td width="5%" style="padding: 0;"></td>
                                         <td width="90%" style="min-width: 224px; padding: 0;">
                                           <h2
-                                            style="margin:0; font-size: 16px; font-weight: 700; text-align: center; color: #068832;">
-                                            {{~#if multiCity~}}
+                                            style="margin:0; font-size: 16px; font-weight: 700; line-height: 24px; text-align: center; color: #068832;">
+                                            {{#with @root.trip as | t |}}
+                                            {{#with (lookup @root [t])}}{{#if multiCityTrip}}
                                             Your Multi City Trip Booking Confirmed!
-                                            {{~else}}{{#if roundTrip~}}
+                                            {{else}}{{#if roundTrip}}
                                             Your Round Trip Booking Confirmed!
-                                            {{~else~}}
+                                            {{else}}{{#if oneWayTrip}}
                                             Your Oneway Trip Booking Confirmed!
-                                            {{~/if}}
-                                            {{/if~}}
+                                            {{/if}}{{/if}}{{/if}}{{/with}}{{/with}}
                                           </h2>
                                         </td>
                                         <td width="5%" style="padding: 0;"></td>
                                       </tr>
                                     </tbody>
                                   </table>
-
                                 </td>
                               </tr>
                               <tr height="16">
@@ -205,27 +209,31 @@
                                     style="border-collapse: collapse; background-color: #E4EAF1; border-radius: 12px;">
                                     <tbody>
                                       <tr>
+                                        <td width="16" style="padding: 0;"></td>
                                         <td width="32" style="padding: 0;">
                                           <p
-                                            style="margin: 0; font-size: 11px; font-weight: 600; text-align: end; color:#384e6b">
+                                            style="margin: 0; font-size: 11px; font-weight: 600; text-align: start; color:#384e6b">
                                             PNR</p>
                                         </td>
                                         <td style="padding: 0;">
                                           <h4
                                             style="margin:0; font-size: 16px; font-weight: 700; text-align: center; color: #384e6b;">
-                                            {{pnr}}</h4>
+                                            {{pnr}}
+                                          </h4>
                                         </td>
-                                        <td width="32" style="padding: 0;">
+                                        <td width="48" style="padding: 0;">
                                         </td>
                                       </tr>
                                     </tbody>
                                   </table>
                                 </td>
                               </tr>
-                              {{else}}
+                              {{/if}}{{/with}}
+                              <!-- Rejection Title -->
+                              {{#with (lookup . [event])}}{{#if tripRejection}}
                               <tr>
                                 <td style="padding: 0;">
-                                  <img src="{{rejectionIconSrc}}" alt="approved" height="48" />
+                                  <img src="{{iconSrc}}" alt="approved" height="64" />
                                 </td>
                               </tr>
                               <tr height="16">
@@ -248,13 +256,12 @@
                                     Has Been Rejected</h3>
                                 </td>
                               </tr>
-                              {{/if}}
-                              {{/if}}
+                              {{/if}}{{/with}}
                               <tr height="16">
                                 <td style="padding: 0;"></td>
                               </tr>
                               <!-- Flight Steps -->
-                              {{#each steps}}
+                              {{#with (lookup . [trip])}}{{#each steps}}
                               <tr>
                                 <td style="padding: 0;">
                                   {{#if isFlight}}
@@ -347,14 +354,14 @@
                                                             <tbody>
                                                               <tr height="4">
                                                                 <td
-                                                                  style="padding: 0; border-top-width: 2px; border-top-style: dashed; border-color: #0099FF;">
+                                                                  style="padding: 0; border-top-width: 2px; border-top-style: dotted; border-color: #0099FF;">
                                                                 </td>
                                                               </tr>
                                                             </tbody>
                                                           </table>
                                                         </td>
                                                         <td width="32" style="padding: 0;">
-                                                          <img height="24" src="{{../plainIconSrc}}" />
+                                                          <img height="24" src="{{@root.plainIconSrc}}" />
                                                         </td>
                                                         <td style="padding: 0;">
                                                           <table width="100%" align="center" border="0"
@@ -362,7 +369,7 @@
                                                             <tbody>
                                                               <tr height="4">
                                                                 <td
-                                                                  style="padding: 0; border-top-width: 2px; border-top-style: dashed; border-color: #0099FF;">
+                                                                  style="padding: 0; border-top-width: 2px; border-top-style: dotted; border-color: #0099FF;">
                                                                 </td>
                                                               </tr>
                                                             </tbody>
@@ -436,14 +443,36 @@
                                     <tbody>
                                       <tr>
                                         <td style="padding: 0;">
-                                          <p
-                                            style="margin: 0; font-size: 13px; font-weight: 500; color: #4A668C; display: inline;">
-                                            🕘️ {{duration}} layover in {{location}}
-                                          </p>
+                                          <table align="center" border="0" style="border-collapse: collapse;">
+                                            <tbody>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <table align="center" border="0" style="border-collapse: collapse;">
+                                                    <tbody>
+                                                      <tr height="6">
+                                                        <td style="padding: 0;"></td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td style="padding: 0;">
+                                                          <img src="{{@root.clockIconSrc}}" height="15" />
+                                                        </td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                                <td width="2" style="padding: 0;"></td>
+                                                <td style="padding: 0;">
+                                                  <p
+                                                    style="margin: 0; font-size: 13px; font-weight: 500; color: #4A668C; display: inline;">
+                                                    {{duration}} layover in {{location}}
+                                                  </p>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
                                         </td>
                                       </tr>
                                     </tbody>
-
                                   </table>
                                   {{/if}}
                                   {{/if}}
@@ -452,8 +481,8 @@
                               <tr height="16">
                                 <td style="padding: 0;"></td>
                               </tr>
-                              {{/each}}
-                              <!-- Passenger Summary -->
+                              {{/each}}{{/with}}
+                              <!-- Passengers Summary -->
                               <tr>
                                 <td style="padding: 0;">
                                   <table width="100%" align="center" border="1"
@@ -507,18 +536,22 @@
                                                                   <h3
                                                                     style="margin: 0; font-size: 13px; font-weight: 600; color: #003180; text-align: start;">
                                                                     {{name}}
+                                                                    {{#if grade}}
                                                                     <span
                                                                       style="font-size: 10px; font-weight: 500; color: #4A668C;">
-                                                                      {{seat}}
+                                                                      {{grade}}
                                                                     </span>
+                                                                    {{/if}}
                                                                   </h3>
                                                                 </td>
+                                                                {{#if team}}
                                                                 <td style="padding: 0;">
                                                                   <p
                                                                     style="margin: 0; font-size: 13px; font-weight: 500; color: #4A668C; text-align: end;">
-                                                                    {{role}}
+                                                                    {{team}}
                                                                   </p>
                                                                 </td>
+                                                                {{/if}}
                                                               </tr>
                                                             </tbody>
                                                           </table>
@@ -529,7 +562,7 @@
                                                   </table>
                                                 </td>
                                               </tr>
-                                              {{#if corpBooking}}
+                                              {{#with (lookup . [scope])}}{{#if B2B}}
                                               {{#if policyViolations}}
                                               <tr height="16">
                                                 <td style="padding: 0;"></td>
@@ -578,6 +611,8 @@
                                                 </td>
                                               </tr>
                                               {{/if}}
+                                              {{#with @root.event as | e |}}
+                                              {{#with (lookup @root [e])}}{{#if tripRejection}}
                                               <tr height="16">
                                                 <td style="padding: 0;"></td>
                                               </tr>
@@ -591,8 +626,35 @@
                                               </tr>
                                               <tr>
                                                 <td style="padding: 0;">
+                                                  <h3
+                                                    style="margin: 0; font-size: 13px; font-weight: 600; text-align: start; color: #212F4A;">
+                                                    Reason of Rejection</h3>
+                                                </td>
+                                              </tr>
+                                              <tr height="6">
+                                                <td style="padding: 0;">
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <p
+                                                    style="margin: 0; font-size: 14px; font-weight: 500; text-align: start; color: #4A668C;">
+                                                    {{reason}}</p>
+                                                </td>
+                                              </tr>
+                                              {{/if}}{{/with}}{{/with}}
+                                              <tr height="16">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td width="100%" height="1"
+                                                  style="height: 1px; padding: 0; background-color: #C2CAD6;">
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
                                                   <div class="corp-booking"
-                                                    style="min-width: 98px; padding-right: 32px; padding-bottom: 12px;">
+                                                    style="min-width: 98px; padding-right: 32px; padding-top: 16px;">
                                                     <p
                                                       style="margin: 0; padding-bottom: 4px; font-size: 12px; font-weight: 500; text-align: start; color: #67788F;">
                                                       Requested via
@@ -603,7 +665,7 @@
                                                     </h3>
                                                   </div>
                                                   <div class="corp-booking"
-                                                    style="min-width: 98px; padding-right: 32px; padding-bottom: 12px;">
+                                                    style="min-width: 98px; padding-right: 32px; padding-top: 16px;">
                                                     <p
                                                       style="margin: 0; padding-bottom: 4px; font-size: 12px; font-weight: 500; text-align: start; color: #67788F;">
                                                       Purpose
@@ -614,7 +676,7 @@
                                                     </h3>
                                                   </div>
                                                   <div class="corp-booking"
-                                                    style="min-width: 98px; padding-right: 32px; padding-bottom: 12px;">
+                                                    style="min-width: 98px; padding-right: 32px; padding-top: 16px;">
                                                     <p
                                                       style="margin: 0; padding-bottom: 4px; font-size: 12px; font-weight: 500; text-align: start; color: #67788F;">
                                                       Tag
@@ -626,7 +688,47 @@
                                                   </div>
                                                 </td>
                                               </tr>
-                                              {{/if}}
+                                              {{/if}}{{/with}}
+                                              {{#with @root.event as | e |}}
+                                              {{#with (lookup @root [e])}}{{#if tripRejection}}
+                                              <tr height="16">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td width="100%" height="1"
+                                                  style="height: 1px; padding: 0; background-color: #C2CAD6;">
+                                                </td>
+                                              </tr>
+                                              <tr height="16">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <table width="100%" align="center" border="0"
+                                                    style="border-collapse: collapse;">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td style="padding: 0;">
+                                                          <h3
+                                                            style="margin: 0; font-size: 12px; font-weight: 500; color: #212F4A; text-align: start;">
+                                                            Total Price
+                                                          </h3>
+                                                        </td>
+                                                        <td style="padding: 0;">
+                                                          <p
+                                                            style="margin: 0; font-size: 14px; font-weight: 600; color: #212F4A; text-align: end;">
+                                                            <span
+                                                              style="font-size: 12px; font-weight: 500; color: #4A668C;">
+                                                              {{currency}}
+                                                            </span> {{totalPrice}}
+                                                          </p>
+                                                        </td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                              {{/if}}{{/with}}{{/with}}
                                               <tr height="14">
                                                 <td style="padding: 0; border-width: 0;"></td>
                                               </tr>
@@ -639,6 +741,70 @@
                                   </table>
                                 </td>
                               </tr>
+                              {{#with (lookup . [scope])}}{{#if B2C}}
+                              <tr height="16">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              <!-- Payment Info -->
+                              <tr>
+                                <td style="padding: 0;">
+                                  <table width="100%" align="center" border="1"
+                                    style="border-width: 1px; border-style: solid; border-color: #C2CAD6; border-radius: 12px; background-color: #FFFFFF;">
+                                    <tbody>
+                                      <tr>
+                                        <td width="12" border="0" style="padding: 0; border-width: 0;"></td>
+                                        <td border="0" style="padding: 0; border-width: 0;">
+                                          <table width="100%" align="center" border="0"
+                                            style="border-collapse: collapse;">
+                                            <tbody>
+                                              <tr height="10">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <h3
+                                                    style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: start;">
+                                                    Receipt
+                                                  </h3>
+                                                </td>
+                                                <td style="padding: 0;">
+                                                  <p
+                                                    style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: end;">
+                                                    {{receiptId}}
+                                                  </p>
+                                                </td>
+                                              </tr>
+                                              <tr height="12">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                              <tr>
+                                                <td style="padding: 0;">
+                                                  <h3
+                                                    style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: start;">
+                                                    Payment Method
+                                                  </h3>
+                                                </td>
+                                                <td style="padding: 0;">
+                                                  <p
+                                                    style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: end;">
+                                                    {{paymentMethod}}
+                                                  </p>
+                                                </td>
+                                              </tr>
+                                              <tr height="10">
+                                                <td style="padding: 0;"></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                        <td width="12" border="0" style="padding: 0; border-width: 0;"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              {{/if}}{{/with}}
+                              {{#with (lookup . [event])}}{{#with priceSummary}}
                               <tr height="16">
                                 <td style="padding: 0;"></td>
                               </tr>
@@ -751,7 +917,7 @@
                                                   </table>
                                                 </td>
                                               </tr>
-                                              <tr height=" 10">
+                                              <tr height="10">
                                                 <td style="padding: 0;"></td>
                                               </tr>
                                             </tbody>
@@ -763,8 +929,85 @@
                                   </table>
                                 </td>
                               </tr>
-
-                              {{#if adminEmail}}
+                              {{/with}}{{/with}}
+                              {{#with (lookup . [event])}}{{#unless tripRejection}}
+                              {{#with @root.trip as | t |}}{{#with (lookup @root [t]) as | trip |}}{{#if roundTrip}}
+                              <!-- Book Your Hotel -->
+                              <tr height="16">
+                                <td style="padding: 0;"></td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 0;">
+                                  <a style="text-decoration: none;" href="{{hotelBookingLink}}" target="_blank">
+                                    <table width="100%" align="center" border="0"
+                                      style="min-height: 72px; border-collapse: collapse; background-color: #196DFB; border-radius: 12px; overflow: hidden;">
+                                      <tbody>
+                                        <tr>
+                                          <td width="16" style="padding: 0;"></td>
+                                          <td style="padding: 0;">
+                                            <table width="100%" align="center" border="0"
+                                              style="border-collapse: collapse;">
+                                              <tbody>
+                                                <tr height="16">
+                                                  <td style="padding: 0;"></td>
+                                                </tr>
+                                                <tr>
+                                                  <td style="padding: 0;">
+                                                    <h2
+                                                      style="margin: 0; font-size: 16px; font-weight: 700; color: #FFFFFF; text-align: start;">
+                                                      Book Your Hotel in {{trip.hotelCity}} <img height="14"
+                                                        src="{{arrowRightIconSrc}}" />
+                                                    </h2>
+                                                  </td>
+                                                </tr>
+                                                {{#with @root.event as | e |}}
+                                                {{#with (lookup @root [e]) as | event|}}{{#if adminRequest}}
+                                                <tr height="6">
+                                                  <td style="padding: 0;"></td>
+                                                </tr>
+                                                <tr>
+                                                  <td style="padding: 0;">
+                                                    <p
+                                                      style="margin: 0; font-size: 12px; line-height: 15px; font-weight: 500; color: #AAFEFF; text-align: start;">
+                                                      You can now book hotels for your team through FlyAkeed and enjoy
+                                                      corporate
+                                                      discounts
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                                {{/if}}{{/with}}{{/with}}
+                                                <tr height="16">
+                                                  <td style="padding: 0;"></td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                          <td style="max-width: 69px; padding: 0;">
+                                            <table align="end" border="0" style="border-collapse: collapse;">
+                                              <tbody>
+                                                <tr
+                                                  height="{{#with @root.event as | e |}}{{#with (lookup @root [e]) as | event|}}{{#if adminRequest}}35{{else}}21{{/if}}{{/with}}{{/with}}">
+                                                  <td style="padding: 0;"></td>
+                                                </tr>
+                                                <tr>
+                                                  <td width="100%" style="padding: 0;"></td>
+                                                  <td style="padding: 0;">
+                                                    <img height="48" src="{{hotelBannerImageSrc}}"
+                                                      style="padding: 0; margin: 0;" />
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </a>
+                                </td>
+                              </tr>
+                              {{/if}}{{/with}}{{/with}}
+                              {{/unless}}{{/with}}
+                              {{#with (lookup . [event])}}{{#if adminRequest}}
                               <!-- Request Actions -->
                               <tr height="32">
                                 <td style="padding: 0;"></td>
@@ -814,62 +1057,11 @@
                                   </table>
                                 </td>
                               </tr>
-                              <tr height="32">
-                                <td style="padding: 0;"></td>
-                              </tr>
-                              {{else}}{{#if approved}}
-                              {{#if roundTrip}}
-                              <!-- Book Your Hotel -->
                               <tr height="16">
                                 <td style="padding: 0;"></td>
                               </tr>
-                              <tr>
-                                <td style="padding: 0;">
-                                  <a style="text-decoration: none;" href="{{hotelBookingLink}}" target="_blank">
-                                    <table height="72" width="100%" align="center" border="0"
-                                      style="border-collapse: collapse; background-color: #196DFB; border-radius: 12px;">
-                                      <tbody>
-                                        <tr>
-                                          <td width="16" style="padding: 0;"></td>
-                                          <td style="padding: 0;">
-                                            <h2
-                                              style="margin: 0; font-size: 16px; font-weight: 700; color: #FFFFFF; text-align: start;">
-                                              Book Your Hotel in {{hotelCity}} <img height="14"
-                                                src="{{arrowRightIconSrc}}" />
-                                            </h2>
-                                          </td>
-                                          <td style="max-width: 69px; padding: 0;">
-                                            <table align="end" border="0"
-                                              style="border-collapse: collapse; background-color: #196DFB; border-radius: 12px; overflow: hidden;">
-                                              <tbody>
-                                                <tr height="21">
-                                                  <td style="padding: 0;"></td>
-                                                </tr>
-                                                <tr>
-                                                  <td width="100%" style="padding: 0;"></td>
-                                                  <td style="padding: 0;">
-                                                    <img height="48" src="{{hotelBannerImageSrc}}"
-                                                      style="padding: 0; margin: 0;" />
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </a>
-                                </td>
-                              </tr>
-                              <tr height="16">
-                                <td style="padding: 0;"></td>
-                              </tr>
-                              {{else}}
-                              <tr height="16">
-                                <td style="padding: 0;"></td>
-                              </tr>
-                              {{/if}}
-                              {{else}}
+                              {{/if}}{{/with}}
+                              {{#with (lookup . [event])}}{{#if tripRejection}}
                               <tr height="32">
                                 <td style="padding: 0;"></td>
                               </tr>
@@ -900,12 +1092,14 @@
                                   </table>
                                 </td>
                               </tr>
-                              <tr height="32">
+                              <tr height="16">
                                 <td style="padding: 0;"></td>
                               </tr>
-                              {{/if}}
-                              {{/if}}
+                              {{/if}}{{/with}}
                               <!-- Contact Us -->
+                              <tr height="16">
+                                <td style="padding: 0;"></td>
+                              </tr>
                               <tr height="32">
                                 <td style="padding: 0;">
                                   <table align="center" border="0" style="border-collapse: collapse;">
@@ -936,11 +1130,11 @@
                                             </table>
                                           </a>
                                         </td>
-                                        {{#if adminEmail}}
+                                        {{#with (lookup . [event])}}{{#if adminRequest}}
                                         <td width="24" style="padding: 0;"></td>
                                         <td style="padding: 0;">
                                           <a width="128" style="min-width: 128px; text-decoration: none;"
-                                            href="{{pendingRequestLink}}" target="_blank">
+                                            href="{{requestPreviewLink}}" target="_blank">
                                             <table height="32" align="center" border="0"
                                               style="border-collapse: collapse;">
                                               <tbody>
@@ -958,7 +1152,7 @@
                                             </table>
                                           </a>
                                         </td>
-                                        {{/if}}
+                                        {{/if}}{{/with}}
                                       </tr>
                                     </tbody>
                                   </table>
@@ -996,7 +1190,8 @@
                               </tr>
                               <tr>
                                 <td style="padding: 0;">
-                                  <img height="36" src="{{footerLogoSrc}}" />
+                                  <img height="36"
+                                    src="{{#with (lookup . [scope])}}{{#if footerLogoSrc}}{{footerLogoSrc}}{{else}}{{@root.footerLogoSrc}}{{/if}}{{else}}{{@root.footerLogoSrc}}{{/with}}" />
                                 </td>
                               </tr>
                               <tr height="20">

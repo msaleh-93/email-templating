@@ -1,11 +1,12 @@
-export type RootObject = {
+export type NewRootObject = {
   language: string;
-  rtl: boolean;
+  rtl?: boolean;
   headerLogoSrc: string;
   footerLogoSrc: string;
   plainIconSrc: string;
+  clockIconSrc: string;
   callIconSrc: string;
-  homepageLink: string;
+  homepageLink?: string;
   contactUsLink: string;
   subjectLine: string;
   issueDate: string;
@@ -13,49 +14,134 @@ export type RootObject = {
   steps: (Flight | Layover)[];
   passengersSummary: string;
   passengers: Passenger[];
-  basePrice: string;
-  serviceFee: string;
-  vat: string;
-  totalPrice: string;
-  currency: string;
   contactInfo: string;
-} & (
-  | (CorpBooking & (RequestEmail | ConfirmationEmail))
-  | ({ corpBooking?: false } & ConfirmationEmail)
-) &
-  (
-    | { multiCity: true; roundTrip?: false }
-    | ({ multiCity?: false } & (RoundTrip | { roundTrip?: false }))
-  );
+} & Trip &
+  (B2CTripApproval | B2BAdminRequest | B2BTripApproval | B2BTripRejection);
 
-interface RoundTrip {
-  roundTrip: true;
-  arrowRightIconSrc: string;
-  hotelBannerImageSrc: string;
-  hotelBookingLink: string;
-  hotelCity: string;
+interface B2CTripApproval extends B2CScope, TripApprovalEvent {}
+
+interface B2BAdminRequest extends B2BScope, AdminRequestEvent {}
+
+interface B2BTripApproval extends B2BScope, TripApprovalEvent {}
+
+interface B2BTripRejection extends B2BScope, TripRejectionEvent {}
+
+interface AdminRequestEvent {
+  event: "adminRequest";
+  adminRequest: AdminRequest;
+  tripApproval?: TripApproval | null;
+  tripRejection?: TripRejection | null;
 }
 
-interface CorpBooking {
-  corpBooking: true;
+interface TripApprovalEvent {
+  event: "tripApproval";
+  adminRequest?: AdminRequest | null;
+  tripApproval: TripApproval;
+  tripRejection?: TripRejection | null;
+}
+
+interface TripRejectionEvent {
+  event: "tripRejection";
+  adminRequest?: AdminRequest | null;
+  tripApproval?: TripApproval | null;
+  tripRejection: TripRejection;
+}
+
+interface B2BScope {
+  scope: "B2B";
+  B2B: B2B;
+}
+
+interface B2CScope {
+  scope: "B2C";
+  B2C: B2C;
+}
+
+interface B2B {
+  B2B: true;
+  headerLogoSrc?: string;
+  footerLogoSrc?: string;
   policyViolations: PolicyViolation[];
   requestedVia: string;
   purpose: string;
   tag: string;
 }
 
-interface RequestEmail {
-  adminEmail: true;
-  requestEndsAt: string;
-  pendingRequestLink: string;
-  approvalLink: string;
-  rejectionLink: string;
+interface B2C {
+  B2C: true;
+  receiptId: string;
+  paymentMethod: string;
 }
 
-type ConfirmationEmail = { adminEmail?: false; pnr: string } & (
-  | { approved: true; approvalIconSrc: string }
-  | { approved: false; rejectionIconSrc: string; reBookingLink: string }
-);
+interface AdminRequest {
+  adminRequest: true;
+  requestEndsAt: string;
+  requestPreviewLink: string;
+  approvalLink: string;
+  rejectionLink: string;
+  priceSummary: PriceSummary;
+}
+
+interface TripApproval {
+  tripApproval: true;
+  iconSrc: string;
+  pnr: string;
+  priceSummary: PriceSummary;
+}
+
+interface TripRejection extends Pick<PriceSummary, "totalPrice" | "currency"> {
+  tripRejection: true;
+  reason: string;
+  reBookingLink: string;
+  priceSummary?: false;
+}
+
+interface PriceSummary {
+  basePrice: string;
+  serviceFee: string;
+  vat: string;
+  totalPrice: string;
+  currency: string;
+}
+
+type Trip =
+  | {
+      trip: "multiCityTrip";
+      multiCityTrip: MultiCityTrip;
+      roundTrip?: RoundTrip | null;
+      oneWayTrip?: OneWayTrip | null;
+    }
+  | {
+      trip: "roundTrip";
+      multiCityTrip?: MultiCityTrip | null;
+      roundTrip: RoundTrip;
+      oneWayTrip?: OneWayTrip | null;
+    }
+  | {
+      trip: "oneWayTrip";
+      multiCityTrip?: MultiCityTrip | null;
+      roundTrip?: RoundTrip | null;
+      oneWayTrip: OneWayTrip;
+    };
+
+interface MultiCityTrip {
+  multiCityTrip: true;
+  steps: (Flight | Layover)[];
+}
+
+interface RoundTrip {
+  roundTrip: true;
+  steps: (Flight | Layover)[];
+  arrowRightIconSrc: string;
+  hotelBannerImageSrc: string;
+  hotelBookingLink: string;
+  hotelCity: string;
+}
+
+interface OneWayTrip {
+  oneWayTrip: true;
+  steps: (Flight | Layover)[];
+}
 
 interface PolicyViolation {
   number: number;
@@ -66,8 +152,8 @@ interface Passenger {
   imageSrc?: string | null;
   label: string;
   name: string;
-  seat: string;
-  role: string;
+  grade: string;
+  team: string;
 }
 
 interface Flight {
@@ -76,8 +162,8 @@ interface Flight {
   airline: string;
   plain: string;
   class: string;
-  departure: FlightEvent;
-  arrival: FlightEvent;
+  departure: Destination;
+  arrival: Destination;
   duration: string;
 }
 
@@ -88,7 +174,7 @@ interface Layover {
   location: string;
 }
 
-interface FlightEvent {
+interface Destination {
   city: string;
   airport: string;
   date: string;
