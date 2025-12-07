@@ -84,7 +84,7 @@
                                           <a href="{{#if homepageLink}}{{homepageLink}}{{else}}https://flyakeed.com{{/if}}"
                                             target="_blank">
                                             <img
-                                              src="{{#with (lookup . [scope])}}{{#if headerLogoSrc}}{{headerLogoSrc}}{{else}}{{@root.headerLogoSrc}}{{/if}}{{else}}{{@root.headerLogoSrc}}{{/with}}"
+                                              src="https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/header-logo{{#with (lookup . [scope])}}{{#if B2B}}-corp{{/if}}{{/with}}.svg"
                                               alt="flyakeed-logo" height="24" />
                                           </a>
                                         </td>
@@ -169,7 +169,8 @@
                               {{#with (lookup . [event])}}{{#if tripApproval}}
                               <tr>
                                 <td style="padding: 0;">
-                                  <img src="{{iconSrc}}" alt="approved" height="36" />
+                                  <img src="https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/checkmark.svg"
+                                    alt="approved" height="36" />
                                 </td>
                               </tr>
                               <tr height="10">
@@ -233,7 +234,8 @@
                               {{#with (lookup . [event])}}{{#if tripRejection}}
                               <tr>
                                 <td style="padding: 0;">
-                                  <img src="{{iconSrc}}" alt="approved" height="64" />
+                                  <img src="https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/ice-cream.png"
+                                    alt="approved" height="64" />
                                 </td>
                               </tr>
                               <tr height="16">
@@ -361,7 +363,8 @@
                                                           </table>
                                                         </td>
                                                         <td width="32" style="padding: 0;">
-                                                          <img height="24" src="{{@root.plainIconSrc}}" />
+                                                          <img height="24"
+                                                            src="https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/plain.svg" />
                                                         </td>
                                                         <td style="padding: 0;">
                                                           <table width="100%" align="center" border="0"
@@ -454,7 +457,9 @@
                                                       </tr>
                                                       <tr>
                                                         <td style="padding: 0;">
-                                                          <img src="{{@root.clockIconSrc}}" height="15" />
+                                                          <img
+                                                            src="https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/clock.svg"
+                                                            height="15" />
                                                         </td>
                                                       </tr>
                                                     </tbody>
@@ -718,7 +723,9 @@
 
                                                           <p
                                                             style="margin: 0; font-size: 14px; font-weight: 600; color: #212F4A; text-align: end;">
-                                                            <img src="{{currencyIconSrc}}" height="11"
+                                                            <img
+                                                              src="{{#if currencyIconSrc}}{{currencyIconSrc}}{{else}}https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/sar.svg{{/if}}"
+                                                              height="11"
                                                               alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}" />
                                                             {{totalPrice}}
                                                           </p>
@@ -839,7 +846,9 @@
                                                         <td style="padding: 0;">
                                                           <p
                                                             style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: end;">
-                                                            <img src="{{currencyIconSrc}}" height="11"
+                                                            <img
+                                                              src="{{#if currencyIconSrc}}{{currencyIconSrc}}{{else}}https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/sar.svg{{/if}}"
+                                                              height="11"
                                                               alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}" />
                                                             {{basePrice}}
                                                           </p>
@@ -858,7 +867,9 @@
                                                         <td style="padding: 0;">
                                                           <p
                                                             style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: end;">
-                                                            <img src="{{currencyIconSrc}}" height="11"
+                                                            <img
+                                                              src="{{#if currencyIconSrc}}{{currencyIconSrc}}{{else}}https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/sar.svg{{/if}}"
+                                                              height="11"
                                                               alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}" />
                                                             {{serviceFee}}
                                                           </p>
@@ -877,7 +888,9 @@
                                                         <td style="padding: 0;">
                                                           <p
                                                             style="margin: 0; font-size: 12px; font-weight: 500; color: #4A668C; text-align: end;">
-                                                            <img src="{{currencyIconSrc}}" height="11"
+                                                            <img
+                                                              src="{{#if currencyIconSrc}}{{currencyIconSrc}}{{else}}https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/sar.svg{{/if}}"
+                                                              height="11"
                                                               alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}" />
                                                             {{vat}}
                                                           </p>
@@ -913,7 +926,9 @@
                                                         <td style="padding: 0;">
                                                           <p
                                                             style="margin: 0; font-size: 14px; font-weight: 600; color: #212F4A; text-align: end;">
-                                                            <img src="{{currencyIconSrc}}" height="11"
+                                                            <img
+                                                              src="{{#if currencyIconSrc}}{{currencyIconSrc}}{{else}}https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/sar.svg{{/if}}"
+                                                              height="11"
                                                               alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}" />
                                                             {{totalPrice}}
                                                           </p>
@@ -962,7 +977,7 @@
                                                     <h2
                                                       style="margin: 0; font-size: 16px; font-weight: 700; color: #FFFFFF; text-align: start;">
                                                       Book Your Hotel in {{trip.hotelCity}} <img height="14"
-                                                        src="{{arrowRightIconSrc}}" />
+                                                        src="https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/arrow-right.svg" />
                                                     </h2>
                                                   </td>
                                                 </tr>
@@ -998,7 +1013,8 @@
                                                 <tr>
                                                   <td width="100%" style="padding: 0;"></td>
                                                   <td style="padding: 0;">
-                                                    <img height="48" src="{{hotelBannerImageSrc}}"
+                                                    <img height="48"
+                                                      src="https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/hotel-banner-image.svg"
                                                       style="padding: 0; margin: 0;" />
                                                   </td>
                                                 </tr>
@@ -1121,7 +1137,8 @@
                                                 <tr>
                                                   <td width="8" style="padding: 0;"></td>
                                                   <td style="padding: 0;">
-                                                    <img height="20" src="{{callIconSrc}}" />
+                                                    <img height="20"
+                                                      src="https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/call.svg" />
                                                   </td>
                                                   <td width="4" style="margin: 0;"></td>
                                                   <td style="padding: 0;">
@@ -1197,7 +1214,7 @@
                               <tr>
                                 <td style="padding: 0;">
                                   <img height="36"
-                                    src="{{#with (lookup . [scope])}}{{#if footerLogoSrc}}{{footerLogoSrc}}{{else}}{{@root.footerLogoSrc}}{{/if}}{{else}}{{@root.footerLogoSrc}}{{/with}}" />
+                                    src="https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/footer-logo{{#with (lookup . [scope])}}{{#if B2B}}-corp{{/if}}{{/with}}.svg" />
                                 </td>
                               </tr>
                               <tr height="20">

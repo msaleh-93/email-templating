@@ -1,11 +1,6 @@
 export type FlightEmail = {
   language: string;
   rtl?: boolean;
-  headerLogoSrc: string;
-  footerLogoSrc: string;
-  plainIconSrc: string;
-  clockIconSrc: string;
-  callIconSrc: string;
   homepageLink?: string;
   contactUsLink: string;
   subjectLine: string;
@@ -79,8 +74,6 @@ interface B2CScope {
 
 interface B2B {
   B2B: true;
-  headerLogoSrc?: string;
-  footerLogoSrc?: string;
   policyViolations: PolicyViolation[];
   requestedVia: string;
   purpose: string;
@@ -108,7 +101,6 @@ interface PendingTrip {
 
 interface TripApproval {
   tripApproval: true;
-  iconSrc: string;
   pnr: string;
 }
 
@@ -123,8 +115,8 @@ interface PriceSummary {
   serviceFee: string;
   vat: string;
   totalPrice: string;
-  currencyIconSrc: string;
-  currency?: string;
+  currencyIconSrc?: string | null;
+  currency?: string | null;
 }
 
 type Trip =
@@ -155,8 +147,6 @@ interface MultiCityTrip {
 interface RoundTrip {
   roundTrip: true;
   steps: (Flight | Layover)[];
-  arrowRightIconSrc: string;
-  hotelBannerImageSrc: string;
   hotelBookingLink: string;
   hotelCity: string;
 }
