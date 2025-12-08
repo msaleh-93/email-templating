@@ -110,14 +110,22 @@ interface TripRejection {
   reBookingLink: string;
 }
 
-interface PriceSummary {
-  basePrice: string;
-  serviceFee: string;
-  vat: string;
+type PriceSummary = {
   totalPrice: string;
   currencyIconSrc?: string | null;
   currency?: string | null;
-}
+} & (
+  | {
+      basePrice: string;
+      serviceFee?: string | null;
+      vat?: string | null;
+    }
+  | {
+      basePrice?: null;
+      serviceFee?: null;
+      vat?: null;
+    }
+);
 
 type Trip =
   | {

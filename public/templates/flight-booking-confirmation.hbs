@@ -831,6 +831,7 @@
                                               <tr height="10">
                                                 <td style="padding: 0;"></td>
                                               </tr>
+                                              {{#if basePrice}}
                                               <tr>
                                                 <td style="padding: 0;">
                                                   <table width="100%" align="center" border="0"
@@ -854,6 +855,7 @@
                                                           </p>
                                                         </td>
                                                       </tr>
+                                                      {{#if serviceFee}}
                                                       <tr height="8">
                                                         <td style="padding: 0;"></td>
                                                       </tr>
@@ -875,6 +877,8 @@
                                                           </p>
                                                         </td>
                                                       </tr>
+                                                      {{/if}}
+                                                      {{#if vat}}
                                                       <tr height="8">
                                                         <td style="padding: 0;"></td>
                                                       </tr>
@@ -896,6 +900,7 @@
                                                           </p>
                                                         </td>
                                                       </tr>
+                                                      {{/if}}
                                                     </tbody>
                                                   </table>
                                                 </td>
@@ -911,6 +916,7 @@
                                               <tr height="12">
                                                 <td style="padding: 0;"></td>
                                               </tr>
+                                              {{/if}}
                                               <tr>
                                                 <td style="padding: 0;">
                                                   <table width="100%" align="center" border="0"
