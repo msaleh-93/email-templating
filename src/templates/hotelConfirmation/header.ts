@@ -1,5 +1,5 @@
 import { $, t } from "~/lib/templateBuilder";
-import { gridRow } from "../blocks/grid";
+import { gridCol, gridRow } from "../blocks/grid";
 
 export function header() {
   return gridRow(
@@ -18,45 +18,44 @@ export function header() {
           $.lookup(".", "scope"),
           $.if(
             "B2B",
-            "https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/header-logo-corp.svg",
-            "https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/header-logo.svg",
+            "https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/header-logo-corp.svg",
+            "https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/header-logo.svg",
           ),
         ),
         alt: "flyakeed-logo",
         height: 24,
       }),
     ),
-    /*
-<td style="min-width: 72px; padding: 0;">
-  <table width="100%" align="center" border="0"
-    style="border-collapse: collapse;">
-    <tbody>
-      <tr>
-        <td style="padding: 0;">
-          <p
-            style="margin: 0; font-size: 12px; font-weight: 500; text-align: end; color: #496997;">
-            {{issueDate}}
-          </p>
-        </td>
-      </tr>
-      <tr height="4">
-        <td style="padding: 0;"></td>
-      </tr>
-      <tr> 
-        <td style="padding: 0;">
-          <p
-            style="margin: 0; font-size: 12px; font-weight: 500; text-align: end; color: #496997;">
-            ID:{{issueId}}
-          </p>
-        </td>
-      </tr>
-      <tr height="4">
-        <td style="padding: 0;"></td>
-      </tr>
-    </tbody>
-  </table>
-</td>
-*/
-    t.td({ style: { "min-width": "72px", padding: 0 } }),
+    gridCol(
+      { gap: 4, style: { "min-width": "128px" } },
+      t.p(
+        {
+          style: {
+            margin: 0,
+            color: "#496997",
+            "font-size": "12px",
+            "font-weight": 500,
+            "text-align": "end",
+          },
+        },
+        $.var("issueDate"),
+      ),
+      $.if(
+        "issueId",
+        t.p(
+          {
+            style: {
+              margin: 0,
+              color: "#496997",
+              "font-size": "12px",
+              "font-weight": 500,
+              "text-align": "end",
+            },
+          },
+          "Akeed# ",
+          $.var("issueId"),
+        ),
+      ),
+    ),
   );
 }

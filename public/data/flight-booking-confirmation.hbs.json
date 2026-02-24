@@ -7,7 +7,7 @@
   "issueDate": "5 Nov 2025",
   "issueId": "654654",
   "trip": "roundTrip",
-  "scope": "B2C",
+  "scope": "B2B",
   "event": "adminRequest",
   "multiCityTrip": {
     "multiCityTrip": true,

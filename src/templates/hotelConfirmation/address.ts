@@ -6,7 +6,11 @@ export function address() {
   return grayBox(
     t.td(
       { style: { padding: 0, "max-width": "16px" }, width: 16 },
-      t.img({ src: "/assets/pin.svg", height: 15, alt: "pin" }),
+      t.img({
+        src: "https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/pin.svg",
+        height: 15,
+        alt: "pin",
+      }),
     ),
     spacingX(6),
     t.p(

@@ -7,7 +7,7 @@ export function bookedHotel() {
     t.td(
       { style: { padding: 0 }, width: 32 },
       t.img({
-        src: "https://cdn.flyakeed.com/flyakeed-emails/images/Hotel.svg",
+        src: "https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/hotel.svg",
         height: 26,
         alt: "Hotel",
       }),

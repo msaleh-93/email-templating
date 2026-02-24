@@ -10,19 +10,7 @@
 	<meta name="color-scheme" content="light">
 	<meta name="supported-color-schemes" content="light">
 	<title>
-		{{~#with (lookup . [event])~}}
-		{{~#if adminRequest~}}
-		Trip Approval Request
-		{{~else~}}
-		{{~#if tripApproval~}}
-		Trip Confirmation
-		{{~else~}}
-		{{~#if tripRejection~}}
-		Trip Rejection
-		{{~/if~}}
-		{{~/if~}}
-		{{~/if~}}
-		{{~/with~}}
+		{{title}}
 	</title>
 	<!--[if mso]>
 		<noscript>
@@ -93,13 +81,44 @@
 																					<a href="{{#if homepageLink}}{{homepageLink}}{{else}}https://flyakeed.com{{/if}}"
 																						target="_blank">
 																						<img
-																							src="{{#with (lookup . [scope])}}{{#if B2B}}https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/header-logo-corp.svg{{else}}https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/header-logo.svg{{/if}}{{/with}}"
+																							src="{{#with (lookup . [scope])}}{{#if B2B}}https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/header-logo-corp.svg{{else}}https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/header-logo.svg{{/if}}{{/with}}"
 																							alt="flyakeed-logo" height="24">
 																					</a>
 																				</td>
 																				<td x-area="spacing-x" width="100%"
 																					style="padding: 0; min-width: 100%px; max-width: 100%px;"></td>
-																				<td style="min-width: 72px; padding: 0;"></td>
+																				<td style="padding: 0;">
+																					<table x-area="grid-col" width="100%" align="center" border="0"
+																						style="border-collapse: collapse; min-width: 128px;">
+																						<tbody>
+																							<tr>
+																								<td style="padding: 0;">
+																									<p
+																										style="margin: 0; color: #496997; font-size: 12px; font-weight: 500; text-align: end;">
+																										{{issueDate}}
+																									</p>
+																								</td>
+																							</tr>
+																							<tr x-area="spacing-y" height="4">
+																								<td style="padding: 0;"></td>
+																							</tr>
+																							{{~#if issueId~}}
+																							<tr>
+																								<td style="padding: 0;">
+																									<p
+																										style="margin: 0; color: #496997; font-size: 12px; font-weight: 500; text-align: end;">
+																										Akeed#
+																										{{issueId}}
+																									</p>
+																								</td>
+																							</tr>
+																							<tr x-area="spacing-y" height="4">
+																								<td style="padding: 0;"></td>
+																							</tr>
+																							{{~/if~}}
+																						</tbody>
+																					</table>
+																				</td>
 																			</tr>
 																		</tbody>
 																	</table>
@@ -113,21 +132,13 @@
 																<td style="padding: 0;"></td>
 															</tr>
 															{{~#with (lookup . [event])~}}
-															{{~#if bookingApproval~}}
-															<tr>
-																<td style="padding: 0;">
-																	<h3 style="color: #00419C; font-size: 18px; font-weight: 700; margin: 0;">
-																		Hotel Confirmation
-																	</h3>
-																</td>
-															</tr>
-															{{~/if~}}
 															{{~#if adminRequest~}}
 															<tr>
 																<td style="padding: 0;">
-																	<h3 style="margin: 0; color: #003180; font-size: 16px; font-weight: 700;">
+																	<h2
+																		style="margin: 0; color: #003180; font-size: 16px; font-weight: 700; text-align: center;">
 																		Hotel Request
-																	</h3>
+																	</h2>
 																</td>
 															</tr>
 															<tr x-area="spacing-y" height="8">
@@ -135,9 +146,163 @@
 															</tr>
 															<tr>
 																<td style="padding: 0;">
-																	<p style="margin: 0; color: #bf1a0d; font-size: 12px; font-weight: 500;">
+																	<p
+																		style="margin: 0; color: #bf1a0d; font-size: 12px; font-weight: 500; text-align: center;">
 																		Ends
 																		{{requestEndsAt}}
+																	</p>
+																</td>
+															</tr>
+															{{~/if~}}
+															{{~#if autoApprove~}}
+															<tr>
+																<td style="padding: 0;">
+																	<table x-area="box" align="center" border="0"
+																		style="border-collapse: collapse; background-color: #35a53f; border-radius: 6px;">
+																		<tbody>
+																			<tr x-area="spacing-y" height="6">
+																				<td style="padding: 0;"></td>
+																			</tr>
+																			<tr>
+																				<td x-area="spacing-x" width="16"
+																					style="padding: 0; min-width: 16px; max-width: 16px;"></td>
+																				<td style="padding: 0;">
+																					<p
+																						style="margin: 0; color: #ffffff; font-size: 15px; font-weight: 700; text-align: center;">
+																						Auto-Approved
+																					</p>
+																				</td>
+																				<td x-area="spacing-x" width="16"
+																					style="padding: 0; min-width: 16px; max-width: 16px;"></td>
+																			</tr>
+																			<tr x-area="spacing-y" height="6">
+																				<td style="padding: 0;"></td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</td>
+															</tr>
+															<tr x-area="spacing-y" height="10">
+																<td style="padding: 0;"></td>
+															</tr>
+															<tr>
+																<td style="padding: 0;">
+																	<h3
+																		style="margin: 0; color: #00419C; font-size: 18px; font-weight: 700; text-align: center;">
+																		Hotel Request
+																	</h3>
+																</td>
+															</tr>
+															<tr x-area="spacing-y" height="10">
+																<td style="padding: 0;"></td>
+															</tr>
+															<tr>
+																<td style="padding: 0;">
+																	<p
+																		style="margin: 0; color: #00419c; font-size: 14px; font-weight: 500; text-align: center;">
+																		#
+																		{{~requestId}}
+																	</p>
+																</td>
+															</tr>
+															{{~/if~}}
+															{{~#if autoReject~}}
+															<tr>
+																<td style="padding: 0;">
+																	<table x-area="box" align="center" border="0"
+																		style="border-collapse: collapse; background-color: #b32318; border-radius: 6px;">
+																		<tbody>
+																			<tr x-area="spacing-y" height="6">
+																				<td style="padding: 0;"></td>
+																			</tr>
+																			<tr>
+																				<td x-area="spacing-x" width="16"
+																					style="padding: 0; min-width: 16px; max-width: 16px;"></td>
+																				<td style="padding: 0;">
+																					<p
+																						style="margin: 0; color: #ffffff; font-size: 15px; font-weight: 700; text-align: center;">
+																						Auto-Reject
+																					</p>
+																				</td>
+																				<td x-area="spacing-x" width="16"
+																					style="padding: 0; min-width: 16px; max-width: 16px;"></td>
+																			</tr>
+																			<tr x-area="spacing-y" height="6">
+																				<td style="padding: 0;"></td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</td>
+															</tr>
+															<tr x-area="spacing-y" height="10">
+																<td style="padding: 0;"></td>
+															</tr>
+															<tr>
+																<td style="padding: 0;">
+																	<h3
+																		style="margin: 0; color: #00419C; font-size: 18px; font-weight: 700; text-align: center;">
+																		Hotel Request
+																	</h3>
+																</td>
+															</tr>
+															<tr x-area="spacing-y" height="10">
+																<td style="padding: 0;"></td>
+															</tr>
+															<tr>
+																<td style="padding: 0;">
+																	<p
+																		style="margin: 0; color: #00419c; font-size: 14px; font-weight: 500; text-align: center;">
+																		#
+																		{{~requestId}}
+																	</p>
+																</td>
+															</tr>
+															{{~/if~}}
+															{{~#if bookingApproval~}}
+															<tr>
+																<td style="padding: 0;">
+																	<h2
+																		style="margin: 0; color: #00419C; font-size: 18px; font-weight: 700; text-align: center;">
+																		Hotel Confirmation
+																	</h2>
+																</td>
+															</tr>
+															{{~/if~}}
+															{{~#if bookingRejection~}}
+															<tr>
+																<td style="padding: 0;">
+																	<table x-area="box" align="center" border="0" style="border-collapse: collapse;">
+																		<tbody>
+																			<tr>
+																				<td style="padding: 0;">
+																					<img
+																						src="https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/ice-cream.png"
+																						alt="ice-cream" height="64">
+																				</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</td>
+															</tr>
+															<tr x-area="spacing-y" height="10">
+																<td style="padding: 0;"></td>
+															</tr>
+															<tr>
+																<td style="padding: 0;">
+																	<h2
+																		style="margin: 0; color: #00419C; font-size: 18px; font-weight: 700; text-align: center;">
+																		Your Booking
+																	</h2>
+																</td>
+															</tr>
+															<tr x-area="spacing-y" height="10">
+																<td style="padding: 0;"></td>
+															</tr>
+															<tr>
+																<td style="padding: 0;">
+																	<p
+																		style="margin: 0; color: #e50000; font-size: 14px; font-weight: 700; text-align: center;">
+																		Has Been Rejected
 																	</p>
 																</td>
 															</tr>
@@ -178,8 +343,36 @@
 																<td style="padding: 0;"></td>
 															</tr>
 															{{~#with (lookup . [event])~}}
-															{{~#unless bookingRejection~}}
-															{{~#if hcn~}}
+															{{~#if bookingRejection~}}
+															<tr>
+																<td style="padding: 0;">
+																	<table x-area="box" width="100%" align="center" border="0"
+																		style="border-collapse: collapse; background-color: #eaeef3; border-radius: 6px;">
+																		<tbody>
+																			<tr x-area="spacing-y" height="10">
+																				<td style="padding: 0;"></td>
+																			</tr>
+																			<tr>
+																				<td x-area="spacing-x" width="16"
+																					style="padding: 0; min-width: 16px; max-width: 16px;"></td>
+																				<td style="padding: 0;">
+																					<p style="margin: 0; color: #394f6c; font-size: 11px; font-weight: 500;">
+																						Greetings, An admin has rejected your Hotel booking on
+																						{{rejectedAt}}
+																					</p>
+																				</td>
+																				<td x-area="spacing-x" width="16"
+																					style="padding: 0; min-width: 16px; max-width: 16px;"></td>
+																			</tr>
+																			<tr x-area="spacing-y" height="10">
+																				<td style="padding: 0;"></td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</td>
+															</tr>
+															{{~else~}}
+															{{~#if ../hcn~}}
 															<tr>
 																<td style="padding: 0;">
 																	<table x-area="box" width="100%" align="center" border="0"
@@ -199,7 +392,7 @@
 																				</td>
 																				<td style="padding: 0;">
 																					<h4 style="margin: 0; color: #ffffff; font-size: 16px; font-weight: 700;">
-																						{{hcn}}
+																						{{../hcn}}
 																					</h4>
 																				</td>
 																				<td width="64" style="padding: 0;"></td>
@@ -226,7 +419,7 @@
 																				<td x-area="spacing-x" width="16"
 																					style="padding: 0; min-width: 16px; max-width: 16px;"></td>
 																				<td style="padding: 0;">
-																					<p style="margin: 0; color: #394f6c; font-size: 12px; font-weight: 500;">
+																					<p style="margin: 0; color: #394f6c; font-size: 11px; font-weight: 500;">
 																						Your confirmation number will be provided 24 hours before check-in.
 																					</p>
 																				</td>
@@ -241,35 +434,7 @@
 																</td>
 															</tr>
 															{{~/if~}}
-															{{~else~}}
-															<tr>
-																<td style="padding: 0;">
-																	<table x-area="box" width="100%" align="center" border="0"
-																		style="border-collapse: collapse; background-color: #eaeef3; border-radius: 6px;">
-																		<tbody>
-																			<tr x-area="spacing-y" height="10">
-																				<td style="padding: 0;"></td>
-																			</tr>
-																			<tr>
-																				<td x-area="spacing-x" width="16"
-																					style="padding: 0; min-width: 16px; max-width: 16px;"></td>
-																				<td style="padding: 0;">
-																					<p style="margin: 0; color: #394f6c; font-size: 12px; font-weight: 500;">
-																						Greetings, An admin has rejected your Hotel booking on
-																						{{rejectedAt}}
-																					</p>
-																				</td>
-																				<td x-area="spacing-x" width="16"
-																					style="padding: 0; min-width: 16px; max-width: 16px;"></td>
-																			</tr>
-																			<tr x-area="spacing-y" height="10">
-																				<td style="padding: 0;"></td>
-																			</tr>
-																		</tbody>
-																	</table>
-																</td>
-															</tr>
-															{{~/unless~}}
+															{{~/if~}}
 															{{~/with~}}
 															<tr x-area="spacing-y" height="20">
 																<td style="padding: 0;"></td>
@@ -281,7 +446,8 @@
 																		<tbody>
 																			<tr>
 																				<td style="padding: 0;" width="32">
-																					<img src="https://cdn.flyakeed.com/flyakeed-emails/images/Hotel.svg"
+																					<img
+																						src="https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/hotel.svg"
 																						height="26" alt="Hotel">
 																				</td>
 																				<td x-area="spacing-x" width="8"
@@ -426,7 +592,8 @@
 																				<td x-area="spacing-x" width="12"
 																					style="padding: 0; min-width: 12px; max-width: 12px;"></td>
 																				<td style="padding: 0; max-width: 16px;" width="16">
-																					<img src="/assets/pin.svg" height="15" alt="pin">
+																					<img src="https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/pin.svg"
+																						height="15" alt="pin">
 																				</td>
 																				<td x-area="spacing-x" width="6"
 																					style="padding: 0; min-width: 6px; max-width: 6px;"></td>
@@ -462,7 +629,9 @@
 																				<td x-area="spacing-x" width="12"
 																					style="padding: 0; min-width: 12px; max-width: 12px;"></td>
 																				<td style="padding: 0; max-width: 16px;" width="16">
-																					<img src="/assets/phone.svg" height="15" alt="phone">
+																					<img
+																						src="https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/phone.svg"
+																						height="15" alt="phone">
 																				</td>
 																				<td x-area="spacing-x" width="6"
 																					style="padding: 0; min-width: 6px; max-width: 6px;"></td>
@@ -763,8 +932,8 @@
 																</td>
 															</tr>
 															{{~/if~}}
-															{{~#with (lookup . [scope])~}}
-															{{~#if B2B~}}
+															{{~#with (lookup . [event])~}}
+															{{~#unless autoApprove~}}
 															<tr x-area="spacing-y" height="16">
 																<td style="padding: 0;"></td>
 															</tr>
@@ -783,17 +952,20 @@
 																					<table x-area="grid-col" width="100%" align="center" border="0"
 																						style="border-collapse: collapse;">
 																						<tbody>
+																							{{~#with @root.scope as | s |~}}
+																							{{~#with (lookup @root [s])~}}
+																							{{~#if B2B~}}
 																							{{~#if policyViolations~}}
 																							<tr>
 																								<td style="padding: 0;">
 																									<h3
 																										style="margin: 0; color: #893606; font-size: 13px; font-weight: 600; text-align: start;">
-																										Request Details
+																										Policy Violations
 																									</h3>
 																								</td>
 																							</tr>
 																							{{~#each policyViolations~}}
-																							<tr x-area="spacing-y" height="8">
+																							<tr x-area="spacing-y" height="6">
 																								<td style="padding: 0;"></td>
 																							</tr>
 																							<tr>
@@ -804,7 +976,7 @@
 																											<tr>
 																												<td style="padding: 0;" width="20">
 																													<p
-																														style="margin: 0; width: 14px; height: 14px; background-color: #893606; color: #ffffff; border-radius: 14px; font-size: 10px; font-weight: 500;">
+																														style="margin: 0; width: 14px; height: 14px; background-color: #893606; color: #ffffff; border-radius: 14px; font-size: 10px; font-weight: 500; text-align: center;">
 																														{{number}}
 																													</p>
 																												</td>
@@ -830,6 +1002,7 @@
 																								</td>
 																							</tr>
 																							{{~/if~}}
+																							{{~#if employeeNote~}}
 																							<tr x-area="spacing-y" height="16">
 																								<td style="padding: 0;"></td>
 																							</tr>
@@ -840,7 +1013,6 @@
 																							<tr x-area="spacing-y" height="16">
 																								<td style="padding: 0;"></td>
 																							</tr>
-																							{{~#if employeeNode~}}
 																							<tr>
 																								<td style="padding: 0;">
 																									<table x-area="box" width="100%" align="center" border="0"
@@ -860,7 +1032,7 @@
 																																<td style="padding: 0;">
 																																	<h3
 																																		style="margin: 0; color: #3c516e; font-size: 12px; font-weight: 700; text-align: start;">
-																																		Employee Node
+																																		Employee Note
 																																	</h3>
 																																</td>
 																															</tr>
@@ -871,7 +1043,7 @@
 																																<td style="padding: 0;">
 																																	<p
 																																		style="margin: 0; color: #3c516e; font-size: 12px; font-weight: 500; text-align: start;">
-																																		{{employeeNode}}
+																																		{{employeeNote}}
 																																	</p>
 																																</td>
 																															</tr>
@@ -888,6 +1060,11 @@
 																									</table>
 																								</td>
 																							</tr>
+																							{{~/if~}}
+																							{{~/if~}}
+																							{{~/with~}}
+																							{{~/with~}}
+																							{{~#if adminRequest~}}
 																							<tr x-area="spacing-y" height="16">
 																								<td style="padding: 0;"></td>
 																							</tr>
@@ -895,7 +1072,6 @@
 																								<td width="100%" height="1"
 																									style="height: 1px; padding: 0; background-color: #C2CAD6;"></td>
 																							</tr>
-																							{{~/if~}}
 																							<tr>
 																								<td style="padding: 0;">
 																									<div class="corp-booking"
@@ -905,7 +1081,7 @@
 																											Requested via
 																										</h4>
 																										<h3
-																											style="margin: 0; color: #384e6b; font-size: 14px; font-weight: 600; text-align: start;">
+																											style="margin: 0; color: #384e6b; font-size: 13px; font-weight: 600; text-align: start;">
 																											{{requestedVia}}
 																										</h3>
 																									</div>
@@ -916,7 +1092,7 @@
 																											Purpose
 																										</h4>
 																										<h3
-																											style="margin: 0; color: #384e6b; font-size: 14px; font-weight: 600; text-align: start;">
+																											style="margin: 0; color: #384e6b; font-size: 13px; font-weight: 600; text-align: start;">
 																											{{purpose}}
 																										</h3>
 																									</div>
@@ -927,12 +1103,115 @@
 																											Tag
 																										</h4>
 																										<h3
-																											style="margin: 0; color: #384e6b; font-size: 14px; font-weight: 600; text-align: start;">
+																											style="margin: 0; color: #384e6b; font-size: 13px; font-weight: 600; text-align: start;">
 																											{{tag}}
 																										</h3>
 																									</div>
 																								</td>
 																							</tr>
+																							{{~/if~}}
+																							{{~#if autoReject~}}
+																							<tr x-area="spacing-y" height="16">
+																								<td style="padding: 0;"></td>
+																							</tr>
+																							<tr x-area="divider-h">
+																								<td width="100%" height="1"
+																									style="height: 1px; padding: 0; background-color: #C2CAD6;"></td>
+																							</tr>
+																							<tr x-area="spacing-y" height="16">
+																								<td style="padding: 0;"></td>
+																							</tr>
+																							<tr>
+																								<td style="padding: 0;">
+																									<h3
+																										style="margin: 0; color: #893606; font-size: 13px; font-weight: 600; text-align: start;">
+																										Reason of Rejection
+																									</h3>
+																								</td>
+																							</tr>
+																							<tr x-area="spacing-y" height="6">
+																								<td style="padding: 0;"></td>
+																							</tr>
+																							<tr>
+																								<td style="padding: 0;">
+																									<p
+																										style="margin: 0; color: #893606; font-size: 12px; font-weight: 500; text-align: start;">
+																										{{~#if reason~}}
+																										{{reason}}
+																										{{~else~}}
+																										Auto-rejected. Booking details did not match the policy tied this
+																										account.
+																										{{~/if~}}
+																									</p>
+																								</td>
+																							</tr>
+																							{{~/if~}}
+																							{{~#if bookingApproval~}}
+																							<tr x-area="spacing-y" height="16">
+																								<td style="padding: 0;"></td>
+																							</tr>
+																							<tr x-area="divider-h">
+																								<td width="100%" height="1"
+																									style="height: 1px; padding: 0; background-color: #C2CAD6;"></td>
+																							</tr>
+																							<tr>
+																								<td style="padding: 0;">
+																									<div class="corp-booking"
+																										style="min-width: 98px; padding-inline-end: 64px; padding-top: 16px;">
+																										<h4
+																											style="margin: 0; padding-bottom: 4px; color: #67788f; font-size: 12px; font-weight: 500; text-align: start;">
+																											Approved
+																										</h4>
+																										<h3
+																											style="margin: 0; color: #384e6b; font-size: 13px; font-weight: 600; text-align: start;">
+																											{{approvedAt}}
+																										</h3>
+																									</div>
+																									<div class="corp-booking"
+																										style="min-width: 98px; padding-inline-end: 64px; padding-top: 16px;">
+																										<h4
+																											style="margin: 0; padding-bottom: 4px; color: #67788f; font-size: 12px; font-weight: 500; text-align: start;">
+																											By
+																										</h4>
+																										<h3
+																											style="margin: 0; color: #384e6b; font-size: 13px; font-weight: 600; text-align: start;">
+																											{{approvedBy}}
+																										</h3>
+																									</div>
+																								</td>
+																							</tr>
+																							{{~/if~}}
+																							{{~#if bookingRejection~}}
+																							<tr x-area="spacing-y" height="16">
+																								<td style="padding: 0;"></td>
+																							</tr>
+																							<tr x-area="divider-h">
+																								<td width="100%" height="1"
+																									style="height: 1px; padding: 0; background-color: #C2CAD6;"></td>
+																							</tr>
+																							<tr x-area="spacing-y" height="16">
+																								<td style="padding: 0;"></td>
+																							</tr>
+																							<tr>
+																								<td style="padding: 0;">
+																									<h3
+																										style="margin: 0; color: #893606; font-size: 13px; font-weight: 600; text-align: start;">
+																										Reason of Rejection
+																									</h3>
+																								</td>
+																							</tr>
+																							<tr x-area="spacing-y" height="6">
+																								<td style="padding: 0;"></td>
+																							</tr>
+																							<tr>
+																								<td style="padding: 0;">
+																									<p
+																										style="margin: 0; color: #893606; font-size: 12px; font-weight: 500; text-align: start;">
+																										{{reason}}
+																									</p>
+																								</td>
+																							</tr>
+																							{{~/if~}}
 																						</tbody>
 																					</table>
 																				</td>
@@ -946,7 +1225,7 @@
 																	</table>
 																</td>
 															</tr>
-															{{~/if~}}
+															{{~/unless~}}
 															{{~/with~}}
 															{{~#with priceSummary~}}
 															<tr x-area="spacing-y" height="16">
@@ -991,7 +1270,7 @@
 																													<p
 																														style="margin: 0; font-size: 12px; font-weight: 500; text-align: end;">
 																														<img
-																															src="{{#if currencyIconSrc}}{{currencyIconSrc}}{{else}}https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/sar.svg{{/if}}"
+																															src="{{#if currencyIconSrc}}{{currencyIconSrc}}{{else}}https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/sar.svg{{/if}}"
 																															height="11"
 																															alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}"
 																															style="filter: {{#if subtracted}}invert(42%) sepia(93%) saturate(6462%) hue-rotate(139deg) brightness(99%) contrast(94%){{else}}none{{/if}};">
@@ -1055,7 +1334,7 @@
 																													<p
 																														style="margin: 0; color: #212f4a; font-size: 14px; font-weight: 600; text-align: end;">
 																														<img
-																															src="{{#if currencyIconSrc}}{{currencyIconSrc}}{{else}}https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/sar.svg{{/if}}"
+																															src="{{#if currencyIconSrc}}{{currencyIconSrc}}{{else}}https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/sar.svg{{/if}}"
 																															height="11"
 																															alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}">
 																														{{totalPrice}}
@@ -1141,7 +1420,7 @@
 																							{{~#with target~}}
 																							<span style="color: #0763df; font-weight: 700;">
 																								<img
-																									src="{{#if currencyIconSrc}}{{currencyIconSrc}}{{else}}https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/sar.svg{{/if}}"
+																									src="{{#if currencyIconSrc}}{{currencyIconSrc}}{{else}}https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/sar.svg{{/if}}"
 																									height="11" alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}"
 																									style="filter: invert(28%) sepia(53%) saturate(6026%) hue-rotate(208deg) brightness(92%) contrast(95%);">
 																								{{price}}
@@ -1185,7 +1464,7 @@
 																				<td style="padding: 0;">
 																					<a style="text-decoration: none;" target="_blank" href="{{rejectionLink}}">
 																						<table x-area="box" width="128" align="center" border="0"
-																							style="border-collapse: collapse; background-color: #b32318; border-radius: 36px; color: #ffffff; font-size: 14px; font-weight: 700;"
+																							style="border-collapse: collapse; background-color: #b32318; border-radius: 36px; color: #ffffff; font-size: 14px; font-weight: 700; text-align: center;"
 																							height="37">
 																							<tbody>
 																								<tr x-area="spacing-y" height="10">
@@ -1214,7 +1493,7 @@
 																				<td style="padding: 0;">
 																					<a style="text-decoration: none;" target="_blank" href="{{approvalLink}}">
 																						<table x-area="box" width="128" align="center" border="0"
-																							style="border-collapse: collapse; background-color: #079235; border-radius: 36px; color: #ffffff; font-size: 14px; font-weight: 700;"
+																							style="border-collapse: collapse; background-color: #079235; border-radius: 36px; color: #ffffff; font-size: 14px; font-weight: 700; text-align: center;"
 																							height="37">
 																							<tbody>
 																								<tr x-area="spacing-y" height="10">
@@ -1253,20 +1532,34 @@
 															</tr>
 															<tr>
 																<td style="padding: 0;">
-																	<table x-area="grid-row" align="center" border="0" style="border-collapse: collapse;">
+																	<table x-area="box" align="center" border="0" style="border-collapse: collapse;">
 																		<tbody>
 																			<tr>
 																				<td style="padding: 0;">
-																					<img
-																						src="https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/call.svg"
-																						height="20" alt="call">
-																				</td>
-																				<td x-area="spacing-x" width="6"
-																					style="padding: 0; min-width: 6px; max-width: 6px;"></td>
-																				<td style="padding: 0;">
-																					<p style="margin: 0; color: #196dfb; font-size: 14px; font-weight: 700;">
-																						Need Help?
-																					</p>
+																					<a width="128" style="text-decoration: none; min-width: 128px;"
+																						href="{{#if contactUsLink}}{{contactUsLink}}{{else}}https://flyakeed.com/contact.html{{/if}}"
+																						target="_blank">
+																						<table x-area="grid-row" width="100%" align="center" border="0"
+																							style="border-collapse: collapse;">
+																							<tbody>
+																								<tr>
+																									<td style="padding: 0;">
+																										<img
+																											src="https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/call.svg"
+																											height="20" alt="call">
+																									</td>
+																									<td x-area="spacing-x" width="6"
+																										style="padding: 0; min-width: 6px; max-width: 6px;"></td>
+																									<td style="padding: 0;">
+																										<p
+																											style="margin: 0; color: #196dfb; font-size: 14px; font-weight: 700;">
+																											Need Help?
+																										</p>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+																					</a>
 																				</td>
 																			</tr>
 																		</tbody>
@@ -1304,9 +1597,17 @@
 														<tbody>
 															<tr>
 																<td style="padding: 0;">
-																	<img
-																		src="{{#with (lookup . [scope])}}{{#if B2B}}https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/footer-logo-corp.svg{{else}}https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/footer-logo.svg{{/if}}{{/with}}"
-																		height="36" alt="footer-logo">
+																	<table x-area="box" align="center" border="0" style="border-collapse: collapse;">
+																		<tbody>
+																			<tr>
+																				<td style="padding: 0;">
+																					<img
+																						src="{{#with (lookup . [scope])}}{{#if B2B}}https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/footer-logo-corp.svg{{else}}https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/footer-logo.svg{{/if}}{{/with}}"
+																						height="36" alt="footer-logo">
+																				</td>
+																			</tr>
+																		</tbody>
+																	</table>
 																</td>
 															</tr>
 															<tr x-area="spacing-y" height="20">
@@ -1314,7 +1615,8 @@
 															</tr>
 															<tr>
 																<td style="padding: 0;">
-																	<p style="margin: 0; color: #8adcff; font-size: 10px; font-weight: 500;">
+																	<p
+																		style="margin: 0; color: #8adcff; font-size: 10px; font-weight: 500; text-align: center;">
 																		{{~#if contactInfo~}}
 																		{{contactInfo}}
 																		{{~else~}}
@@ -1342,7 +1644,7 @@
 							{{~#if B2C~}}
 							<tr>
 								<td style="padding: 0;">
-									<p style="margin: 0; color: #477199; font-size: 12px; font-weight: 500;">
+									<p style="margin: 0; color: #477199; font-size: 12px; font-weight: 500; text-align: center;">
 										If you did not request this booking, please ignore this email
 									</p>
 								</td>

@@ -1,24 +1,40 @@
 export type HotelEmail = {
   language: string;
+  title: string;
   rtl?: boolean | null;
   homepageLink?: string | null;
   contactUsLink?: string | null;
+  issueDate?: string | null;
+  issueId?: string | null;
+  hcn?: string | null;
   guests: Guest[];
   name: string;
   rooms: Room[];
   address: string;
+  phoneNumber?: string | null;
   checkIn: DateTime;
   checkOut: DateTime;
   cancellationPolicy?: string | null;
   checkInPolicy?: string | null;
   specialInstructions?: string | null;
   priceSummary: PriceSummary;
-  dueAtProperty?: boolean | null;
+  dueAtProperty?: DueAtProperty | null;
   contactInfo?: string | null;
-} & (B2CBookingApproval | B2BAdminRequest);
+} & (
+  | B2BAdminRequest
+  | B2BAutoApprove
+  | B2BAutoReject
+  | B2BBookingApproval
+  | B2BBookingRejection
+  | B2CBookingApproval
+);
 
-interface B2CBookingApproval extends B2CScope, BookingApprovalEvent {}
 interface B2BAdminRequest extends B2BScope, AdminRequestEvent {}
+interface B2BAutoApprove extends B2BScope, AutoApproveEvent {}
+interface B2BAutoReject extends B2BScope, AutoRejectEvent {}
+interface B2BBookingApproval extends B2BScope, BookingApprovalEvent {}
+interface B2BBookingRejection extends B2BScope, BookingRejectionEvent {}
+interface B2CBookingApproval extends B2CScope, BookingApprovalEvent {}
 
 interface B2BScope {
   scope: "B2B";
@@ -29,26 +45,55 @@ interface B2CScope {
   scope: "B2C";
   B2C: B2C;
 }
+interface AdminRequestEvent {
+  event: "adminRequest";
+  adminRequest: AdminRequest;
+  autoApprove?: AutoApprove | null;
+  autoReject?: AutoReject | null;
+  bookingApproval?: BookingApproval | null;
+  bookingRejection?: BookingRejection | null;
+}
+
+interface AutoApproveEvent {
+  event: "autoApprove";
+  adminRequest?: AdminRequest | null;
+  autoApprove: AutoApprove;
+  autoReject?: AutoReject | null;
+  bookingApproval?: BookingApproval | null;
+  bookingRejection?: BookingRejection | null;
+}
+
+interface AutoRejectEvent {
+  event: "autoReject";
+  adminRequest?: AdminRequest | null;
+  autoApprove?: AutoApprove | null;
+  autoReject: AutoReject;
+  bookingApproval?: BookingApproval | null;
+  bookingRejection?: BookingRejection | null;
+}
 
 interface BookingApprovalEvent {
   event: "bookingApproval";
   adminRequest?: AdminRequest | null;
+  autoApprove?: AutoApprove | null;
+  autoReject?: AutoReject | null;
   bookingApproval: BookingApproval;
+  bookingRejection?: BookingRejection | null;
 }
 
-interface AdminRequestEvent {
-  event: "adminRequest";
-  adminRequest: AdminRequest;
+interface BookingRejectionEvent {
+  event: "bookingRejection";
+  adminRequest?: AdminRequest | null;
+  autoApprove?: AutoApprove | null;
+  autoReject?: AutoReject | null;
   bookingApproval?: BookingApproval | null;
+  bookingRejection: BookingRejection;
 }
 
 interface B2B {
   B2B: true;
   policyViolations?: PolicyViolation[] | null;
-  employeeNode?: string | null;
-  requestedVia: string;
-  purpose: string;
-  tag: string;
+  employeeNote?: string | null;
 }
 
 interface B2C {
@@ -57,16 +102,35 @@ interface B2C {
 
 interface AdminRequest {
   adminRequest: true;
-  hcn?: string | null;
   requestEndsAt: string;
-  requestPreviewLink: string;
   approvalLink: string;
   rejectionLink: string;
+  requestedVia: string;
+  purpose: string;
+  tag: string;
+}
+
+interface AutoApprove {
+  autoApprove: true;
+  requestId?: string | null;
+}
+
+interface AutoReject {
+  autoReject: true;
+  requestId?: string | null;
+  reason?: string | null;
 }
 
 interface BookingApproval {
   bookingApproval: true;
-  hcn?: string | null;
+  approvedAt?: string | null;
+  approvedBy?: string | null;
+}
+
+interface BookingRejection {
+  bookingRejection: true;
+  reason: string;
+  rejectedAt: string;
 }
 
 interface PolicyViolation {

@@ -73,7 +73,7 @@ export function dueAtProperty() {
                   src: $.if(
                     "currencyIconSrc",
                     $.var("currencyIconSrc"),
-                    "https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/sar.svg",
+                    "https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/sar.svg",
                   ),
                   height: 11,
                   alt: $.if("currency", $.var("currency"), "SAR"),

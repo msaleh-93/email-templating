@@ -24,6 +24,12 @@ export const $ = {
   var(path: string) {
     return `{{${path}}}`;
   },
+  lookup(path: string, key: string) {
+    return `(lookup ${path} [${key}])`;
+  },
+  alias(path: string, alias: string) {
+    return `${path} as | ${alias} |`;
+  },
   if(path: string, body: any, _else?: any) {
     return new Wrapper("if", path, body, _else);
   },
@@ -35,9 +41,6 @@ export const $ = {
   },
   with(path: string, body: any) {
     return new Wrapper("with", path, body);
-  },
-  lookup(path: string, key: string) {
-    return `(lookup ${path} ${key.startsWith("@") ? key : `[${key}]`})`;
   },
 };
 

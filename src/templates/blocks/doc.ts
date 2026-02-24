@@ -26,21 +26,7 @@ export function doc(...children: any[]) {
       t.meta({ name: "x-apple-disable-message-reformatting" }),
       t.meta({ name: "color-scheme", content: "light" }),
       t.meta({ name: "supported-color-schemes", content: "light" }),
-      t.title(
-        null,
-        $.with(
-          $.lookup(".", "event"),
-          $.if(
-            "adminRequest",
-            "Trip Approval Request",
-            $.if(
-              "tripApproval",
-              "Trip Confirmation",
-              $.if("tripRejection", "Trip Rejection", ""),
-            ),
-          ),
-        ),
-      ),
+      t.title(null, $.var("title")),
       "<!--[if mso]>",
       t.noscript(
         null,

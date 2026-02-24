@@ -8,7 +8,11 @@ export function phoneNumber() {
     grayBox(
       t.td(
         { style: { padding: 0, "max-width": "16px" }, width: 16 },
-        t.img({ src: "/assets/phone.svg", height: 15, alt: "phone" }),
+        t.img({
+          src: "https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/phone.svg",
+          height: 15,
+          alt: "phone",
+        }),
       ),
       spacingX(6),
       t.p(

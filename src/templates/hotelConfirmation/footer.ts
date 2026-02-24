@@ -11,18 +11,21 @@ export function footer() {
       },
       gridCol(
         { gap: 20 },
-        t.img({
-          src: $.with(
-            $.lookup(".", "scope"),
-            $.if(
-              "B2B",
-              "https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/footer-logo-corp.svg",
-              "https://cdn.flyakeed.com/flyakeed-emails/flight-confirmation/footer-logo.svg",
+        box(
+          { width: null },
+          t.img({
+            src: $.with(
+              $.lookup(".", "scope"),
+              $.if(
+                "B2B",
+                "https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/footer-logo-corp.svg",
+                "https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/footer-logo.svg",
+              ),
             ),
-          ),
-          height: 36,
-          alt: "footer-logo",
-        }),
+            height: 36,
+            alt: "footer-logo",
+          }),
+        ),
         t.p(
           {
             style: {
@@ -30,6 +33,7 @@ export function footer() {
               color: "#8adcff",
               "font-size": "10px",
               "font-weight": 500,
+              "text-align": "center",
             },
           },
           $.if(
@@ -51,6 +55,7 @@ export function footer() {
               color: "#477199",
               "font-size": "12px",
               "font-weight": 500,
+              "text-align": "center",
             },
           },
           "If you did not request this booking, please ignore this email",

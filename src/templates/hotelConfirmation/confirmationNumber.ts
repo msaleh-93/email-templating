@@ -4,10 +4,18 @@ import { box, td } from "../blocks";
 export function confirmationNumber() {
   return $.with(
     $.lookup(".", "event"),
-    $.unless(
+    $.if(
       "bookingRejection",
+      box(
+        { style: BOX_STYLE, padding: PADDING },
+        t.p(
+          { style: P_STYLE },
+          "Greetings, An admin has rejected your Hotel booking on ",
+          $.var("rejectedAt"),
+        ),
+      ),
       $.if(
-        "hcn",
+        "../hcn",
         box(
           {
             style: { ...BOX_STYLE, "background-color": "#0099ff" },
@@ -37,7 +45,7 @@ export function confirmationNumber() {
                 "font-weight": 700,
               },
             },
-            $.var("hcn"),
+            $.var("../hcn"),
           ),
           td({ width: 64 }),
         ),
@@ -47,14 +55,6 @@ export function confirmationNumber() {
             { style: P_STYLE },
             "Your confirmation number will be provided 24 hours before check-in.",
           ),
-        ),
-      ),
-      box(
-        { style: BOX_STYLE, padding: PADDING },
-        t.p(
-          { style: P_STYLE },
-          "Greetings, An admin has rejected your Hotel booking on ",
-          $.var("rejectedAt"),
         ),
       ),
     ),
@@ -69,6 +69,6 @@ const PADDING = { top: 10, bottom: 10, start: 16, end: 16 } as const,
   P_STYLE = {
     margin: 0,
     color: "#394f6c",
-    "font-size": "12px",
+    "font-size": "11px",
     "font-weight": 500,
   } as const;

@@ -1,12 +1,16 @@
 {
   "language": "en",
+  "title": "Booking Confirmation",
   "homepageLink": "https://flyakeed.com",
   "contactUsLink": "https://flyakeed.com/contact.html",
+  "issueDate": "2026-01-30 10:31",
+  "issueId": "7568",
+  "hcn": "DK2JD8UGSK",
   "name": "Grand Millennium Tabuk",
   "address": "3421 Al-Haram Street, Rawabi Dist, Makkah, Saudi Arabia",
   "phoneNumber": "+966 14 3288888",
   "scope": "B2B",
-  "event": "adminRequest",
+  "event": "bookingApproval",
   "B2B": {
     "B2B": true,
     "policyViolations": [
@@ -23,22 +27,38 @@
         "value": "Included dependants"
       }
     ],
-    "employeeNode": "Steve Jobs once said that intuition is more powerful than intellect. Let me show you how to harness the incredible power of your intuition.",
-    "requestedVia": "Akeed Corp",
-    "purpose": "Business Trip",
-    "tag": "General"
+    "employeeNote": "Steve Jobs once said that intuition is more powerful than intellect. Let me show you how to harness the incredible power of your intuition."
   },
   "B2C": {
     "B2C": true
   },
-  "bookingApproval": {
-    "bookingApproval": true,
-    "hcn": "DK2JD8UGSK"
-  },
   "adminRequest": {
     "adminRequest": true,
-    "_hcn": "DK2JD8UGSK",
-    "requestEndsAt": "30 Jan 2026 - 11:01 AM"
+    "requestEndsAt": "30 Jan 2026 - 11:01 AM",
+    "approvalLink": "/",
+    "rejectionLink": "/",
+    "requestedVia": "Akeed Corp",
+    "purpose": "Business Trip",
+    "tag": "General"
+  },
+  "autoApprove": {
+    "autoApprove": true,
+    "requestId": "5864597"
+  },
+  "autoReject": {
+    "autoReject": true,
+    "requestId": "5864597",
+    "reason": ""
+  },
+  "bookingApproval": {
+    "bookingApproval": true,
+    "approvedAt": "2026-01-27 09:03",
+    "approvedBy": "Abdulaziz Aldultli"
+  },
+  "bookingRejection": {
+    "bookingRejection": true,
+    "rejectedAt": "2025-12-01 08:47",
+    "reason": "Booking request rejected upon administrator(s) review."
   },
   "checkIn": {
     "date": "20 Aug,2026",

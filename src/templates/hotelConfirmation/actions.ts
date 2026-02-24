@@ -26,6 +26,7 @@ export function actions() {
                   color: "#ffffff",
                   "font-size": "14px",
                   "font-weight": 700,
+                  "text-align": "center",
                 },
               },
               t.p({ style: { margin: 0 } }, label),
