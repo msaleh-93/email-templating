@@ -1,7 +1,14 @@
 import { serve } from "bun";
 import { readdir } from "node:fs/promises";
+import { join } from "path";
 
 import index from "~/index.html";
+import { writeTemplates } from "./templates";
+
+const PUBLIC = join(".", "public"),
+  TEMPLATES = join(PUBLIC, "templates"),
+  DATA = join(PUBLIC, "data"),
+  ASSETS = join(PUBLIC, "assets");
 
 const server = serve({
   routes: {
@@ -9,7 +16,7 @@ const server = serve({
     "/:filename": {
       async GET(req) {
         const filename = req.params.filename;
-        const file = Bun.file(`./public/${filename}`);
+        const file = Bun.file(join(PUBLIC, filename));
         return (await file.exists())
           ? new Response(await file.bytes(), {
               headers: { "Content-Type": file.type },
@@ -19,13 +26,13 @@ const server = serve({
     },
     "/api/templates": {
       async GET() {
-        return Response.json((await readdir("./public/templates")).sort());
+        return Response.json((await readdir(TEMPLATES)).sort());
       },
     },
     "/api/data/:template": {
       async GET(req) {
         const template = req.params.template;
-        const file = Bun.file(`./public/data/${template}.json`);
+        const file = Bun.file(join(DATA, `${template}.json`));
         return (await file.exists())
           ? Response.json(await file.json())
           : new Response(null, { status: 404 });
@@ -34,7 +41,7 @@ const server = serve({
         const template = req.params.template;
         console.log("Writing data for template:", template);
         const data = await req.json();
-        const file = Bun.file(`./public/data/${template}.json`);
+        const file = Bun.file(join(DATA, `${template}.json`));
         await file.write(JSON.stringify(data, null, 2));
         return new Response(null, { status: 204 });
       },
@@ -42,7 +49,7 @@ const server = serve({
     "/assets/:filename": {
       async GET(req) {
         const filename = req.params.filename;
-        const file = Bun.file(`./public/assets/${filename}`);
+        const file = Bun.file(join(ASSETS, filename));
         return (await file.exists())
           ? new Response(await file.bytes(), {
               headers: { "Content-Type": file.type },
@@ -53,7 +60,7 @@ const server = serve({
     "/templates/:filename": {
       async GET(req) {
         const filename = req.params.filename;
-        const file = Bun.file(`./public/templates/${filename}`);
+        const file = Bun.file(join(TEMPLATES, filename));
         return (await file.exists())
           ? new Response(await file.text(), {
               headers: { "Content-Type": "text/html" },
@@ -73,3 +80,5 @@ const server = serve({
 });
 
 console.log(`🚀 Server running at ${server.url}`);
+
+await writeTemplates(TEMPLATES);

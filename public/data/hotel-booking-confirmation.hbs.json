@@ -1,0 +1,148 @@
+{
+  "language": "en",
+  "homepageLink": "https://flyakeed.com",
+  "contactUsLink": "https://flyakeed.com/contact.html",
+  "name": "Grand Millennium Tabuk",
+  "address": "3421 Al-Haram Street, Rawabi Dist, Makkah, Saudi Arabia",
+  "phoneNumber": "+966 14 3288888",
+  "scope": "B2B",
+  "event": "adminRequest",
+  "B2B": {
+    "B2B": true,
+    "policyViolations": [
+      {
+        "number": 1,
+        "value": "Not the cheapest flight"
+      },
+      {
+        "number": 2,
+        "value": "Not domestic"
+      },
+      {
+        "number": 3,
+        "value": "Included dependants"
+      }
+    ],
+    "employeeNode": "Steve Jobs once said that intuition is more powerful than intellect. Let me show you how to harness the incredible power of your intuition.",
+    "requestedVia": "Akeed Corp",
+    "purpose": "Business Trip",
+    "tag": "General"
+  },
+  "B2C": {
+    "B2C": true
+  },
+  "bookingApproval": {
+    "bookingApproval": true,
+    "hcn": "DK2JD8UGSK"
+  },
+  "adminRequest": {
+    "adminRequest": true,
+    "_hcn": "DK2JD8UGSK",
+    "requestEndsAt": "30 Jan 2026 - 11:01 AM"
+  },
+  "checkIn": {
+    "date": "20 Aug,2026",
+    "time": "2:00pm"
+  },
+  "checkOut": {
+    "date": "24 Aug,2026",
+    "time": "11:00am"
+  },
+  "cancellationPolicy": "<ul><li>Estimated 623.414 SAR cancellation fee applied between 1/25/2026 and 1/27/2026 days before check-in</li></ul>",
+  "checkInPolicy": "<ul><li>Check-in start time: 3:00 PM;</li><li>Check-in end time: midnight</li><li>Contactless check-in available</li><li>Late check-in subject to availability</li><li>Minimum check-in age: 18</li></ul>",
+  "specialInstructions": "This property offers transfers from the airport (surcharges may apply); to arrange pick-up, guests must contact the property 48 hours prior to arrival, using the contact information on the booking confirmation. Guests must contact the property in advance for check-in instructions; front desk staff will greet guests on arrival at the property. To make arrangements for check-in please contact the property at least 72 hours before arrival using the information on the booking confirmation. If you are planning to arrive after 11 PM please contact the property in advance using the information on the booking confirmation. The credit card used to book the reservation must be presented by the cardholder at check-in along with matching photo identification, and other arrangements must be coordinated with the property prior to arrival. Information provided by the property may be translated using automated translation tools.",
+  "guests": [
+    {
+      "name": "Tariq Kawari",
+      "type": "Adult"
+    },
+    {
+      "name": "Tariq Kawari",
+      "type": "Adult"
+    }
+  ],
+  "rooms": [
+    {
+      "name": "Royal Suite King Bed",
+      "nights": {
+        "value": 6,
+        "plural": true
+      },
+      "adults": {
+        "value": 2,
+        "plural": true
+      },
+      "children": {
+        "value": 1
+      },
+      "description": "One Bedroom Suite King Bed with One Bathroom"
+    },
+    {
+      "name": "Single Standard",
+      "nights": {
+        "value": 6,
+        "plural": true
+      },
+      "adults": {
+        "value": 1
+      },
+      "description": "One Bedroom Single Bed with One Bathroom"
+    },
+    {
+      "name": "Single Standard",
+      "nights": {
+        "value": 6,
+        "plural": true
+      },
+      "adults": {
+        "value": 1
+      },
+      "description": "One Bedroom Single Bed with One Bathroom"
+    }
+  ],
+  "priceSummary": {
+    "totalPrice": "6,250.18",
+    "details": [
+      {
+        "label": "Base Price",
+        "value": "6220.18"
+      },
+      {
+        "label": "Taxes & Fees *",
+        "value": "30"
+      },
+      {
+        "label": "Affiliate Service Fees",
+        "value": "10"
+      },
+      {
+        "label": "Resort Fee",
+        "value": "30",
+        "atProperty": true
+      },
+      {
+        "label": "City Tax",
+        "value": "30",
+        "atProperty": true
+      },
+      {
+        "label": "Discount",
+        "value": "50",
+        "subtracted": true
+      },
+      {
+        "label": "Paid",
+        "value": "30"
+      }
+    ]
+  },
+  "dueAtProperty": {
+    "original": {
+      "price": "$16.00",
+      "currency": "USD"
+    },
+    "target": {
+      "price": "100"
+    }
+  }
+}

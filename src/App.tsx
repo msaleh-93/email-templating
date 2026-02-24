@@ -12,8 +12,8 @@ export default function App() {
           <TemplateSelector />
           <DataEditor />
         </div>
-        <Preview title="Desktop View" size={768} canSave />
-        <Preview title="Mobile View" size={384} />
+        <Preview title="Desktop View" size={640} canSave />
+        <Preview title="Mobile View" size={320} />
       </main>
     </>
   );

@@ -1,0 +1,78 @@
+{
+  "language": "en",
+  "rtl": false,
+  "homepageLink": "https://flyakeed.com",
+  "contactUsLink": "https://flyakeed.com/contact.html",
+  "subjectLine": "Hotel Booking Confirmation",
+  "issueDate": "15 Feb 2026",
+  "issueId": "HTL789456",
+  "hotelName": "Grand Plaza Hotel & Resort",
+  "hotelAddress": "123 Ocean Drive, Miami Beach, FL 33139, United States",
+  "hotelAddressMapLink": "https://maps.google.com/?q=123+Ocean+Drive+Miami+Beach+FL+33139",
+  "checkInDate": "20 Aug, 2026",
+  "checkInTime": "3:00 PM",
+  "checkOutDate": "25 Aug, 2026",
+  "checkOutTime": "11:00 AM",
+  "confirmationNumber": "HCN-8X9Y2Z",
+  "rooms": [
+    {
+      "roomTitle": "Deluxe Ocean View Suite",
+      "numberOfNights": 5,
+      "numberOfGuests": 2,
+      "roomDescription": "Spacious suite with stunning ocean views, king-size bed, separate living area, private balcony, and modern amenities including flat-screen TV, minibar, and marble bathroom."
+    },
+    {
+      "roomTitle": "Standard Double Room",
+      "numberOfNights": 5,
+      "numberOfGuests": 2,
+      "roomDescription": "Comfortable room with two double beds, city view, flat-screen TV, and all essential amenities for a pleasant stay."
+    }
+  ],
+  "guestsSummary": "2 Adults, 1 Child",
+  "guests": [
+    {
+      "name": "Sarah Johnson",
+      "type": "Adult"
+    },
+    {
+      "name": "Michael Johnson",
+      "type": "Adult"
+    },
+    {
+      "name": "Emma Johnson",
+      "type": "Child"
+    }
+  ],
+  "cancellationPolicy": "Free cancellation until 18 Aug, 2026. After this date, cancellations will incur a fee of one night's stay. No-shows will be charged the full amount.",
+  "checkInPolicies": "Check-in requires a valid photo ID and credit card. Minimum check-in age is 21 years. Early check-in is subject to availability and may incur additional charges.",
+  "specialInstructions": "Please note that parking is available for $25 per night. Pool access is complimentary for all guests. Breakfast is served daily from 6:30 AM to 10:30 AM.",
+  "scope": "B2C",
+  "event": "bookingConfirmation",
+  "B2C": {
+    "B2C": true,
+    "receiptId": "RCP-123456",
+    "paymentMethod": "Visa ****4242"
+  },
+  "B2B": {
+    "B2B": true,
+    "policyViolations": [],
+    "requestedVia": "",
+    "purpose": "",
+    "tag": ""
+  },
+  "adminRequest": null,
+  "pendingBooking": null,
+  "bookingApproval": {
+    "bookingApproval": true
+  },
+  "bookingRejection": null,
+  "priceSummary": {
+    "basePrice": "1,250.00",
+    "taxAndFees": "187.50",
+    "discount": "125.00",
+    "totalPrice": "1,312.50",
+    "currency": "SAR",
+    "taxDisclaimer": "The taxes are tax recovery charges paid to vendors (e.g., hotels); for details, please see our Terms of Use. Service fees are retained as compensation in servicing your booking and may include fees charged by vendors."
+  },
+  "contactInfo": "+1 800 123 4567  Miami, Florida, USA"
+}

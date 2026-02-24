@@ -13,7 +13,7 @@ export function Preview({ title, size, canSave }: Props) {
     try {
       return s.hbsTemplate?.(s.getData());
     } catch (error) {
-      console.error(error);
+      console.error(">>> Population Error:", error);
     }
   });
 

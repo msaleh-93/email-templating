@@ -124,6 +124,7 @@ async function getHbsTemplate(filename: string) {
 
 async function getData(template: string) {
   const rsp = await fetch(`/api/data/${template}`);
+  if (!rsp.ok) return {};
   return (await rsp.json()) as Record<string, unknown>;
 }
 

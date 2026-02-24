@@ -2,7 +2,7 @@ export type FlightEmail = {
   language: string;
   rtl?: boolean;
   homepageLink?: string;
-  contactUsLink: string;
+  contactUsLink?: string;
   subjectLine: string;
   issueDate: string;
   issueId: string;
