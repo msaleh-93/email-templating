@@ -1,15 +1,15 @@
 {
   "language": "en",
-  "title": "Booking Confirmation",
+  "title": "Hotel Booking",
   "homepageLink": "https://flyakeed.com",
   "contactUsLink": "https://flyakeed.com/contact.html",
   "issueDate": "2026-01-30 10:31",
   "issueId": "7568",
-  "hcn": "DK2JD8UGSK",
+  "_hcn": "DK2JD8UGSK",
   "name": "Grand Millennium Tabuk",
   "address": "3421 Al-Haram Street, Rawabi Dist, Makkah, Saudi Arabia",
   "phoneNumber": "+966 14 3288888",
-  "scope": "B2B",
+  "scope": "B2C",
   "event": "bookingApproval",
   "B2B": {
     "B2B": true,
@@ -81,6 +81,12 @@
       "type": "Adult"
     }
   ],
+  "_guests": [
+    {
+      "name": "Tariq Kawari",
+      "type": "Adult"
+    }
+  ],
   "rooms": [
     {
       "name": "Royal Suite King Bed",
@@ -108,6 +114,19 @@
       },
       "description": "One Bedroom Single Bed with One Bathroom"
     },
+    {
+      "name": "Single Standard",
+      "nights": {
+        "value": 6,
+        "plural": true
+      },
+      "adults": {
+        "value": 1
+      },
+      "description": "One Bedroom Single Bed with One Bathroom"
+    }
+  ],
+  "_rooms": [
     {
       "name": "Single Standard",
       "nights": {

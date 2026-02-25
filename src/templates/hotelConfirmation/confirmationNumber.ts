@@ -43,6 +43,7 @@ export function confirmationNumber() {
                 color: "#ffffff",
                 "font-size": "16px",
                 "font-weight": 700,
+                "text-align": "center",
               },
             },
             $.var("../hcn"),
@@ -71,4 +72,5 @@ const PADDING = { top: 10, bottom: 10, start: 16, end: 16 } as const,
     color: "#394f6c",
     "font-size": "11px",
     "font-weight": 500,
+    "text-align": "center",
   } as const;

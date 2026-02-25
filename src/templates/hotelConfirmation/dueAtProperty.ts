@@ -9,7 +9,7 @@ export function dueAtProperty() {
       t.td(
         { style: { padding: 0 } },
         t.div(
-          { style: { display: "inline-block", "max-width": "320px" } },
+          { class: "corp-booking", style: { "max-width": "320px" } },
           t.h3(
             {
               style: {
@@ -22,8 +22,8 @@ export function dueAtProperty() {
             },
             "Due at property",
           ),
-          $.if("original", [
-            // spacingY(4),
+          $.if(
+            "original",
             t.p(
               {
                 style: {
@@ -44,11 +44,10 @@ export function dueAtProperty() {
               $.var("original.currency~"),
               ". Your card issuer may charge a foreign transaction fee.",
             ),
-          ]),
+          ),
         ),
         t.div(
-          { style: { display: "inline-block" } },
-          // spacingY(4),
+          { class: "corp-booking" },
           t.p(
             {
               style: {
@@ -86,8 +85,8 @@ export function dueAtProperty() {
               ),
             ),
           ),
-          $.with("original", [
-            // spacingY(4),
+          $.with(
+            "original",
             t.p(
               {
                 style: {
@@ -111,7 +110,7 @@ export function dueAtProperty() {
               $.var("~price~"),
               ")",
             ),
-          ]),
+          ),
         ),
       ),
     ),
