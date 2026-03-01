@@ -52,11 +52,21 @@
       padding: 0 0 0 16px;
       margin: 0;
     }
-      
+
     @media screen and (min-width: 512px) {
-      .corp-booking {
+      .side-by-side {
         display: inline-block;
       }
+
+      .mobile-only {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 512px) {
+        .desktop-only {
+          display: none;
+        }
     }
 		</style>
 	</head>
@@ -818,7 +828,7 @@
 																						style="padding: 0;">
 																						<p
 																							style="margin: 0; color: #3d526e; font-size: 12px; font-weight: 500; text-align: start;">
-																							{{description}}
+																							{{{description}}}
 																						</p>
 																					</td>
 																				</tr>
@@ -851,56 +861,61 @@
 																<tr>
 																	<td
 																		style="padding: 0;">
-																		<table
-																			x-area="box"
-																			width="100%"
-																			align="center"
-																			border="0"
-																			style="border-collapse: collapse; background-color: #ecf1f8; border-radius: 8px;">
-																			<tbody>
-																				<tr
-																					x-area="spacing-y"
-																					height="12">
-																					<td
-																						style="padding: 0;"></td>
-																				</tr>
-																				<tr>
-																					<td
-																						x-area="spacing-x"
-																						width="12"
-																						style="padding: 0; min-width: 12px; max-width: 12px;"></td>
-																					<td
-																						style="padding: 0; max-width: 16px;"
-																						width="16">
-																						<img
-																							src="https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/pin.svg"
-																							height="15"
-																							alt="pin">
-																					</td>
-																					<td
-																						x-area="spacing-x"
-																						width="6"
-																						style="padding: 0; min-width: 6px; max-width: 6px;"></td>
-																					<td
-																						style="padding: 0;">
-																						<p
-																							style="margin: 0; color: #3a4f6d; font-size: 12px; font-weight: 500; text-align: start; line-height: 145.4%;">
-																							{{address}}
-																						</p>
-																					</td>
-																					<td
-																						x-area="spacing-x"
-																						width="12"
-																						style="padding: 0; min-width: 12px; max-width: 12px;"></td>
-																				</tr>
-																				<tr
-																					x-area="spacing-y"
-																					height="12">
-																					<td
-																						style="padding: 0;"></td>
-																				</tr>
-																			</tbody>
-																		</table>
+																		<a
+																			href="{{mapLink}}"
+																			target="_blank"
+																			style="text-decoration: none;">
+																			<table
+																				x-area="box"
+																				width="100%"
+																				align="center"
+																				border="0"
+																				style="border-collapse: collapse; background-color: #ecf1f8; border-radius: 8px;">
+																				<tbody>
+																					<tr
+																						x-area="spacing-y"
+																						height="12">
+																						<td
+																							style="padding: 0;"></td>
+																					</tr>
+																					<tr>
+																						<td
+																							x-area="spacing-x"
+																							width="12"
+																							style="padding: 0; min-width: 12px; max-width: 12px;"></td>
+																						<td
+																							style="padding: 0; max-width: 16px;"
+																							width="16">
+																							<img
+																								src="https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/pin.svg"
+																								height="15"
+																								alt="pin">
+																						</td>
+																						<td
+																							x-area="spacing-x"
+																							width="6"
+																							style="padding: 0; min-width: 6px; max-width: 6px;"></td>
+																						<td
+																							style="padding: 0;">
+																							<p
+																								style="margin: 0; color: #3a4f6d; font-size: 12px; font-weight: 500; text-align: start; line-height: 145.4%;">
+																								{{address}}
+																							</p>
+																						</td>
+																						<td
+																							x-area="spacing-x"
+																							width="12"
+																							style="padding: 0; min-width: 12px; max-width: 12px;"></td>
+																					</tr>
+																					<tr
+																						x-area="spacing-y"
+																						height="12">
+																						<td
+																							style="padding: 0;"></td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</a>
 																	</td>
 																</tr>
 																{{~#if phoneNumber~}}
@@ -1283,7 +1298,7 @@
 																										style="padding: 0;">
 																										<h3
 																											style="margin: 0; color: #3a4f6d; font-size: 12px; font-weight: 700; text-align: start;">
-																											Check-in Policy
+																											Check-In Policies
 																										</h3>
 																									</td>
 																								</tr>
@@ -1610,7 +1625,7 @@
 																									<td
 																										style="padding: 0;">
 																										<div
-																											class="corp-booking"
+																											class="side-by-side"
 																											style="min-width: 98px; padding-inline-end: 32px; padding-top: 16px;">
 																											<h4
 																												style="margin: 0; padding-bottom: 4px; color: #67788f; font-size: 12px; font-weight: 500; text-align: start;">
@@ -1622,7 +1637,7 @@
 																											</h3>
 																										</div>
 																										<div
-																											class="corp-booking"
+																											class="side-by-side"
 																											style="min-width: 98px; padding-inline-end: 32px; padding-top: 16px;">
 																											<h4
 																												style="margin: 0; padding-bottom: 4px; color: #67788f; font-size: 12px; font-weight: 500; text-align: start;">
@@ -1634,7 +1649,7 @@
 																											</h3>
 																										</div>
 																										<div
-																											class="corp-booking"
+																											class="side-by-side"
 																											style="min-width: 98px; padding-inline-end: 32px; padding-top: 16px;">
 																											<h4
 																												style="margin: 0; padding-bottom: 4px; color: #67788f; font-size: 12px; font-weight: 500; text-align: start;">
@@ -1715,7 +1730,7 @@
 																									<td
 																										style="padding: 0;">
 																										<div
-																											class="corp-booking"
+																											class="side-by-side"
 																											style="min-width: 98px; padding-inline-end: 64px; padding-top: 16px;">
 																											<h4
 																												style="margin: 0; padding-bottom: 4px; color: #67788f; font-size: 12px; font-weight: 500; text-align: start;">
@@ -1727,7 +1742,7 @@
 																											</h3>
 																										</div>
 																										<div
-																											class="corp-booking"
+																											class="side-by-side"
 																											style="min-width: 98px; padding-inline-end: 64px; padding-top: 16px;">
 																											<h4
 																												style="margin: 0; padding-bottom: 4px; color: #67788f; font-size: 12px; font-weight: 500; text-align: start;">
@@ -2047,66 +2062,197 @@
 																						style="padding: 0; min-width: 14px; max-width: 14px;"></td>
 																					<td
 																						style="padding: 0;">
-																						<div
-																							class="corp-booking"
-																							style="max-width: 320px;">
-																							<h3
-																								style="margin: 0; color: #3d526e; font-size: 12px; font-weight: 600; text-align: start;">
-																								Due at property
-																							</h3>
-																							{{~#if original~}}
-																							<p
-																								style="margin: 0; padding-top: 4px; color: #4a668c; font-size: 10px; font-weight: 400; text-align: start; line-height: 145.4%;">
-																								<span>
-																									{{~#if target.currency~}}
-																										{{target.currency}}
-																									{{~else~}}
-																										SAR (SAR)
-																									{{~/if~}}
-																								</span>
-																								 amounts due at the property are estimates based on current exchange rates, which may vary at the time of travel. You will pay these amounts in 
-																								{{original.currency~}}
-																								. Your card issuer may charge a foreign transaction fee.
-																							</p>
-																							{{~/if~}}
-																						</div>
-																						<div
-																							class="corp-booking">
-																							<p
-																								style="margin: 0; padding-top: 4px; font-size: 12px; text-align: end;">
-																								{{~#if original~}}
-																								<span
-																									style="color: #4a668c; font-weight: 500;">
-																									Approx
-																								</span>
-																								{{~/if~}}
-																								{{~#with target~}}
-																								<span
-																									style="color: #0763df; font-weight: 700;">
-																									<img
-																										src="{{#if currencyIconSrc}}{{currencyIconSrc}}{{else}}https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/sar.svg{{/if}}"
-																										height="11"
-																										alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}"
-																										style="filter: invert(28%) sepia(53%) saturate(6026%) hue-rotate(208deg) brightness(92%) contrast(95%);">
-																									{{price}}
-																								</span>
-																								{{~/with~}}
-																							</p>
-																							{{~#with original~}}
-																							<p
-																								style="margin: 0; padding-top: 4px; color: #4a668c; font-size: 12px; font-weight: 500; text-align: end;">
-																								(
-																								{{~#if currencyIconSrc~}}
-																								<img
-																									src="{{currencyIconSrc}}"
-																									height="11"
-																									alt="{{currency}}">
-																								{{~/if~}}
-																								{{~price~}}
-																								)
-																							</p>
-																							{{~/with~}}
-																						</div>
+																						<table
+																							x-area="grid-row"
+																							width="100%"
+																							align="center"
+																							border="0"
+																							style="border-collapse: collapse;">
+																							<tbody>
+																								<tr>
+																									<td
+																										style="padding: 0;">
+																										<table
+																											x-area="grid-col"
+																											width="100%"
+																											align="center"
+																											border="0"
+																											style="border-collapse: collapse;">
+																											<tbody>
+																												<tr>
+																													<td
+																														style="padding: 0;">
+																														<h3
+																															style="margin: 0; color: #3d526e; font-size: 12px; font-weight: 600; text-align: start;">
+																															Due at property
+																														</h3>
+																													</td>
+																												</tr>
+																												<tr
+																													x-area="spacing-y"
+																													height="4">
+																													<td
+																														style="padding: 0;"></td>
+																												</tr>
+																												{{~#if original~}}
+																												<tr>
+																													<td
+																														style="padding: 0;">
+																														<p
+																															style="margin: 0; color: #4a668c; font-size: 10px; font-weight: 400; text-align: start; line-height: 145.4%;">
+																															<span>
+																																{{~#if target.currency~}}
+																																	{{target.currency}}
+																																{{~else~}}
+																																	SAR (SAR)
+																																{{~/if~}}
+																															</span>
+																															 amounts due at the property are estimates based on current exchange rates, which may vary at the time of travel. You will pay these amounts in 
+																															{{original.currency~}}
+																															. Your card issuer may charge a foreign transaction fee.
+																														</p>
+																													</td>
+																												</tr>
+																												<tr
+																													x-area="spacing-y"
+																													height="4">
+																													<td
+																														style="padding: 0;"></td>
+																												</tr>
+																												{{~/if~}}
+																												<tr>
+																													<td
+																														style="padding: 0;">
+																														<table
+																															x-area="grid-col"
+																															align="center"
+																															border="0"
+																															style="border-collapse: collapse;"
+																															class="mobile-only">
+																															<tbody>
+																																<tr>
+																																	<td
+																																		style="padding: 0;">
+																																		<p
+																																			style="margin: 0; font-size: 12px; text-align: end;">
+																																			{{~#if original~}}
+																																			<span
+																																				style="color: #4a668c; font-weight: 500;">
+																																				Approx
+																																			</span>
+																																			{{~/if~}}
+																																			{{~#with target~}}
+																																			<span
+																																				style="color: #0763df; font-weight: 700;">
+																																				<img
+																																					src="{{#if currencyIconSrc}}{{currencyIconSrc}}{{else}}https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/sar.svg{{/if}}"
+																																					height="11"
+																																					alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}"
+																																					style="filter: invert(28%) sepia(53%) saturate(6026%) hue-rotate(208deg) brightness(92%) contrast(95%);">
+																																				{{price}}
+																																			</span>
+																																			{{~/with~}}
+																																		</p>
+																																	</td>
+																																</tr>
+																																<tr
+																																	x-area="spacing-y"
+																																	height="4">
+																																	<td
+																																		style="padding: 0;"></td>
+																																</tr>
+																																{{~#with original~}}
+																																<tr>
+																																	<td
+																																		style="padding: 0;">
+																																		<p
+																																			style="margin: 0; color: #4a668c; font-size: 12px; font-weight: 500; text-align: end;">
+																																			(
+																																			{{~#if currencyIconSrc~}}
+																																			<img
+																																				src="{{currencyIconSrc}}"
+																																				height="11"
+																																				alt="{{currency}}">
+																																			{{~/if~}}
+																																			{{~price~}}
+																																			)
+																																		</p>
+																																	</td>
+																																</tr>
+																																{{~/with~}}
+																															</tbody>
+																														</table>
+																													</td>
+																												</tr>
+																											</tbody>
+																										</table>
+																									</td>
+																									<td
+																										style="padding: 0;">
+																										<table
+																											x-area="grid-col"
+																											width="100%"
+																											align="center"
+																											border="0"
+																											style="border-collapse: collapse; min-width: 96px;"
+																											class="desktop-only">
+																											<tbody>
+																												<tr>
+																													<td
+																														style="padding: 0;">
+																														<p
+																															style="margin: 0; font-size: 12px; text-align: end;">
+																															{{~#if original~}}
+																															<span
+																																style="color: #4a668c; font-weight: 500;">
+																																Approx
+																															</span>
+																															{{~/if~}}
+																															{{~#with target~}}
+																															<span
+																																style="color: #0763df; font-weight: 700;">
+																																<img
+																																	src="{{#if currencyIconSrc}}{{currencyIconSrc}}{{else}}https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/sar.svg{{/if}}"
+																																	height="11"
+																																	alt="{{#if currency}}{{currency}}{{else}}SAR{{/if}}"
+																																	style="filter: invert(28%) sepia(53%) saturate(6026%) hue-rotate(208deg) brightness(92%) contrast(95%);">
+																																{{price}}
+																															</span>
+																															{{~/with~}}
+																														</p>
+																													</td>
+																												</tr>
+																												<tr
+																													x-area="spacing-y"
+																													height="4">
+																													<td
+																														style="padding: 0;"></td>
+																												</tr>
+																												{{~#with original~}}
+																												<tr>
+																													<td
+																														style="padding: 0;">
+																														<p
+																															style="margin: 0; color: #4a668c; font-size: 12px; font-weight: 500; text-align: end;">
+																															(
+																															{{~#if currencyIconSrc~}}
+																															<img
+																																src="{{currencyIconSrc}}"
+																																height="11"
+																																alt="{{currency}}">
+																															{{~/if~}}
+																															{{~price~}}
+																															)
+																														</p>
+																													</td>
+																												</tr>
+																												{{~/with~}}
+																											</tbody>
+																										</table>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
 																					</td>
 																					<td
 																						x-area="spacing-x"

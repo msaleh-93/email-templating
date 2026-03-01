@@ -89,7 +89,7 @@ export function rooms() {
             "text-align": "start",
           },
         },
-        $.var("description"),
+        $.var("{description}"),
       ),
       spacingY(10),
     ]),

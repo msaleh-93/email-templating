@@ -5,12 +5,13 @@
   "contactUsLink": "https://flyakeed.com/contact.html",
   "issueDate": "2026-01-30 10:31",
   "issueId": "7568",
-  "_hcn": "DK2JD8UGSK",
+  "hcn": "DK2JD8UGSK",
   "name": "Grand Millennium Tabuk",
   "address": "3421 Al-Haram Street, Rawabi Dist, Makkah, Saudi Arabia",
+  "mapLink": "https://maps.app.goo.gl/ay39eBhxkCv29pkr9",
   "phoneNumber": "+966 14 3288888",
-  "scope": "B2C",
-  "event": "bookingApproval",
+  "scope": "B2B",
+  "event": "adminRequest",
   "B2B": {
     "B2B": true,
     "policyViolations": [
@@ -62,11 +63,11 @@
   },
   "checkIn": {
     "date": "20 Aug,2026",
-    "time": "2:00pm"
+    "time": "2:00 PM"
   },
   "checkOut": {
     "date": "24 Aug,2026",
-    "time": "11:00am"
+    "time": "11:00 AM"
   },
   "cancellationPolicy": "<ul><li>Estimated 623.414 SAR cancellation fee applied between 1/25/2026 and 1/27/2026 days before check-in</li></ul>",
   "checkInPolicy": "<ul><li>Check-in start time: 3:00 PM;</li><li>Check-in end time: midnight</li><li>Contactless check-in available</li><li>Late check-in subject to availability</li><li>Minimum check-in age: 18</li></ul>",
@@ -148,30 +149,30 @@
       },
       {
         "label": "Taxes & Fees *",
-        "value": "30"
+        "value": "30.00"
       },
       {
         "label": "Affiliate Service Fees",
-        "value": "10"
+        "value": "10.00"
       },
       {
         "label": "Resort Fee",
-        "value": "30",
+        "value": "30.00",
         "atProperty": true
       },
       {
         "label": "City Tax",
-        "value": "30",
+        "value": "30.00",
         "atProperty": true
       },
       {
         "label": "Discount",
-        "value": "50",
+        "value": "50.00",
         "subtracted": true
       },
       {
         "label": "Paid",
-        "value": "30"
+        "value": "30.00"
       }
     ]
   },

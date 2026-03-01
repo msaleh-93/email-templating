@@ -205,7 +205,7 @@ function renderOptions({
 }) {
   return t.div(
     {
-      class: "corp-booking",
+      class: "side-by-side",
       style: {
         "min-width": "98px",
         "padding-inline-end": `${spacing}px`,

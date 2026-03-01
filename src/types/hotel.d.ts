@@ -11,6 +11,7 @@ export type HotelEmail = {
   name: string;
   rooms: Room[];
   address: string;
+  mapLink: string;
   phoneNumber?: string | null;
   checkIn: DateTime;
   checkOut: DateTime;

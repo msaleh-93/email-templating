@@ -1,15 +1,73 @@
 import { $, t } from "~/lib/templateBuilder";
-import { spacingY } from "../blocks";
+import { gridCol, gridRow, spacingY } from "../blocks";
 import { borderedBox } from "./borderedBox";
 
 export function dueAtProperty() {
+  const price = [
+    t.p(
+      {
+        style: { margin: 0, "font-size": "12px", "text-align": "end" },
+      },
+      $.if(
+        "original",
+        t.span({ style: { color: "#4a668c", "font-weight": 500 } }, "Approx"),
+      ),
+      $.with(
+        "target",
+        t.span(
+          { style: { color: "#0763df", "font-weight": 700 } },
+          t.img({
+            src: $.if(
+              "currencyIconSrc",
+              $.var("currencyIconSrc"),
+              "https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/sar.svg",
+            ),
+            height: 11,
+            alt: $.if("currency", $.var("currency"), "SAR"),
+            style: {
+              filter:
+                "invert(28%) sepia(53%) saturate(6026%) hue-rotate(208deg) brightness(92%) contrast(95%)",
+            },
+          }),
+          $.var("price"),
+        ),
+      ),
+    ),
+    spacingY(4),
+    $.with(
+      "original",
+      t.p(
+        {
+          style: {
+            margin: 0,
+            color: "#4a668c",
+            "font-size": "12px",
+            "font-weight": 500,
+            "text-align": "end",
+          },
+        },
+        "(",
+        $.if(
+          "currencyIconSrc",
+          t.img({
+            src: $.var("currencyIconSrc"),
+            height: 11,
+            alt: $.var("currency"),
+          }),
+        ),
+        $.var("~price~"),
+        ")",
+      ),
+    ),
+  ];
+
   return $.with("dueAtProperty", [
     spacingY(16),
     borderedBox(
-      t.td(
-        { style: { padding: 0 } },
-        t.div(
-          { class: "corp-booking", style: { "max-width": "320px" } },
+      gridRow(
+        null,
+        gridCol(
+          { gap: 4 },
           t.h3(
             {
               style: {
@@ -28,7 +86,6 @@ export function dueAtProperty() {
               {
                 style: {
                   margin: 0,
-                  "padding-top": "4px",
                   color: "#4a668c",
                   "font-size": "10px",
                   "font-weight": 400,
@@ -45,72 +102,11 @@ export function dueAtProperty() {
               ". Your card issuer may charge a foreign transaction fee.",
             ),
           ),
+          gridCol({ class: "mobile-only", width: null }, price),
         ),
-        t.div(
-          { class: "corp-booking" },
-          t.p(
-            {
-              style: {
-                margin: 0,
-                "padding-top": "4px",
-                "font-size": "12px",
-                "text-align": "end",
-              },
-            },
-            $.if(
-              "original",
-              t.span(
-                { style: { color: "#4a668c", "font-weight": 500 } },
-                "Approx",
-              ),
-            ),
-            $.with(
-              "target",
-              t.span(
-                { style: { color: "#0763df", "font-weight": 700 } },
-                t.img({
-                  src: $.if(
-                    "currencyIconSrc",
-                    $.var("currencyIconSrc"),
-                    "https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/sar.svg",
-                  ),
-                  height: 11,
-                  alt: $.if("currency", $.var("currency"), "SAR"),
-                  style: {
-                    filter:
-                      "invert(28%) sepia(53%) saturate(6026%) hue-rotate(208deg) brightness(92%) contrast(95%)",
-                  },
-                }),
-                $.var("price"),
-              ),
-            ),
-          ),
-          $.with(
-            "original",
-            t.p(
-              {
-                style: {
-                  margin: 0,
-                  "padding-top": "4px",
-                  color: "#4a668c",
-                  "font-size": "12px",
-                  "font-weight": 500,
-                  "text-align": "end",
-                },
-              },
-              "(",
-              $.if(
-                "currencyIconSrc",
-                t.img({
-                  src: $.var("currencyIconSrc"),
-                  height: 11,
-                  alt: $.var("currency"),
-                }),
-              ),
-              $.var("~price~"),
-              ")",
-            ),
-          ),
+        gridCol(
+          { class: "desktop-only", style: { "min-width": "96px" } },
+          price,
         ),
       ),
     ),

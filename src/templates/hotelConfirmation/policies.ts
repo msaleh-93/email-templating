@@ -42,6 +42,6 @@ export function policies() {
 
 const OPTIONS = [
   { key: "cancellationPolicy", label: "Cancellation Policy" },
-  { key: "checkInPolicy", label: "Check-in Policy" },
+  { key: "checkInPolicy", label: "Check-In Policies" },
   { key: "specialInstructions", label: "Special Instructions" },
 ];

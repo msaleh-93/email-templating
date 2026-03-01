@@ -53,11 +53,21 @@ export function doc(...children: any[]) {
       padding: 0 0 0 16px;
       margin: 0;
     }
-      
+
     @media screen and (min-width: 512px) {
-      .corp-booking {
+      .side-by-side {
         display: inline-block;
       }
+
+      .mobile-only {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 512px) {
+        .desktop-only {
+          display: none;
+        }
     }`,
       ),
     ),

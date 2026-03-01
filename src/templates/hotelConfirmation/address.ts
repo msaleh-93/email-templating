@@ -3,28 +3,35 @@ import { spacingX } from "../blocks";
 import { grayBox } from "./grayBox";
 
 export function address() {
-  return grayBox(
-    t.td(
-      { style: { padding: 0, "max-width": "16px" }, width: 16 },
-      t.img({
-        src: "https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/pin.svg",
-        height: 15,
-        alt: "pin",
-      }),
-    ),
-    spacingX(6),
-    t.p(
-      {
-        style: {
-          margin: 0,
-          color: "#3a4f6d",
-          "font-size": "12px",
-          "font-weight": 500,
-          "text-align": "start",
-          "line-height": "145.4%",
+  return t.a(
+    {
+      href: $.var("mapLink"),
+      target: "_blank",
+      style: { "text-decoration": "none" },
+    },
+    grayBox(
+      t.td(
+        { style: { padding: 0, "max-width": "16px" }, width: 16 },
+        t.img({
+          src: "https://cdn.flyakeed.com/flyakeed-emails/hotel-confirmation/pin.svg",
+          height: 15,
+          alt: "pin",
+        }),
+      ),
+      spacingX(6),
+      t.p(
+        {
+          style: {
+            margin: 0,
+            color: "#3a4f6d",
+            "font-size": "12px",
+            "font-weight": 500,
+            "text-align": "start",
+            "line-height": "145.4%",
+          },
         },
-      },
-      $.var("address"),
+        $.var("address"),
+      ),
     ),
   );
 }
