@@ -81,6 +81,7 @@ export function rooms() {
       spacingY(4),
       t.p(
         {
+          class: "external-cms",
           style: {
             margin: 0,
             color: "#3d526e",

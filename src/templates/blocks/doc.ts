@@ -54,6 +54,10 @@ export function doc(...children: any[]) {
       margin: 0;
     }
 
+    .external-cms * {
+      text-align: start;
+    }
+
     @media screen and (min-width: 512px) {
       .side-by-side {
         display: inline-block;
@@ -76,7 +80,6 @@ export function doc(...children: any[]) {
         "xml:lang": $.var("language"),
         style: {
           "background-color": "#cce6ff",
-          "text-align": "center",
           "font-family": "inter, system-ui, sans-serif",
           "font-size": "16px",
           padding: 0,
